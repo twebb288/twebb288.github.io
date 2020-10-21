@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <settings>
-  <projectName>AJ Punch</projectName>
-  <projectConfig>/Users/t.webb/Documents/Sports media ideas/360 test/AJ Punch/AJ Punch.xml</projectConfig>
+  <projectName>NewProject3</projectName>
+  <projectConfig>/Users/t.webb/Documents/Sports media ideas/360 test/NewProject3/NewProject3.xml</projectConfig>
   <interface>
     <clipboxPreview>True</clipboxPreview>
     <clipboxFitImages>False</clipboxFitImages>
@@ -13,10 +13,8 @@
     <spotWheelSpeedDown>False</spotWheelSpeedDown>
   </interface>
   <publishing>
-    <publishPath>
-    </publishPath>
-    <viewName>
-    </viewName>
+    <publishPath>/Users/t.webb/Documents/Sports media ideas/360 test/NewProject3/published</publishPath>
+    <viewName>NewProject3</viewName>
     <skinType>0</skinType>
     <viewerWidth>777</viewerWidth>
     <viewerHeight>486</viewerHeight>
@@ -30,16 +28,14 @@
     <cropMarginBottom>0</cropMarginBottom>
     <cropMarginRight>0</cropMarginRight>
     <cropFillColor>-1</cropFillColor>
-    <viewerBackColor>-1</viewerBackColor>
+    <viewerBackColor>-16777216</viewerBackColor>
     <hideWatermarks>False</hideWatermarks>
-    <fittedImages>True</fittedImages>
+    <fittedImages>False</fittedImages>
     <skipImagePublishing>False</skipImagePublishing>
     <launchLocalBrowser>True</launchLocalBrowser>
-    <launchRemotelBrowser>True</launchRemotelBrowser>
-    <testBrowser>
-    </testBrowser>
-    <publishTemplate>
-    </publishTemplate>
+    <launchRemotelBrowser>False</launchRemotelBrowser>
+    <testBrowser>Safari</testBrowser>
+    <publishTemplate>Mobile full page (iFrame)</publishTemplate>
     <loopGif>True</loopGif>
     <publishGifPath>
     </publishGifPath>
@@ -57,7 +53,6 @@
   <canvas />
   <effects />
   <connections>
-    <activeConnection>
-    </activeConnection>
+    <activeConnection>Do not upload</activeConnection>
   </connections>
 </settings>
