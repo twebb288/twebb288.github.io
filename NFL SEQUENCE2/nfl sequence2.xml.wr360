@@ -28,7 +28,7 @@
     <cropMarginBottom>0</cropMarginBottom>
     <cropMarginRight>0</cropMarginRight>
     <cropFillColor>-1</cropFillColor>
-    <viewerBackColor>-1</viewerBackColor>
+    <viewerBackColor>-16777216</viewerBackColor>
     <hideWatermarks>False</hideWatermarks>
     <fittedImages>True</fittedImages>
     <skipImagePublishing>False</skipImagePublishing>
