@@ -13,17 +13,15 @@
     <spotWheelSpeedDown>False</spotWheelSpeedDown>
   </interface>
   <publishing>
-    <publishPath>
-    </publishPath>
-    <viewName>
-    </viewName>
+    <publishPath>/Users/t.webb/Documents/Sports media ideas/360 test/MJ2/published</publishPath>
+    <viewName>MJ2</viewName>
     <skinType>0</skinType>
     <viewerWidth>432</viewerWidth>
     <viewerHeight>486</viewerHeight>
     <imageScale>0.41</imageScale>
     <imageFormat>1</imageFormat>
-    <jpgQuality>94</jpgQuality>
-    <jpgQualityHighres>94</jpgQualityHighres>
+    <jpgQuality>70</jpgQuality>
+    <jpgQualityHighres>70</jpgQualityHighres>
     <cropMarginScale>4</cropMarginScale>
     <cropMarginTop>0</cropMarginTop>
     <cropMarginLeft>0</cropMarginLeft>
@@ -32,14 +30,12 @@
     <cropFillColor>-1</cropFillColor>
     <viewerBackColor>-16777216</viewerBackColor>
     <hideWatermarks>False</hideWatermarks>
-    <fittedImages>True</fittedImages>
+    <fittedImages>False</fittedImages>
     <skipImagePublishing>False</skipImagePublishing>
     <launchLocalBrowser>True</launchLocalBrowser>
-    <launchRemotelBrowser>True</launchRemotelBrowser>
-    <testBrowser>
-    </testBrowser>
-    <publishTemplate>
-    </publishTemplate>
+    <launchRemotelBrowser>False</launchRemotelBrowser>
+    <testBrowser>Safari</testBrowser>
+    <publishTemplate>Mobile full page (iFrame)</publishTemplate>
     <loopGif>True</loopGif>
     <publishGifPath>
     </publishGifPath>
@@ -57,7 +53,6 @@
   <canvas />
   <effects />
   <connections>
-    <activeConnection>
-    </activeConnection>
+    <activeConnection>Do not upload</activeConnection>
   </connections>
 </settings>
