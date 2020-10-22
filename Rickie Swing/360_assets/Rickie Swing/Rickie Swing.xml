@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <settings>
+    <preloader image="images/Swing000.webp?t=1603388391" />
+    <userInterface showZoomButtons="false" showToolTips="false" showHotspotsButton="false" showFullScreenButton="false" showTogglePlayButton="false" showArrows="false" toolbarAlign="center" toolbarBackColor="transparent" toolbarHoverColor="#808285" toolbarForeColor="#A7A9AE" toolbarBackAlpha="0" toolbarAlpha="1" showProgressNumbers="false" showFullScreenToolbar="false" fullScreenBackColor="#000000" toolbarPosition="0" customCursorClass="default_cursor" viewerHint="" toolbarAutohide="true" showToolbarOnLoadStart="false" />
+    <control dragSpeed="0.13" doubleClickZooms="true" disableMouseControl="false" showHighresOnFullScreen="true" mouseHoverDrag="false" hideHotspotsOnLoad="true" hideHotspotsOnZoom="true" rowSensitivity="15" dragSensitivity="10" inBrowserFullScreen="false" doubleClickFullscreen="false" zoomSteps="1" zoomSpeed="300" singleClickZooms="false" pauseOnPreload="false" resumePreloadOnHover="false" mouseWheelDrag="false" mouseWheelDragZoomOnly="false" allowRotateInputInZoom="false" allowPanX="true" allowPanY="true" />
+    <rotation firstImage="0" rotate="false" rotatePeriod="7" bounce="false" rotateDirection="1" forceDirection="false" inertiaRelToDragSpeed="true" inertiaTimeToStop="700" inertiaMaxInterval="120" useInertia="true" flipHorizontalInput="false" flipVerticalInput="false" bounceRows="true" rowsOnSingleIndex="false" flipAxis="false" />
+  </settings>
+  <hotspots />
+  <images rows="1" highresWidth="1080" highresHeight="1920">
+    <image src="images/Swing000.webp?t=1603388391">
+      <highres src="images/highres/Swing000.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing001.webp?t=1603388391">
+      <highres src="images/highres/Swing001.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing002.webp?t=1603388391">
+      <highres src="images/highres/Swing002.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing003.webp?t=1603388391">
+      <highres src="images/highres/Swing003.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing004.webp?t=1603388391">
+      <highres src="images/highres/Swing004.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing005.webp?t=1603388391">
+      <highres src="images/highres/Swing005.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing006.webp?t=1603388391">
+      <highres src="images/highres/Swing006.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing007.webp?t=1603388391">
+      <highres src="images/highres/Swing007.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing008.webp?t=1603388391">
+      <highres src="images/highres/Swing008.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing009.webp?t=1603388391">
+      <highres src="images/highres/Swing009.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing010.webp?t=1603388391">
+      <highres src="images/highres/Swing010.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing011.webp?t=1603388391">
+      <highres src="images/highres/Swing011.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing012.webp?t=1603388391">
+      <highres src="images/highres/Swing012.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing013.webp?t=1603388391">
+      <highres src="images/highres/Swing013.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing014.webp?t=1603388391">
+      <highres src="images/highres/Swing014.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing015.webp?t=1603388391">
+      <highres src="images/highres/Swing015.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing016.webp?t=1603388391">
+      <highres src="images/highres/Swing016.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing017.webp?t=1603388391">
+      <highres src="images/highres/Swing017.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing018.webp?t=1603388391">
+      <highres src="images/highres/Swing018.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing019.webp?t=1603388391">
+      <highres src="images/highres/Swing019.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing020.webp?t=1603388391">
+      <highres src="images/highres/Swing020.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing021.webp?t=1603388391">
+      <highres src="images/highres/Swing021.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing022.webp?t=1603388391">
+      <highres src="images/highres/Swing022.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing023.webp?t=1603388391">
+      <highres src="images/highres/Swing023.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing024.webp?t=1603388391">
+      <highres src="images/highres/Swing024.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing025.webp?t=1603388391">
+      <highres src="images/highres/Swing025.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing026.webp?t=1603388391">
+      <highres src="images/highres/Swing026.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing027.webp?t=1603388391">
+      <highres src="images/highres/Swing027.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing028.webp?t=1603388391">
+      <highres src="images/highres/Swing028.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing029.webp?t=1603388391">
+      <highres src="images/highres/Swing029.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing030.webp?t=1603388391">
+      <highres src="images/highres/Swing030.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing031.webp?t=1603388391">
+      <highres src="images/highres/Swing031.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing032.webp?t=1603388391">
+      <highres src="images/highres/Swing032.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing033.webp?t=1603388391">
+      <highres src="images/highres/Swing033.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing034.webp?t=1603388391">
+      <highres src="images/highres/Swing034.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing035.webp?t=1603388391">
+      <highres src="images/highres/Swing035.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing036.webp?t=1603388391">
+      <highres src="images/highres/Swing036.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing037.webp?t=1603388391">
+      <highres src="images/highres/Swing037.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing038.webp?t=1603388391">
+      <highres src="images/highres/Swing038.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing039.webp?t=1603388391">
+      <highres src="images/highres/Swing039.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing040.webp?t=1603388391">
+      <highres src="images/highres/Swing040.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing041.webp?t=1603388391">
+      <highres src="images/highres/Swing041.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing042.webp?t=1603388391">
+      <highres src="images/highres/Swing042.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing043.webp?t=1603388391">
+      <highres src="images/highres/Swing043.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing044.webp?t=1603388391">
+      <highres src="images/highres/Swing044.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing045.webp?t=1603388391">
+      <highres src="images/highres/Swing045.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing046.webp?t=1603388391">
+      <highres src="images/highres/Swing046.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing047.webp?t=1603388391">
+      <highres src="images/highres/Swing047.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing048.webp?t=1603388391">
+      <highres src="images/highres/Swing048.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing049.webp?t=1603388391">
+      <highres src="images/highres/Swing049.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing050.webp?t=1603388391">
+      <highres src="images/highres/Swing050.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing051.webp?t=1603388391">
+      <highres src="images/highres/Swing051.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing052.webp?t=1603388391">
+      <highres src="images/highres/Swing052.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing053.webp?t=1603388391">
+      <highres src="images/highres/Swing053.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing054.webp?t=1603388391">
+      <highres src="images/highres/Swing054.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing055.webp?t=1603388391">
+      <highres src="images/highres/Swing055.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing056.webp?t=1603388391">
+      <highres src="images/highres/Swing056.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing057.webp?t=1603388391">
+      <highres src="images/highres/Swing057.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing058.webp?t=1603388391">
+      <highres src="images/highres/Swing058.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing059.webp?t=1603388391">
+      <highres src="images/highres/Swing059.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing060.webp?t=1603388391">
+      <highres src="images/highres/Swing060.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing061.webp?t=1603388391">
+      <highres src="images/highres/Swing061.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing062.webp?t=1603388391">
+      <highres src="images/highres/Swing062.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing063.webp?t=1603388391">
+      <highres src="images/highres/Swing063.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing064.webp?t=1603388391">
+      <highres src="images/highres/Swing064.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing065.webp?t=1603388391">
+      <highres src="images/highres/Swing065.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing066.webp?t=1603388391">
+      <highres src="images/highres/Swing066.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing067.webp?t=1603388391">
+      <highres src="images/highres/Swing067.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing068.webp?t=1603388391">
+      <highres src="images/highres/Swing068.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing069.webp?t=1603388391">
+      <highres src="images/highres/Swing069.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing070.webp?t=1603388391">
+      <highres src="images/highres/Swing070.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing071.webp?t=1603388391">
+      <highres src="images/highres/Swing071.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing072.webp?t=1603388391">
+      <highres src="images/highres/Swing072.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing073.webp?t=1603388391">
+      <highres src="images/highres/Swing073.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing074.webp?t=1603388391">
+      <highres src="images/highres/Swing074.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing075.webp?t=1603388391">
+      <highres src="images/highres/Swing075.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing076.webp?t=1603388391">
+      <highres src="images/highres/Swing076.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing077.webp?t=1603388391">
+      <highres src="images/highres/Swing077.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing078.webp?t=1603388391">
+      <highres src="images/highres/Swing078.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing079.webp?t=1603388391">
+      <highres src="images/highres/Swing079.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing080.webp?t=1603388391">
+      <highres src="images/highres/Swing080.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing081.webp?t=1603388391">
+      <highres src="images/highres/Swing081.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing082.webp?t=1603388391">
+      <highres src="images/highres/Swing082.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing083.webp?t=1603388391">
+      <highres src="images/highres/Swing083.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing084.webp?t=1603388391">
+      <highres src="images/highres/Swing084.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing085.webp?t=1603388391">
+      <highres src="images/highres/Swing085.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing086.webp?t=1603388391">
+      <highres src="images/highres/Swing086.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing087.webp?t=1603388391">
+      <highres src="images/highres/Swing087.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing088.webp?t=1603388391">
+      <highres src="images/highres/Swing088.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing089.webp?t=1603388391">
+      <highres src="images/highres/Swing089.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing090.webp?t=1603388391">
+      <highres src="images/highres/Swing090.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing091.webp?t=1603388391">
+      <highres src="images/highres/Swing091.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing092.webp?t=1603388391">
+      <highres src="images/highres/Swing092.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing093.webp?t=1603388391">
+      <highres src="images/highres/Swing093.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing094.webp?t=1603388391">
+      <highres src="images/highres/Swing094.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing095.webp?t=1603388391">
+      <highres src="images/highres/Swing095.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing096.webp?t=1603388391">
+      <highres src="images/highres/Swing096.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing097.webp?t=1603388391">
+      <highres src="images/highres/Swing097.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing098.webp?t=1603388391">
+      <highres src="images/highres/Swing098.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing099.webp?t=1603388391">
+      <highres src="images/highres/Swing099.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing100.webp?t=1603388391">
+      <highres src="images/highres/Swing100.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing101.webp?t=1603388391">
+      <highres src="images/highres/Swing101.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing102.webp?t=1603388391">
+      <highres src="images/highres/Swing102.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing103.webp?t=1603388391">
+      <highres src="images/highres/Swing103.webp?t=1603388391" />
+    </image>
+    <image src="images/Swing104.webp?t=1603388391">
+      <highres src="images/highres/Swing104.webp?t=1603388391" />
+    </image>
+  </images>
+</config>
