@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <settings>
+    <preloader image="images/HD BBALL00.jpg?t=1603361747" />
+    <userInterface showZoomButtons="false" showToolTips="false" showHotspotsButton="false" showFullScreenButton="false" showTogglePlayButton="false" showArrows="false" toolbarAlign="center" toolbarBackColor="transparent" toolbarHoverColor="#808285" toolbarForeColor="#A7A9AE" toolbarBackAlpha="0" toolbarAlpha="1" showProgressNumbers="false" showFullScreenToolbar="false" fullScreenBackColor="#FFFFFF" toolbarPosition="0" customCursorClass="default_cursor" viewerHint="" toolbarAutohide="true" showToolbarOnLoadStart="false" />
+    <control dragSpeed="0.13" doubleClickZooms="true" disableMouseControl="false" showHighresOnFullScreen="true" mouseHoverDrag="false" hideHotspotsOnLoad="true" hideHotspotsOnZoom="true" rowSensitivity="15" dragSensitivity="10" inBrowserFullScreen="false" doubleClickFullscreen="false" zoomSteps="1" zoomSpeed="300" singleClickZooms="false" pauseOnPreload="false" resumePreloadOnHover="false" mouseWheelDrag="false" mouseWheelDragZoomOnly="false" allowRotateInputInZoom="false" allowPanX="true" allowPanY="true" />
+    <rotation firstImage="0" rotate="false" rotatePeriod="7" bounce="false" rotateDirection="1" forceDirection="false" inertiaRelToDragSpeed="true" inertiaTimeToStop="700" inertiaMaxInterval="120" useInertia="true" flipHorizontalInput="false" flipVerticalInput="false" bounceRows="true" rowsOnSingleIndex="false" flipAxis="false" />
+  </settings>
+  <hotspots />
+  <images rows="1">
+    <image src="images/HD BBALL00.jpg?t=1603361747" />
+    <image src="images/HD BBALL01.jpg?t=1603361747" />
+    <image src="images/HD BBALL02.jpg?t=1603361747" />
+    <image src="images/HD BBALL03.jpg?t=1603361747" />
+    <image src="images/HD BBALL04.jpg?t=1603361747" />
+    <image src="images/HD BBALL05.jpg?t=1603361747" />
+    <image src="images/HD BBALL06.jpg?t=1603361747" />
+    <image src="images/HD BBALL07.jpg?t=1603361747" />
+    <image src="images/HD BBALL08.jpg?t=1603361747" />
+    <image src="images/HD BBALL09.jpg?t=1603361747" />
+    <image src="images/HD BBALL10.jpg?t=1603361747" />
+    <image src="images/HD BBALL11.jpg?t=1603361747" />
+    <image src="images/HD BBALL12.jpg?t=1603361747" />
+    <image src="images/HD BBALL13.jpg?t=1603361747" />
+    <image src="images/HD BBALL14.jpg?t=1603361747" />
+    <image src="images/HD BBALL15.jpg?t=1603361747" />
+    <image src="images/HD BBALL16.jpg?t=1603361747" />
+    <image src="images/HD BBALL17.jpg?t=1603361747" />
+    <image src="images/HD BBALL18.jpg?t=1603361747" />
+    <image src="images/HD BBALL19.jpg?t=1603361747" />
+    <image src="images/HD BBALL20.jpg?t=1603361747" />
+    <image src="images/HD BBALL21.jpg?t=1603361747" />
+    <image src="images/HD BBALL22.jpg?t=1603361747" />
+    <image src="images/HD BBALL23.jpg?t=1603361747" />
+    <image src="images/HD BBALL24.jpg?t=1603361747" />
+    <image src="images/HD BBALL25.jpg?t=1603361747" />
+    <image src="images/HD BBALL26.jpg?t=1603361747" />
+    <image src="images/HD BBALL27.jpg?t=1603361747" />
+    <image src="images/HD BBALL28.jpg?t=1603361747" />
+    <image src="images/HD BBALL29.jpg?t=1603361747" />
+    <image src="images/HD BBALL30.jpg?t=1603361747" />
+    <image src="images/HD BBALL31.jpg?t=1603361747" />
+    <image src="images/HD BBALL32.jpg?t=1603361747" />
+    <image src="images/HD BBALL33.jpg?t=1603361747" />
+    <image src="images/HD BBALL34.jpg?t=1603361747" />
+    <image src="images/HD BBALL35.jpg?t=1603361747" />
+    <image src="images/HD BBALL36.jpg?t=1603361747" />
+    <image src="images/HD BBALL37.jpg?t=1603361747" />
+    <image src="images/HD BBALL38.jpg?t=1603361747" />
+    <image src="images/HD BBALL39.jpg?t=1603361747" />
+    <image src="images/HD BBALL40.jpg?t=1603361747" />
+    <image src="images/HD BBALL41.jpg?t=1603361747" />
+    <image src="images/HD BBALL42.jpg?t=1603361747" />
+    <image src="images/HD BBALL43.jpg?t=1603361747" />
+    <image src="images/HD BBALL44.jpg?t=1603361747" />
+    <image src="images/HD BBALL45.jpg?t=1603361747" />
+    <image src="images/HD BBALL46.jpg?t=1603361747" />
+    <image src="images/HD BBALL47.jpg?t=1603361747" />
+    <image src="images/HD BBALL48.jpg?t=1603361747" />
+    <image src="images/HD BBALL49.jpg?t=1603361747" />
+    <image src="images/HD BBALL50.jpg?t=1603361747" />
+    <image src="images/HD BBALL51.jpg?t=1603361747" />
+    <image src="images/HD BBALL52.jpg?t=1603361747" />
+    <image src="images/HD BBALL53.jpg?t=1603361747" />
+    <image src="images/HD BBALL54.jpg?t=1603361747" />
+    <image src="images/HD BBALL55.jpg?t=1603361747" />
+    <image src="images/HD BBALL56.jpg?t=1603361747" />
+    <image src="images/HD BBALL57.jpg?t=1603361747" />
+    <image src="images/HD BBALL58.jpg?t=1603361747" />
+    <image src="images/HD BBALL59.jpg?t=1603361747" />
+    <image src="images/HD BBALL60.jpg?t=1603361747" />
+    <image src="images/HD BBALL61.jpg?t=1603361747" />
+    <image src="images/HD BBALL62.jpg?t=1603361747" />
+    <image src="images/HD BBALL63.jpg?t=1603361747" />
+    <image src="images/HD BBALL64.jpg?t=1603361747" />
+    <image src="images/HD BBALL65.jpg?t=1603361747" />
+    <image src="images/HD BBALL66.jpg?t=1603361747" />
+    <image src="images/HD BBALL67.jpg?t=1603361747" />
+    <image src="images/HD BBALL68.jpg?t=1603361747" />
+    <image src="images/HD BBALL69.jpg?t=1603361747" />
+    <image src="images/HD BBALL70.jpg?t=1603361747" />
+    <image src="images/HD BBALL71.jpg?t=1603361747" />
+    <image src="images/HD BBALL72.jpg?t=1603361747" />
+    <image src="images/HD BBALL73.jpg?t=1603361747" />
+    <image src="images/HD BBALL74.jpg?t=1603361747" />
+    <image src="images/HD BBALL75.jpg?t=1603361747" />
+    <image src="images/HD BBALL76.jpg?t=1603361747" />
+    <image src="images/HD BBALL77.jpg?t=1603361747" />
+    <image src="images/HD BBALL78.jpg?t=1603361747" />
+    <image src="images/HD BBALL79.jpg?t=1603361747" />
+    <image src="images/HD BBALL80.jpg?t=1603361747" />
+    <image src="images/HD BBALL81.jpg?t=1603361747" />
+    <image src="images/HD BBALL82.jpg?t=1603361747" />
+  </images>
+</config>
