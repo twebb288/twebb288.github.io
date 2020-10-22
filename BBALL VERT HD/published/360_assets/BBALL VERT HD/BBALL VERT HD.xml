@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <settings>
+    <preloader image="images/HD BBALL00.webp?t=1603361747" />
+    <userInterface showZoomButtons="false" showToolTips="false" showHotspotsButton="false" showFullScreenButton="false" showTogglePlayButton="false" showArrows="false" toolbarAlign="center" toolbarBackColor="transparent" toolbarHoverColor="#808285" toolbarForeColor="#A7A9AE" toolbarBackAlpha="0" toolbarAlpha="1" showProgressNumbers="false" showFullScreenToolbar="false" fullScreenBackColor="#FFFFFF" toolbarPosition="0" customCursorClass="default_cursor" viewerHint="" toolbarAutohide="true" showToolbarOnLoadStart="false" />
+    <control dragSpeed="0.13" doubleClickZooms="true" disableMouseControl="false" showHighresOnFullScreen="true" mouseHoverDrag="false" hideHotspotsOnLoad="true" hideHotspotsOnZoom="true" rowSensitivity="15" dragSensitivity="10" inBrowserFullScreen="false" doubleClickFullscreen="false" zoomSteps="1" zoomSpeed="300" singleClickZooms="false" pauseOnPreload="false" resumePreloadOnHover="false" mouseWheelDrag="false" mouseWheelDragZoomOnly="false" allowRotateInputInZoom="false" allowPanX="true" allowPanY="true" />
+    <rotation firstImage="0" rotate="false" rotatePeriod="7" bounce="false" rotateDirection="1" forceDirection="false" inertiaRelToDragSpeed="true" inertiaTimeToStop="700" inertiaMaxInterval="120" useInertia="true" flipHorizontalInput="false" flipVerticalInput="false" bounceRows="true" rowsOnSingleIndex="false" flipAxis="false" />
+  </settings>
+  <hotspots />
+  <images rows="1">
+    <image src="images/HD BBALL00.webp?t=1603361747" />
+    <image src="images/HD BBALL01.webp?t=1603361747" />
+    <image src="images/HD BBALL02.webp?t=1603361747" />
+    <image src="images/HD BBALL03.webp?t=1603361747" />
+    <image src="images/HD BBALL04.webp?t=1603361747" />
+    <image src="images/HD BBALL05.webp?t=1603361747" />
+    <image src="images/HD BBALL06.webp?t=1603361747" />
+    <image src="images/HD BBALL07.webp?t=1603361747" />
+    <image src="images/HD BBALL08.webp?t=1603361747" />
+    <image src="images/HD BBALL09.webp?t=1603361747" />
+    <image src="images/HD BBALL10.webp?t=1603361747" />
+    <image src="images/HD BBALL11.webp?t=1603361747" />
+    <image src="images/HD BBALL12.webp?t=1603361747" />
+    <image src="images/HD BBALL13.webp?t=1603361747" />
+    <image src="images/HD BBALL14.webp?t=1603361747" />
+    <image src="images/HD BBALL15.webp?t=1603361747" />
+    <image src="images/HD BBALL16.webp?t=1603361747" />
+    <image src="images/HD BBALL17.webp?t=1603361747" />
+    <image src="images/HD BBALL18.webp?t=1603361747" />
+    <image src="images/HD BBALL19.webp?t=1603361747" />
+    <image src="images/HD BBALL20.webp?t=1603361747" />
+    <image src="images/HD BBALL21.webp?t=1603361747" />
+    <image src="images/HD BBALL22.webp?t=1603361747" />
+    <image src="images/HD BBALL23.webp?t=1603361747" />
+    <image src="images/HD BBALL24.webp?t=1603361747" />
+    <image src="images/HD BBALL25.webp?t=1603361747" />
+    <image src="images/HD BBALL26.webp?t=1603361747" />
+    <image src="images/HD BBALL27.webp?t=1603361747" />
+    <image src="images/HD BBALL28.webp?t=1603361747" />
+    <image src="images/HD BBALL29.webp?t=1603361747" />
+    <image src="images/HD BBALL30.webp?t=1603361747" />
+    <image src="images/HD BBALL31.webp?t=1603361747" />
+    <image src="images/HD BBALL32.webp?t=1603361747" />
+    <image src="images/HD BBALL33.webp?t=1603361747" />
+    <image src="images/HD BBALL34.webp?t=1603361747" />
+    <image src="images/HD BBALL35.webp?t=1603361747" />
+    <image src="images/HD BBALL36.webp?t=1603361747" />
+    <image src="images/HD BBALL37.webp?t=1603361747" />
+    <image src="images/HD BBALL38.webp?t=1603361747" />
+    <image src="images/HD BBALL39.webp?t=1603361747" />
+    <image src="images/HD BBALL40.webp?t=1603361747" />
+    <image src="images/HD BBALL41.webp?t=1603361747" />
+    <image src="images/HD BBALL42.webp?t=1603361747" />
+    <image src="images/HD BBALL43.webp?t=1603361747" />
+    <image src="images/HD BBALL44.webp?t=1603361747" />
+    <image src="images/HD BBALL45.webp?t=1603361747" />
+    <image src="images/HD BBALL46.webp?t=1603361747" />
+    <image src="images/HD BBALL47.webp?t=1603361747" />
+    <image src="images/HD BBALL48.webp?t=1603361747" />
+    <image src="images/HD BBALL49.webp?t=1603361747" />
+    <image src="images/HD BBALL50.webp?t=1603361747" />
+    <image src="images/HD BBALL51.webp?t=1603361747" />
+    <image src="images/HD BBALL52.webp?t=1603361747" />
+    <image src="images/HD BBALL53.webp?t=1603361747" />
+    <image src="images/HD BBALL54.webp?t=1603361747" />
+    <image src="images/HD BBALL55.webp?t=1603361747" />
+    <image src="images/HD BBALL56.webp?t=1603361747" />
+    <image src="images/HD BBALL57.webp?t=1603361747" />
+    <image src="images/HD BBALL58.webp?t=1603361747" />
+    <image src="images/HD BBALL59.webp?t=1603361747" />
+    <image src="images/HD BBALL60.webp?t=1603361747" />
+    <image src="images/HD BBALL61.webp?t=1603361747" />
+    <image src="images/HD BBALL62.webp?t=1603361747" />
+    <image src="images/HD BBALL63.webp?t=1603361747" />
+    <image src="images/HD BBALL64.webp?t=1603361747" />
+    <image src="images/HD BBALL65.webp?t=1603361747" />
+    <image src="images/HD BBALL66.webp?t=1603361747" />
+    <image src="images/HD BBALL67.webp?t=1603361747" />
+    <image src="images/HD BBALL68.webp?t=1603361747" />
+    <image src="images/HD BBALL69.webp?t=1603361747" />
+    <image src="images/HD BBALL70.webp?t=1603361747" />
+    <image src="images/HD BBALL71.webp?t=1603361747" />
+    <image src="images/HD BBALL72.webp?t=1603361747" />
+    <image src="images/HD BBALL73.webp?t=1603361747" />
+    <image src="images/HD BBALL74.webp?t=1603361747" />
+    <image src="images/HD BBALL75.webp?t=1603361747" />
+    <image src="images/HD BBALL76.webp?t=1603361747" />
+    <image src="images/HD BBALL77.webp?t=1603361747" />
+    <image src="images/HD BBALL78.webp?t=1603361747" />
+    <image src="images/HD BBALL79.webp?t=1603361747" />
+    <image src="images/HD BBALL80.webp?t=1603361747" />
+    <image src="images/HD BBALL81.webp?t=1603361747" />
+    <image src="images/HD BBALL82.webp?t=1603361747" />
+  </images>
+</config>
