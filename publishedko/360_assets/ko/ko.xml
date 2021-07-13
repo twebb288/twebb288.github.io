@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
   <settings>
-    <preloader image="images/ko-01-01.jpg?t=1626177665" />
+    <preloader image="images/ko-01-01.jpg?t=1626190477" />
     <userInterface showZoomButtons="false" showToolTips="false" showHotspotsButton="false" showFullScreenButton="false" showTogglePlayButton="false" showArrows="false" toolbarAlign="center" toolbarBackColor="transparent" toolbarHoverColor="#808285" toolbarForeColor="#A7A9AE" toolbarBackAlpha="0" toolbarAlpha="1" showProgressNumbers="true" showFullScreenToolbar="false" fullScreenBackColor="#050505" toolbarPosition="0" customCursorClass="default_cursor" viewerHint="" toolbarAutohide="false" showToolbarOnLoadStart="false" />
     <control dragSpeed="0.1" doubleClickZooms="true" disableMouseControl="false" showHighresOnFullScreen="true" mouseHoverDrag="false" hideHotspotsOnLoad="false" hideHotspotsOnZoom="true" rowSensitivity="15" dragSensitivity="10" inBrowserFullScreen="false" doubleClickFullscreen="false" zoomSteps="1" zoomSpeed="300" singleClickZooms="false" pauseOnPreload="false" resumePreloadOnHover="false" mouseWheelDrag="false" mouseWheelDragZoomOnly="false" allowRotateInputInZoom="false" allowPanX="true" allowPanY="true" />
-    <rotation firstImage="0" rotate="true" rotatePeriod="4" bounce="true" rotateDirection="-1" forceDirection="false" inertiaRelToDragSpeed="true" inertiaTimeToStop="700" inertiaMaxInterval="120" useInertia="true" flipHorizontalInput="false" flipVerticalInput="false" bounceRows="false" rowsOnSingleIndex="false" flipAxis="false" />
+    <rotation firstImage="0" rotate="true" rotatePeriod="4" bounce="true" rotateDirection="-1" forceDirection="false" inertiaRelToDragSpeed="true" inertiaTimeToStop="700" inertiaMaxInterval="120" useInertia="true" flipHorizontalInput="false" flipVerticalInput="false" bounceRows="true" rowsOnSingleIndex="false" flipAxis="false" />
   </settings>
   <hotspots />
   <images rows="4">
-    <image src="images/ko-01-01.jpg?t=1626177665" />
-    <image src="images/ko-01-02.jpg?t=1626177665" />
-    <image src="images/ko-01-03.jpg?t=1626177665" />
-    <image src="images/ko-01-04.jpg?t=1626177665" />
-    <image src="images/ko-01-05.jpg?t=1626177665" />
-    <image src="images/ko-02-01.jpg?t=1626177665" />
-    <image src="images/ko-02-02.jpg?t=1626177665" />
-    <image src="images/ko-02-03.jpg?t=1626177665" />
-    <image src="images/ko-02-04.jpg?t=1626177665" />
-    <image src="images/ko-02-05.jpg?t=1626177665" />
-    <image src="images/ko-03-01.jpg?t=1626177665" />
-    <image src="images/ko-03-02.jpg?t=1626177665" />
-    <image src="images/ko-03-03.jpg?t=1626177665" />
-    <image src="images/ko-03-04.jpg?t=1626177665" />
-    <image src="images/ko-03-05.jpg?t=1626177665" />
-    <image src="images/ko-04-01.jpg?t=1626177665" />
-    <image src="images/ko-04-02.jpg?t=1626177665" />
-    <image src="images/ko-04-03.jpg?t=1626177665" />
-    <image src="images/ko-04-04.jpg?t=1626177665" />
-    <image src="images/ko-04-05.jpg?t=1626177665" />
+    <image src="images/ko-01-01.jpg?t=1626190477" />
+    <image src="images/ko-01-02.jpg?t=1626190477" />
+    <image src="images/ko-01-03.jpg?t=1626190477" />
+    <image src="images/ko-01-04.jpg?t=1626190477" />
+    <image src="images/ko-01-05.jpg?t=1626190477" />
+    <image src="images/ko-02-01.jpg?t=1626190477" />
+    <image src="images/ko-02-02.jpg?t=1626190477" />
+    <image src="images/ko-02-03.jpg?t=1626190477" />
+    <image src="images/ko-02-04.jpg?t=1626190477" />
+    <image src="images/ko-02-05.jpg?t=1626190477" />
+    <image src="images/ko-03-01.jpg?t=1626190477" />
+    <image src="images/ko-03-02.jpg?t=1626190477" />
+    <image src="images/ko-03-03.jpg?t=1626190477" />
+    <image src="images/ko-03-04.jpg?t=1626190477" />
+    <image src="images/ko-03-05.jpg?t=1626190477" />
+    <image src="images/ko-04-01.jpg?t=1626190477" />
+    <image src="images/ko-04-02.jpg?t=1626190477" />
+    <image src="images/ko-04-03.jpg?t=1626190477" />
+    <image src="images/ko-04-04.jpg?t=1626190477" />
+    <image src="images/ko-04-05.jpg?t=1626190477" />
   </images>
 </config>
