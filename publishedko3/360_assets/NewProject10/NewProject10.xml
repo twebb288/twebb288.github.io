@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <settings>
+    <preloader image="images/1-01.jpg?t=1626354551" />
+    <userInterface showZoomButtons="false" showToolTips="false" showHotspotsButton="false" showFullScreenButton="false" showTogglePlayButton="false" showArrows="false" toolbarAlign="center" toolbarBackColor="transparent" toolbarHoverColor="#808285" toolbarForeColor="#A7A9AE" toolbarBackAlpha="0" toolbarAlpha="1" showProgressNumbers="true" showFullScreenToolbar="false" fullScreenBackColor="#000000" toolbarPosition="0" customCursorClass="default_cursor" viewerHint="" toolbarAutohide="false" showToolbarOnLoadStart="false" />
+    <control dragSpeed="0.13" doubleClickZooms="true" disableMouseControl="false" showHighresOnFullScreen="true" mouseHoverDrag="false" hideHotspotsOnLoad="false" hideHotspotsOnZoom="true" rowSensitivity="15" dragSensitivity="10" inBrowserFullScreen="false" doubleClickFullscreen="false" zoomSteps="1" zoomSpeed="300" singleClickZooms="false" pauseOnPreload="false" resumePreloadOnHover="false" mouseWheelDrag="false" mouseWheelDragZoomOnly="false" allowRotateInputInZoom="false" allowPanX="true" allowPanY="true" />
+    <rotation firstImage="0" rotate="false" rotatePeriod="7" bounce="false" rotateDirection="-1" forceDirection="false" inertiaRelToDragSpeed="true" inertiaTimeToStop="700" inertiaMaxInterval="120" useInertia="true" flipHorizontalInput="false" flipVerticalInput="false" bounceRows="true" rowsOnSingleIndex="false" flipAxis="false" />
+  </settings>
+  <hotspots />
+  <images rows="4">
+    <image src="images/1-01.jpg?t=1626354551" />
+    <image src="images/1-02.jpg?t=1626354551" />
+    <image src="images/1-03.jpg?t=1626354551" />
+    <image src="images/1-04.jpg?t=1626354551" />
+    <image src="images/1-05.jpg?t=1626354551" />
+    <image src="images/1-06.jpg?t=1626354551" />
+    <image src="images/1-07.jpg?t=1626354551" />
+    <image src="images/1-08.jpg?t=1626354551" />
+    <image src="images/1-09.jpg?t=1626354551" />
+    <image src="images/1-10.jpg?t=1626354551" />
+    <image src="images/1-11.jpg?t=1626354551" />
+    <image src="images/1-12.jpg?t=1626354551" />
+    <image src="images/1-13.jpg?t=1626354551" />
+    <image src="images/1-14.jpg?t=1626354551" />
+    <image src="images/1-15.jpg?t=1626354551" />
+    <image src="images/1-16.jpg?t=1626354551" />
+    <image src="images/1-17.jpg?t=1626354551" />
+    <image src="images/1-18.jpg?t=1626354551" />
+    <image src="images/1-19.jpg?t=1626354551" />
+    <image src="images/1-20.jpg?t=1626354551" />
+    <image src="images/2-01.jpg?t=1626354551" />
+    <image src="images/2-02.jpg?t=1626354551" />
+    <image src="images/2-03.jpg?t=1626354551" />
+    <image src="images/2-04.jpg?t=1626354551" />
+    <image src="images/2-05.jpg?t=1626354551" />
+    <image src="images/2-06.jpg?t=1626354551" />
+    <image src="images/2-07.jpg?t=1626354551" />
+    <image src="images/2-08.jpg?t=1626354551" />
+    <image src="images/2-09.jpg?t=1626354551" />
+    <image src="images/2-10.jpg?t=1626354551" />
+    <image src="images/2-11.jpg?t=1626354551" />
+    <image src="images/2-12x.jpg?t=1626354551" />
+    <image src="images/2-13.jpg?t=1626354551" />
+    <image src="images/2-14.jpg?t=1626354551" />
+    <image src="images/2-15.jpg?t=1626354551" />
+    <image src="images/2-16.jpg?t=1626354551" />
+    <image src="images/2-17.jpg?t=1626354551" />
+    <image src="images/2-18.jpg?t=1626354551" />
+    <image src="images/2-19.jpg?t=1626354551" />
+    <image src="images/2-20.jpg?t=1626354551" />
+    <image src="images/3-01.jpg?t=1626354551" />
+    <image src="images/3-02.jpg?t=1626354551" />
+    <image src="images/3-03.jpg?t=1626354551" />
+    <image src="images/3-04.jpg?t=1626354551" />
+    <image src="images/3-05.jpg?t=1626354551" />
+    <image src="images/3-06.jpg?t=1626354551" />
+    <image src="images/3-07.jpg?t=1626354551" />
+    <image src="images/3-08.jpg?t=1626354551" />
+    <image src="images/3-09.jpg?t=1626354551" />
+    <image src="images/3-10.jpg?t=1626354551" />
+    <image src="images/3-11.jpg?t=1626354551" />
+    <image src="images/3-12.jpg?t=1626354551" />
+    <image src="images/3-13.jpg?t=1626354551" />
+    <image src="images/3-14.jpg?t=1626354551" />
+    <image src="images/3-15.jpg?t=1626354551" />
+    <image src="images/3-16.jpg?t=1626354551" />
+    <image src="images/3-17.jpg?t=1626354551" />
+    <image src="images/3-18.jpg?t=1626354551" />
+    <image src="images/3-19.jpg?t=1626354551" />
+    <image src="images/3-20.jpg?t=1626354551" />
+    <image src="images/4-01.jpg?t=1626354551" />
+    <image src="images/4-02.jpg?t=1626354551" />
+    <image src="images/4-03.jpg?t=1626354551" />
+    <image src="images/4-04.jpg?t=1626354551" />
+    <image src="images/4-05.jpg?t=1626354551" />
+    <image src="images/4-06.jpg?t=1626354551" />
+    <image src="images/4-07.jpg?t=1626354551" />
+    <image src="images/4-08.jpg?t=1626354551" />
+    <image src="images/4-09.jpg?t=1626354551" />
+    <image src="images/4-10.jpg?t=1626354551" />
+    <image src="images/4-11.jpg?t=1626354551" />
+    <image src="images/4-12.jpg?t=1626354551" />
+    <image src="images/4-13.jpg?t=1626354551" />
+    <image src="images/4-14.jpg?t=1626354551" />
+    <image src="images/4-15.jpg?t=1626354551" />
+    <image src="images/4-16.jpg?t=1626354551" />
+    <image src="images/4-17.jpg?t=1626354551" />
+    <image src="images/4-18.jpg?t=1626354551" />
+    <image src="images/4-19.jpg?t=1626354551" />
+    <image src="images/4-20.jpg?t=1626354551" />
+  </images>
+</config>
