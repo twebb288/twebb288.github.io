@@ -35,12 +35,13 @@ body {
     --color-link: #52e093;
 }
 
+
 #gl {
 	width: 100vw;
 	height: 100vh;
 	left: 0;
-	top: 0;
-	position: absolute;
+	top: 10;
+	position: relative;
 }
 
 canvas {
