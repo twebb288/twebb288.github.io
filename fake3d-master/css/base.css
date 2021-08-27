@@ -246,3 +246,23 @@ a:focus {
 		pointer-events: auto;
 	}
 }
+
+
+
+@keyframes sprite {
+  to { background-position: -2000px }
+}
+
+.aldo {
+  height: 800px;
+  width: 640px;
+  background: url("img/aldosprite.png");
+  animation: sprite .5s steps(3) infinite;
+  transform: translate(, ) scale(1);
+}
+
+@media only screen and (min-width: 1024px) {
+  .terminal {
+    transform: scale(1);
+  }
+}
