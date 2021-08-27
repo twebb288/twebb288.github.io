@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+<script src="https://scripts.sirv.com/sirv.js"></script>
+<body> 
+<style>
+
+
+
+
+</style> 
+
+<button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
+
+
+
+<div id="car" data-src="https://spestect.sirv.com/Spins/depthtrial/GZLVEtWb6e195aee1c0.jpeg" data-depth-src="https://spestect.sirv.com/Spins/depthtrial/GZLVEtWb6e195aee1c0.png"></div>
+
+
+<script src="https://unpkg.com/3d-image"></script>
+<script>
+    var car = document.getElementById("car");
+    image3D.process(car);
+</script>
+
+
+
+<script type="text/JavaScript">
+ 
+function getAccel(){
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+            console.log("accelerometer permission granted");
+            // Do stuff here
+        }
+    });
+}
+</script>
+
+</body> 
+</html>
