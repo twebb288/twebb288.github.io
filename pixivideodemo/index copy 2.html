@@ -15,20 +15,20 @@
 			let app = new PIXI.Application({width: window.innerWidth, height: window.innerHeight});
 document.body.appendChild(app.view);
 
-let img = new PIXI.Sprite.from("img/aldo2.mp4");
-img.width = 640;
-img.height = 800;
+let img = new PIXI.Sprite.from("img/colordog.webm");
+img.width = 208;
+img.height = 384;
 app.stage.addChild(img);
 
-depthMap = new PIXI.Sprite.from("img/aldo3depth.mp4");
+depthMap = new PIXI.Sprite.from("img/Oursddog.webm");
 app.stage.addChild(depthMap);
         
 displacementFilter = new PIXI.filters.DisplacementFilter(depthMap);
 app.stage.filters = [displacementFilter];
 
 window.onmousemove = function(e) {
-  displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /15;
-  displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /15;
+  displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /10;
+  displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /10;
 };
 
 
