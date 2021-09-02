@@ -11,24 +11,44 @@
 					<button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
 				</div>
 
+				<video id="video" loop crossOrigin="anonymous" playsinline style="display:none">
+      <source src="img/ezgif-3-f91ea17354b4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    </video>
+
+    <video id="video2" loop crossOrigin="anonymous" playsinline style="display:none">
+      <source src="img/ezgif-3-0311e10636cc.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    </video>
+
 		<script type="text/javascript">
 			let app = new PIXI.Application({width: window.innerWidth, height: window.innerHeight});
 document.body.appendChild(app.view);
 
-let img = new PIXI.Sprite.from("img/colordog.webm");
-img.width = 208;
-img.height = 384;
+var video = document.createElement("video");
+video.preload = "auto";
+video.loop = true;              // enable looping
+video.src = "img/ezgif-3-f91ea17354b4.mp4";
+
+var video2 = document.createElement("video2");
+video2.preload = "auto";
+video2.loop = true;              // enable looping
+video2.src = "img/ezgif-3-0311e10636cc.mp4";
+
+let img = new PIXI.Sprite.from(video);
+img.width = 960;
+img.height = 1200;
 app.stage.addChild(img);
 
-depthMap = new PIXI.Sprite.from("img/Oursddog.webm");
+depthMap = new PIXI.Sprite.from("img/ezgif-3-0311e10636cc.mp4");
 app.stage.addChild(depthMap);
         
 displacementFilter = new PIXI.filters.DisplacementFilter(depthMap);
 app.stage.filters = [displacementFilter];
 
+
+
 window.onmousemove = function(e) {
-  displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /10;
-  displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /10;
+  displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /40;
+  displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /40;
 };
 
 

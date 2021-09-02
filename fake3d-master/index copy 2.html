@@ -15,12 +15,12 @@
 			let app = new PIXI.Application({width: window.innerWidth, height: window.innerHeight});
 document.body.appendChild(app.view);
 
-let img = new PIXI.Sprite.from("img/aldo2.mp4");
-img.width = 640;
-img.height = 800;
+let img = new PIXI.Sprite.from("img/colortree.mp4");
+img.width = 384;
+img.height = 288;
 app.stage.addChild(img);
 
-depthMap = new PIXI.Sprite.from("img/aldo3depth.mp4");
+depthMap = new PIXI.Sprite.from("img/Ours.mp4");
 app.stage.addChild(depthMap);
         
 displacementFilter = new PIXI.filters.DisplacementFilter(depthMap);
@@ -31,7 +31,8 @@ window.onmousemove = function(e) {
   displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /15;
 };
 
-
+  renderer.render(stage);       
+  requestAnimationFrame(animate);
 		</script>
 
 
