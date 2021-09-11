@@ -12,11 +12,11 @@
 				</div>
 
 				<video id="video" loop crossOrigin="anonymous" playsinline style="display:none">
-      <source src="img/ezgif-3-f91ea17354b4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+      <source src="img/aldo_2.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
     <video id="video2" loop crossOrigin="anonymous" playsinline style="display:none">
-      <source src="img/ezgif-3-0311e10636cc.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+      <source src="img/aldo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
 		<script type="text/javascript">
@@ -25,20 +25,20 @@ document.body.appendChild(app.view);
 
 var video = document.createElement("video");
 video.preload = "auto";
-video.loop = true;              // enable looping
-video.src = "img/ezgif-3-f91ea17354b4.mp4";
+video.loop = false;              // enable looping
+video.src = "img/aldo_2.mp4";
 
 var video2 = document.createElement("video2");
 video2.preload = "auto";
 video2.loop = true;              // enable looping
-video2.src = "img/ezgif-3-0311e10636cc.mp4";
+video2.src = "img/aldo.mp4";
 
 let img = new PIXI.Sprite.from(video);
-img.width = 960;
-img.height = 1200;
+img.width = 1080;
+img.height = 1350;
 app.stage.addChild(img);
 
-depthMap = new PIXI.Sprite.from("img/ezgif-3-0311e10636cc.mp4");
+depthMap = new PIXI.Sprite.from("img/aldo.mp4");
 app.stage.addChild(depthMap);
         
 displacementFilter = new PIXI.filters.DisplacementFilter(depthMap);
@@ -57,14 +57,29 @@ window.onmousemove = function(e) {
 
 <script type="text/JavaScript">
  
+
+var px = 50; // Position x and y
+var py = 50;
+var vx = 0.0; // Velocity x and y
+var vy = 0.0;
+var updateRate = 1/60; // Sensor refresh rate
+
 function getAccel(){
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
-            console.log("accelerometer permission granted");
-            // Do stuff here
-        }
-    });
-}
+       // Add a listener to get smartphone orientation 
+           // in the alpha-beta-gamma axes (units in degrees)
+            window.addEventListener('deviceorientation',(event) => {
+                // Expose each orientation angle in a more readable way
+                frontToBack_degrees = event.beta;
+                leftToRight_degrees = event.gamma;
+                displacementFilter.scale.x = (window.innerWidth / 2 - event.beta) /40;
+  				displacementFilter.scale.y = (window.innerHeight / 2 - event.gamma) /40;
+                
+                // Update velocity according to how tilted the phone is
+                // Since phones are narrower than they are long, double the increase to the x velocity
+                vx = vx + leftToRight_degrees * updateRate*2; 
+                vy = vy + frontToBack_degrees * updateRate;
 </script>
 
 

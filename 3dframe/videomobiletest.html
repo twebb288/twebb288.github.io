@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html> 
+
+<body> 
+
+
+<button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
+
+
+
+<div class="aldo" id="car" data-src="img/aldo.mp4" data-depth-src="img/aldodepth.mp4"></div>
+
+
+
+<script src="https://unpkg.com/3d-image"></script>
+<script>
+    var car = document.getElementById("car");
+    image3D.process(car);
+</script>
+
+
+<script type="text/JavaScript">
+ 
+function getAccel(){
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+            console.log("accelerometer permission granted");
+            // Do stuff here
+        }
+    });
+}
+</script>
+
+</body> 
+</html>
