@@ -25,7 +25,7 @@ document.body.appendChild(app.view);
 
 var video = document.createElement("video");
 video.preload = "auto";
-video.loop = false;              // enable looping
+video.loop = true;              // enable looping
 video.src = "img/aldo_2.mp4";
 
 var video2 = document.createElement("video2");
@@ -33,7 +33,7 @@ video2.preload = "auto";
 video2.loop = true;              // enable looping
 video2.src = "img/aldo.mp4";
 
-let img = new PIXI.Sprite.from(video);
+let img = new PIXI.Sprite.from("img/aldo_2.mp4");
 img.width = 1080;
 img.height = 1350;
 app.stage.addChild(img);
@@ -47,8 +47,8 @@ app.stage.filters = [displacementFilter];
 
 
 window.onmousemove = function(e) {
-  displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /40;
-  displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /40;
+  displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /60;
+  displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /60;
 };
 
 
