@@ -3,17 +3,23 @@
 <script src="https://scripts.sirv.com/sirv.js"></script>
 <body> 
 <style>
-  @keyframes sprite { to { background-position: -1980px } } .aldo { height: 820px; width: 640px; background: url("img/aldosprite.png"); animation: sprite .5s steps(3) infinite; transform: translate(, ) scale(1); } @media only screen and (min-width: 1024px) { .terminal { transform: scale(1); } }
+ 
 
+.text{
+	display:flex;
+	position: absolute;
+	justify-content:center;
 
+}
 
 </style> 
 
 <button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
 
+<img class="text" src="img/https___s3-images.ladbible2.png"></img>
 
+<div class="aldo" id="car" data-src="img/https___s3-images.ladbible.com_s3_content_a6871d57607e51f2c4975d87e8a009ad.jpg" data-depth-src="img/https___s3-images.ladbible.png"></div>
 
-<div class="aldo" id="car" data-src="img/aldosprite.png" data-depth-src="img/aldodepthsprite.png"></div>
 
 
 
