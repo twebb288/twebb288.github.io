@@ -18,13 +18,31 @@
 
 <img class="text" src="img/https___s3-images.ladbible2.png"></img>
 
-<div class="aldo" id="car" data-src="img/https___s3-images.ladbible.com_s3_content_a6871d57607e51f2c4975d87e8a009ad.jpg" data-depth-src="img/https___s3-images.ladbible.png"></div>
+<div class="aldo" id="car" data-src=(img_plane) data-depth-src=(disp_plane)></div>
 
 
 
 
 <script src="https://unpkg.com/3d-image"></script>
 <script>
+
+const url_base = 'https://spestect.sirv.com/Spins/depthtrial/ferdepth/Feroriginal'
+const durl_base = 'https://spestect.sirv.com/Spins/depthtrial/ferdepth/Ferdepth'
+
+let index = 1;
+  const img_plane = new Image();
+  const disp_plane = new Image();
+  
+  img_plane.crossOrigin = "";   // ask for CORS permission
+  img_plane.src = url_base + index + '.jpg';  // get the image!
+  img_plane.onload = () => { img.update = true };
+
+  disp_plane.crossOrigin = "";   // ask for CORS permission
+  disp_plane.src = durl_base + index + '.jpg';  // get the image!
+  disp_plane.onload = () => { depthMap.update = true };
+
+
+
     var car = document.getElementById("car");
     image3D.process(car);
 </script>

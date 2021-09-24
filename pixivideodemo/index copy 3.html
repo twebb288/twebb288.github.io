@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fake 3D Effect with WebGL Shaders | Demo 1 | Codrops</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+  </head>
+
+  <body >
+<div>
+          <button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
+        </div>
+
+ 
+
+    <script type="text/javascript">
+      let app = new PIXI.Application({width: window.innerWidth, height: window.innerHeight});
+document.body.appendChild(app.view);
+
+  document.addEventListener( 'keydown', onKeyDown );
+
+const url_base = 'https://spestect.sirv.com/Spins/depthtrial/ferdepth/Feroriginal'
+const durl_base = 'https://spestect.sirv.com/Spins/depthtrial/ferdepth/Ferdepth'
+let pointerIsDown  = false
+
+let index = 1;
+  const img_plane = new Image();
+  const disp_plane = new Image();
+  
+  img_plane.crossOrigin = "";   // ask for CORS permission
+  img_plane.src = url_base + index + '.jpg';  // get the image!
+  img_plane.onload = () => { img.update = true };
+
+  disp_plane.crossOrigin = "";   // ask for CORS permission
+  disp_plane.src = durl_base + index + '.jpg';  // get the image!
+  disp_plane.onload = () => { depthMap.update = true };
+
+
+let img = new PIXI.Sprite.from(img_plane);
+img.width = 864;
+img.height = 1536;
+app.stage.addChild(img);
+
+
+depthMap = new PIXI.Sprite.from(disp_plane);
+depthMap.width = 864;
+depthMap.height = 1536;
+app.stage.addChild(depthMap);
+        
+displacementFilter = new PIXI.filters.DisplacementFilter(depthMap);
+app.stage.filters = [displacementFilter];
+
+
+window.onmousemove = function(e) {
+  displacementFilter.scale.x = (window.innerWidth / 2 - e.clientX) /30;
+  displacementFilter.scale.y = (window.innerHeight / 2 - e.clientY) /30;
+};
+
+
+img.on("pointerdown", (doPointerDown));
+
+  function doPointerDown(){
+    pointerIsDown = true;
+    img.texture = new PIXI.Sprite.from(disp_plane); 
+  }
+
+
+function onKeyDown(e) {
+    switch (e.keyCode) {
+        case 81:  //q
+            index--;
+            console.log(url_base + index + '.jpg');
+            img_plane.src = url_base + index + '.jpg';
+            disp_plane.src = durl_base + index + '.jpg';
+            break;
+        case 87:  //w
+            index++;
+            console.log(url_base + index + '.jpg');
+            img_plane.src = url_base + index + '.jpg';
+            disp_plane.src = durl_base + index + '.jpg';
+            break;
+        default:
+            break;
+    }
+}
+
+
+</script>
+
+
+
+  </body>
+</html>
