@@ -17,13 +17,19 @@
 <button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
 
 
-
+<div class="image mt-3 mb-3" id="sliderImages">
 <div class="aldo" id="car" data-src=img/GZLVEtWb6e195aee1c0.jpeg data-depth-src=img/GZLVEtWb6e195aee1c02.png></div>
 
 <div class="aldo" id="car2" data-src=img/GZLVEtWb6e195aee1c0.jpeg data-depth-src=img/GZLVEtWb6e195aee1c02.png></div>
 
+<div class="aldo" id="car3" data-src=img/GZLVEtWb6e195aee1c0.jpeg data-depth-src=img/GZLVEtWb6e195aee1c02.png></div>
 
-
+</div>
+<div class="rangeslider">
+  <input type="range" min="0" max="3" value="1" class="myslider" id="sliderRange">
+  <div class="sliderOutput row mt-3">
+    
+  </div>
 
 <script src="https://unpkg.com/3d-image"></script>
 <script>
@@ -50,6 +56,9 @@ let index = 1;
 
         var car2 = document.getElementById("car2");
     image3D.process(car2);
+
+         var car3 = document.getElementById("car3");
+    image3D.process(car3);
 </script>
 
 
@@ -64,6 +73,23 @@ function getAccel(){
     });
 }
 </script>
+<script type="text/JavaScript">
+ 
+window.addEventListener('load', function() {
 
+  var rangeslider = document.getElementById("sliderRange");
+
+  var images = document.getElementById("sliderImages");
+
+  rangeslider.addEventListener('input', function() {
+    for (var i = 0; i < images.children.length; i++) {
+      images.children[i].style.display = 'none';
+    }
+    i = Number(this.value) - 0;
+    images.children[i].style.display = 'block';
+  });
+
+});
+</script>
 </body> 
 </html>
