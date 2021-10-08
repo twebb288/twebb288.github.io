@@ -1,0 +1,191 @@
+<!DOCTYPE html> 
+<html> 
+<script src="https://scripts.sirv.com/sirv.js"></script>
+<body> 
+<style>
+ 
+.aldo{
+ 
+ display: flex;
+justify-content: center;
+ width: 100vw;
+ height: 100vh;
+  
+}
+
+
+}
+
+</style> 
+
+<button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
+
+    
+  </div>
+
+
+<div class="image mt-3 mb-3" id="sliderImages">
+    <div class="aldo" id="car">
+      <img src="img/aldo1.webp">
+    </div>
+
+    <div class="aldo" id="car">
+      <img src="img/aldo2.webp">
+    </div>
+
+    <div class="aldo" id="car">
+      <img src="img/aldo3.webp">
+    </div>
+
+    <div class="aldo" id="car">
+      <img src="img/aldo4.webp">
+    </div>
+
+    <div class="aldo" id="car">
+      <img src="img/aldo5.webp">
+    </div>
+
+    <div class="aldo" id="car">
+      <img src="img/aldo6.webp">
+    </div>
+
+
+ <div class="aldo" id="car7" data-src=img/aldo7.webp data-depth-src=img/aldo7.png></div>
+
+
+    <div class="aldo" id="car">
+      <img src="img/aldo8.webp">
+    </div>
+
+    <div class="aldo" id="car">
+      <img src="img/aldo9.webp">
+    </div>
+
+   <div class="aldo" id="car">
+      <img src="img/aldo10.webp">
+    </div>
+
+    <div class="aldo" id="car">
+      <img src="img/aldo11.webp">
+    </div>
+
+       <div class="aldo" id="car">
+      <img src="img/aldo12.webp">
+    </div>
+
+    <div class="aldo" id="car">
+      <img src="img/aldo13.webp">
+    </div>
+
+       <div class="aldo" id="car">
+      <img src="img/aldo14.webp">
+    </div>
+
+    <div class="aldo" id="car">
+      <img src="img/aldo15.webp">
+    </div>
+
+</div>
+
+
+<div class="rangeslider">
+  <input type="range" min="0" max="15" value="0" class="myslider" id="sliderRange">
+  <div class="sliderOutput row mt-3">
+
+
+<script src="https://unpkg.com/3d-image"></script>
+<script>
+
+const url_base = 'https://spestect.sirv.com/Spins/depthtrial/ferdepth/Feroriginal'
+const durl_base = 'https://spestect.sirv.com/Spins/depthtrial/ferdepth/Ferdepth'
+
+let index = 1;
+  const img_plane = new Image();
+  const disp_plane = new Image();
+  
+  img_plane.crossOrigin = "";   // ask for CORS permission
+  img_plane.src = url_base + index + '.jpg';  // get the image!
+  img_plane.onload = () => { img.update = true };
+
+  disp_plane.crossOrigin = "";   // ask for CORS permission
+  disp_plane.src = durl_base + index + '.jpg';  // get the image!
+  disp_plane.onload = () => { depthMap.update = true };
+
+
+
+    
+
+      var car7 = document.getElementById("car7");
+    image3D.process(car7);
+
+
+</script>
+
+
+<script type="text/JavaScript">
+ 
+function getAccel(){
+    DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+            console.log("accelerometer permission granted");
+            // Do stuff here
+        }
+    });
+}
+</script>
+<script type="text/JavaScript">
+ 
+window.addEventListener('load', function() {
+
+  var rangeslider = document.getElementById("sliderRange");
+
+  var images = document.getElementById("sliderImages");
+
+  rangeslider.addEventListener('input', function() {
+    for (var i = 0; i < images.children.length; i++) {
+      images.children[i].style.display = 'none';
+    }
+    i = Number(this.value) - 0;
+    images.children[i].style.display = 'block';
+  });
+
+});
+</script>
+
+<style>
+
+
+.myslider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 50px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.myslider:hover {
+  opacity: 1;
+}
+
+.myslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 50px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.myslider::-moz-range-thumb {
+  width: 200px;
+  height: 50px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+</style>
+
+</body> 
+</html>
