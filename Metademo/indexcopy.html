@@ -6,6 +6,7 @@
     <meta name="description" content="Hello, World! - A-Frame">
    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+   <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
   <script src="aframe-stereo-component.min.js"></script>
   </head>
   <body>  
@@ -17,8 +18,8 @@
          
            </a-assets>
           <img id="plane2" src="https://spestect.sirv.com/Spins/16%3A9%20Bball/pexels-tima-miroshnichenko-5586712000.webp">
-          <a-image src="#left" position="0 1 -1" height="1.402" width="0.960" stereo="eye: left"></a-image>
-          <a-image src="#right" position="0 1 -1" height="1.402" width="0.960" stereo="eye: right"></a-image>
+          <a-image src="#left" position="0 1 -1" height="1.402" width="0.960" stereo="eye: left"  look-at="[camera]"></a-image>
+          <a-image src="#right" position="0 1 -1" height="1.402" width="0.960" stereo="eye: right"  look-at="[camera]"></a-image>
 
            <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
            <a-entity oculus-touch-controls="hand: left"></a-entity>
