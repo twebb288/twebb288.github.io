@@ -14,6 +14,8 @@
       <a-assets>
           <img id="left" src="assets/Lefteye1.png">
           <img id="right" src="assets/Righteye1.png">
+          <img id="left1" src="assets/Lefteye2.png">
+          <img id="right1" src="assets/Righteye2.png">
 
          
            </a-assets>
@@ -21,8 +23,8 @@
           <a-image src="#left" position="-1 1 -1" height="1.402" width="1.402" stereo="eye: left"  look-at="a-camera"></a-image>
           <a-image src="#right" position="-1 1 -1" height="1.402" width="1.402" stereo="eye: right"  look-at="a-camera"></a-image>
 
-           <a-image src="#left" position="1 1 -1" height="1.402" width="1.402" stereo="eye: left"  look-at="a-camera"></a-image>
-          <a-image src="#right" position="1 1 -1" height="1.402" width="1.402" stereo="eye: right"  look-at="a-camera"></a-image>
+           <a-image src="#left1" position="1 1 -1" height="1.402" width="0.99" stereo="eye: left"  look-at="a-camera"></a-image>
+          <a-image src="#right1" position="1 1 -1" height="1.402" width="0.99" stereo="eye: right"  look-at="a-camera"></a-image>
 
            <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
            <a-entity oculus-touch-controls="hand: left"></a-entity>
