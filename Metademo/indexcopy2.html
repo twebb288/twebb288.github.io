@@ -21,7 +21,7 @@
           <a-asset-item id="fertext-obj" src="assets/fertext.obj"></a-asset-item>
     <a-asset-item id="fertext-mtl" src="assets/fertext.mtl"></a-asset-item>  
       </a-assets>
-
+        <a-camera stereocam="eye:left" position="0 1.6 4"></a-camera>
         <a-entity scale="2 2 2" geometry="primitive: torusKnot" position="0 6 -10" material="color: magenta; metalness:1; roughness: 0.1; sphericalEnvMap: #sky;" animation="property: rotation;
           to: 0 0 360; 
           dur: 10000;
@@ -30,7 +30,11 @@
 
       </a-entity>
 
-        <a-obj-model src="#fertext-obj" mtl="#fertext-mtl" position="0 3 -3" scale="0.01 0.01 0.01"></a-obj-model>
+        <a-obj-model src="#fertext-obj" mtl="#fertext-mtl" position="0 3 -3" scale="0.01 0.01 0.01" animation="property: object3D.position.y;
+          to: 3.2; 
+          dir: alternate; 
+          dur: 3000; 
+          loop: true"></a-obj-model>
 
  <a-box color="white" depth="0.02" height="0.02" width="0.5" position="0 1.25 -1" look-at="a-camera"></a-box>
 
@@ -49,7 +53,7 @@
       <a-image src="#left" position="0 1.6 -1" height="1.402" width="1.402" scale="0.5 0.5 0.5" stereo="eye: left"  look-at="a-camera"></a-image>
       <a-image src="#right" position="0 1.6 -1" height="1.402" width="1.402" scale="0.5 0.5 0.5" stereo="eye: right"  look-at="a-camera"></a-image>
 
-      <a-camera stereocam="eye:left" position="0 1.6 4"></a-camera>
+      
     </a-scene>
   </body>
 </html>
