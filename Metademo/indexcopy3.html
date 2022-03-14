@@ -6,6 +6,7 @@
    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
   <script src="aframe-stereo-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.3/dist/aframe-transparent-video-shader.umd.js"></script>
 
   </head>
   <body>
@@ -20,7 +21,7 @@
           <img id="right" src="assets/right1.webp">
           <img id="left2" src="assets/left2.png">
           <img id="right2" src="assets/right2.png ">
-          <video id="video" src="https://spestect.sirv.com/pexels-wolfgang-langer-5274215.webm"></video>
+          <video id="video" src="https://spestect.sirv.com/pexels-wolfgang-langer-5274215.webm" autoplay loop="true"></video>
           <a-asset-item id="fertext-obj" src="assets/fertext.obj"></a-asset-item>
     <a-asset-item id="fertext-mtl" src="assets/fertext.mtl"></a-asset-item>  
       </a-assets>
@@ -56,7 +57,13 @@
       <a-image src="#left2" position="0 1.6 -1" height="1.264" width="0.960" scale="1.5 1.5 1.5" stereo="eye: left"  look-at="a-camera"></a-image>   
       <a-image src="#right2" position="0 1.6 -1" height="1.264" width="0.960" scale="1.5 1.5 1.5" stereo="eye: right"  look-at="a-camera"></a-image>
 
-   
+   <a-entity
+        material="shader: transparent-video; src: #video"
+        geometry="primitive: plane;
+                  width: 1;
+                  height: 1.8"
+        position="0 1 -2">
+      </a-entity>
 
       
     </a-scene>
