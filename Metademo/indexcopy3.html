@@ -21,7 +21,7 @@
           <img id="right" src="assets/right1.webp">
           <img id="left2" src="assets/left2.png">
           <img id="right2" src="assets/right2.png ">
-          <video id="video" src="https://spestect.sirv.com/pexels-wolfgang-langer-5274215.webm" autoplay loop="true"></video>
+          <video id="video1" src="https://spestect.sirv.com/pexels-wolfgang-langer-5274215.webm" autoplay loop="true" crossorigin="anonymous"></video>
           <a-asset-item id="fertext-obj" src="assets/fertext.obj"></a-asset-item>
     <a-asset-item id="fertext-mtl" src="assets/fertext.mtl"></a-asset-item>  
       </a-assets>
@@ -58,7 +58,7 @@
       <a-image src="#right2" position="0 1.6 -1" height="1.264" width="0.960" scale="1.5 1.5 1.5" stereo="eye: right"  look-at="a-camera"></a-image>
 
    <a-entity
-        material="shader: transparent-video; src: #video"
+        material="shader: transparent-video; src: #video1"
         geometry="primitive: plane;
                   width: 1;
                   height: 1.8"
