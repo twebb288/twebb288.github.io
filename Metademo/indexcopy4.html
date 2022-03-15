@@ -21,7 +21,7 @@
           <img id="2" src="assets/IMG_7980.JPG">
          
       </a-assets>
-        <a-camera stereocam="eye:left" position="0 1.6 0"><a-box position="0 1.6 1000"></a-box></a-camera>
+        <a-camera stereocam="eye:left" position="0 1.6 0"><a-box id="box" position="0 1.6 1000"></a-box></a-camera>
         
 
       </a-entity>
@@ -39,7 +39,7 @@
       <a-sky color="black"></a-sky>
 
 
-      <a-image src="#left" position="0 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" rotation.z="0" look-at="#a-box"></a-image>   
+      <a-image src="#left" position="0 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" look-at="#box"></a-image>   
         <a-image src="#1" position="-1 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" stereo="eye: left" look-at="a-camera"></a-image>
       <a-image src="#2" position="-1 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" stereo="eye: right" look-at="a-camera"></a-image>
      
