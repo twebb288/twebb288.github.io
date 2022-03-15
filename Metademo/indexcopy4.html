@@ -22,7 +22,7 @@
           <img id="2" src="assets/IMG_7980.JPG">
          
       </a-assets>
-        <a-camera stereocam="eye:left" position="0 1.6 4"></a-camera>
+        <a-camera stereocam="eye:left" position="0 0 0"><a-plane id="box" position="0 1.6 0"></a-plane></a-camera>
         
 
       </a-entity>
@@ -40,7 +40,7 @@
       <a-sky color="black"></a-sky>
 
 
-      <a-image src="#left" position="0 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15"></a-image>   
+      <a-image src="#left" position="0 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" look-at="#box"></a-image>   
         <a-image src="#1" position="-1 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" stereo="eye: left"></a-image>
       <a-image src="#2" position="-1 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" stereo="eye: right"></a-image>
      
