@@ -16,17 +16,14 @@
         <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
         <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
         
-          <img id="left" src="assets/pexels-kevin-lerich-9645639 (1).webp">
-          <img id="1" src="assets/IMG_7979.JPG">
-          <img id="2" src="assets/IMG_7980.JPG">
-         <a-asset-items id="desk" src= "assets/antique_desk/scene.gltf"></a-assets-items>
+         
+          <img id="logo" src="assets/logo1.jpg">
+         <img id="left" src="assets/left1.webp">
+          <img id="right" src="assets/right1.webp">
+          <video id="video1" src="assets/HeyFernanda.mp4" autoplay loop="true" crossorigin="anonymous"></video>
       </a-assets>
         <a-camera stereocam="eye:left" position="0 1 0"></a-camera>
-        
-
-      <a-entity gltf-model="#desk" scale="0.012 0.012 0.012" position="0 0 0"></a-entity>
-
-        
+          
       <a-entity
         geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
         material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
@@ -38,11 +35,23 @@
 
       <a-sky color="black"></a-sky>
 
-<
-      <a-image src="#left" position="0 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" look-at="a-camera"></a-image>  
-      </a-entity> 
-        <a-image src="#1" position="-1 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" stereo="eye: left" look-at="a-camera"></a-image>
-      <a-image src="#2" position="-1 1 -1" height="12.756" width="8.504" scale="0.15 0.15 0.15" stereo="eye: right" look-at="a-camera"></a-image>
+      <a-sphere src="#logo" radius="0.05" position="0 1 -0.4" rotation="0 -90 0" animation="property: object3D.position.y;
+          to: 0.97; 
+          dir: alternate; 
+          dur: 3000; 
+          loop: true"></a-sphere>
+      <a-sphere color="black" radius="0.05" position="0.15 1 -0.4" rotation="0 -90 0" animation="property: object3D.position.y;
+          to: 0.97; 
+          dir: alternate; 
+          dur: 3000; 
+          loop: true"></a-sphere>
+
+           <a-image src="#left" position="0 1 -1" height="1.402" width="1.402" scale="1 1 1" stereo="eye: left"  look-at="a-camera"
+           ></a-image>
+          <a-image src="#right" position="0 1 -1" height="1.402" width="1.402" scale="1 1 1" stereo="eye: right"  look-at="a-camera"
+          ></a-image>
+      
+      <a-video src="#video1" width="16" height="9" position="0 2 -3"></a-video>
      
     </a-scene>
   </body>
