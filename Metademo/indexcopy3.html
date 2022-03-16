@@ -38,6 +38,7 @@
           <img id="left2" src="assets/left2.png">
           <img id="right2" src="assets/right2.png ">
           <video id="video1" src="assets/pexels-wolfgang-langer-5274215_1.webm" autoplay loop="true" crossorigin="anonymous"></video>
+          <video id="video2" src="assets/pexels-wolfgang-langer-5274215.webm" autoplay loop="true" crossorigin="anonymous"></video>
           <a-asset-item id="fertext-obj" src="assets/fertext.obj"></a-asset-item>
     <a-asset-item id="fertext-mtl" src="assets/fertext.mtl"></a-asset-item>  
       </a-assets>
@@ -80,7 +81,19 @@
                   height: 2.16"
         position="0 1 -2"
         play-on-click
-        look-at="a-camera">
+        look-at="a-camera"
+        stereo="eye: left">
+      </a-entity>
+
+      <a-entity
+        material="shader: transparent-video; src: #video2"
+        geometry="primitive: plane;
+                  width: 3.84;
+                  height: 2.16"
+        position="0 1 -2"
+        play-on-click
+        look-at="a-camera"
+        stereo="eye: right">
       </a-entity>
 
       
