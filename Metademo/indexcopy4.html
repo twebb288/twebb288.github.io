@@ -7,6 +7,24 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
   <script src="aframe-stereo-component.min.js"></script>
 
+  <script >AFRAME.registerComponent('play-on-click', {
+  init: function () {
+    this.onClick = this.onClick.bind(this);
+  },
+  play: function () {
+    window.addEventListener('click', this.onClick);
+  },
+  pause: function () {
+    window.removeEventListener('click', this.onClick);
+  },
+  onClick: function (evt) {
+    var videoEl = this.el.getAttribute('material').src;
+    if (!videoEl) { return; }
+    this.el.object3D.visible = true;
+    videoEl.play();
+  }
+});</script>
+
   </head>
   <body>
     <a-scene>
@@ -51,7 +69,7 @@
           <a-image material="alphaTest: 0.5" src="#right" position="0 1 -1" height="1.402" width="1.402" scale="1 1 1" stereo="eye: right"  look-at="a-camera"
           ></a-image>
       
-      <a-video src="#video1" width="16" height="9" scale="0.7 0.7 0.7" position="0 3 -4 "></a-video>
+      <a-video src="#video1" width="16" height="9" scale="0.7 0.7 0.7" position="0 3 -4 " play-on-click></a-video>
      
     </a-scene>
   </body>
