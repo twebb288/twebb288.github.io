@@ -36,8 +36,8 @@
         
          
           <img id="logo" src="assets/logo1.jpg">
-         <img id="left" src="assets/IMG_8003.webp">
-          <img id="right" src="assets/IMG_8004.webp">
+         <img id="left" src="assets/DSC_left.webp">
+          <img id="right" src="assets/right.webp">
           <video id="video1" src="https://spestect.sirv.com/HeyFernanda.mp4" autoplay loop="true" crossorigin="anonymous"></video>
       </a-assets>
         <a-camera stereocam="eye:left" position="0 1 0"></a-camera>
@@ -64,9 +64,9 @@
           dur: 3000; 
           loop: true"></a-sphere>
 
-           <a-image material="alphaTest: 0.5" src="#left" position="0 1 -1" height="4.032" width="3.024" scale="0.5 0.5 0.5" stereo="eye: left"  look-at="a-camera"
+           <a-image material="alphaTest: 0.5" src="#left" position="0 1 -1" height="2.464" width="1.632" scale="1 1 1" stereo="eye: left"  look-at="a-camera"
            ></a-image>
-          <a-image material="alphaTest: 0.5" src="#right" position="0 1 -1" height="4.032" width="3.024" scale="0.5 0.5 0.5" stereo="eye: right"  look-at="a-camera"
+          <a-image material="alphaTest: 0.5" src="#right" position="0 1 -1" height="2.464" width="1.632" scale="1 1 1" stereo="eye: right"  look-at="a-camera"
           ></a-image>
       
       <a-video src="#video1" width="16" height="9" scale="0.7 0.7 0.7" position="0 3 -4 " play-on-click></a-video>
