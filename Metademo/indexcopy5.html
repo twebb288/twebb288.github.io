@@ -7,6 +7,9 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
   <script src="aframe-stereo-component.min.js"></script>
   <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+  <script src="link-controls.js"></script>
+  <script src="aframe-tooltip-component.js"></script>
+    <script src="camera-position.js"></script>
 
   <script >AFRAME.registerComponent('play-on-click', {
   init: function () {
@@ -28,7 +31,9 @@
 
   </head>
   <body>
-    <a-scene>
+    <a-scene
+    raycaster="far: 100; objects: [link];"
+      cursor="rayOrigin: mouse">
       <a-assets>
         <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
         <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
@@ -43,7 +48,7 @@
           <img id="right2" src="https://spestect.sirv.com/Spins/DSC_8883ar.webp">
           <img id="left3" src="https://spestect.sirv.com/Spins/DSC_L.webp">
           <img id="right3" src="https://spestect.sirv.com/Spins/DSC_R.webp">
-
+<img id="thumbEgypt" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/egypt.png">
           <a-asset-items id="text" src= "assets/fertext.gltf"></a-assets-items>
             <a-asset-items id="stand" src= "assets/Project Name (3)/Project Name.gltf"></a-assets-items>
       </a-assets>
@@ -51,7 +56,7 @@
           
      
 
-      
+      <a-link href="indexcopy.html" position="-3.5 1.5 -1.0" image="#thumbEgypt" scale="0.5 0.5 0.5" look-at="a-camera"></a-link>
       
 
       <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
@@ -68,8 +73,14 @@
      <a-cylinder radius="0.8" position="0.2 0 -3" height="0.3" color="#B9F8F8"></a-cylinder>
       
        
-   
-     
+   <a-link href="index2.html" position="3.5 1.5 -1.0" title="My Homepage" image="#right3" scale="0.5 0.5 0.5" look-at="a-camera"></a-link>
+
+
+      <a-entity id="leftHand" link-controls="hand: left"></a-entity>
+      <a-entity id="rightHand" link-controls="hand: right"></a-entity>  
+      <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
+      <a-entity oculus-touch-controls="hand: left"></a-entity>
+      <a-entity oculus-touch-controls="hand: right"></a-entity>
     </a-scene>
   </body>
 
