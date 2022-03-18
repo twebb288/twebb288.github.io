@@ -6,6 +6,7 @@
    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
   <script src="aframe-stereo-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
 
   <script >AFRAME.registerComponent('play-on-click', {
   init: function () {
@@ -36,40 +37,36 @@
         
          
           <img id="logo" src="assets/logo1.jpg">
-         <img id="left" src="assets/Dleft.webp">
-          <img id="right" src="assets/Dright.webp">
-          <video id="video1" src="https://spestect.sirv.com/HeyFernanda.mp4" autoplay loop="true" crossorigin="anonymous"></video>
+          <img id="left" src="https://spestect.sirv.com/Spins/DSC_left.webp">
+          <img id="right" src="https://spestect.sirv.com/Spins/DSC_right.webp">
+          <img id="left2" src="https://spestect.sirv.com/Spins/DSC_8883L.webp">
+          <img id="right2" src="https://spestect.sirv.com/Spins/DSC_8883R.webp">
+          <img id="left3" src="https://spestect.sirv.com/Spins/DSC_L.webp">
+          <img id="right3" src="https://spestect.sirv.com/Spins/DSC_R.webp">
+
+          
       </a-assets>
         <a-camera stereocam="eye:left" position="0 1 0"></a-camera>
           
-      <a-entity
-        geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
-        material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
+     
 
       <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
       <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
       <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
       <a-entity light="color: white; type: ambient;"></a-entity>
 
-      <a-sky color="black"></a-sky>
+      <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
 
-      <a-sphere src="#logo" radius="0.05" position="0 1 -0.4" rotation="0 -90 0" animation="property: object3D.position.y;
-          to: 0.97; 
-          dir: alternate; 
-          dur: 3000; 
-          loop: true"></a-sphere>
-      <a-sphere color="black" radius="0.05" position="0.15 1 -0.4" rotation="0 -90 0" animation="property: object3D.position.y;
-          to: 0.97; 
-          dir: alternate; 
-          dur: 3000; 
-          loop: true"></a-sphere>
 
-           <a-image material="alphaTest: 0.5" src="#left" position="0 1.5 -1" height="2.464" width="1.632" scale="1 1 1" stereo="eye: left"  look-at="a-camera"
+         
+      
+
+                 <a-image material="alphaTest: 0.5" src="#left2" position="0 1.5 -5" height="2.464" width="1.632" scale="5 5 5" stereo="eye: left"  look-at="a-camera"
            ></a-image>
-          <a-image material="alphaTest: 0.5" src="#right" position="0 1.5 -1" height="2.464" width="1.632" scale="1 1 1" stereo="eye: right"  look-at="a-camera"
+          <a-image material="alphaTest: 0.5" src="#right2" position="0 1.5 -5" height="2.464" width="1.632" scale="5 5 5" stereo="eye: right"  look-at="a-camera"
           ></a-image>
       
-      <a-video src="#video1" width="16" height="9" scale="0.6 0.6 0.6" position="0 3 -4 " play-on-click></a-video>
+       
      
     </a-scene>
   </body>
