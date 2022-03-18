@@ -1,0 +1,11 @@
+Model Information:
+* title:	Arena Gallery WebVR
+* source:	https://sketchfab.com/3d-models/arena-gallery-webvr-63563da5aa7342f093a731e98b44cf15
+* author:	vslite (https://sketchfab.com/vslite)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Arena Gallery WebVR" (https://sketchfab.com/3d-models/arena-gallery-webvr-63563da5aa7342f093a731e98b44cf15) by vslite (https://sketchfab.com/vslite) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

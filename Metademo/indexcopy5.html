@@ -45,10 +45,15 @@
           <img id="right3" src="https://spestect.sirv.com/Spins/DSC_R.webp">
 
           <a-asset-items id="text" src= "assets/fertext.gltf"></a-assets-items>
+
+          <a-asset-items id="arena" src= "assets/arena_gallery_webvr/scene.gltf"></a-assets-items>
       </a-assets>
         <a-camera stereocam="eye:left" position="0 1 0"></a-camera>
           
-     
+     <a-entity light="color: #ccccff; intensity: 10; type: ambient;" visible=""></a-entity>
+      <a-entity light="color: ffaaff; intensity: 5.5" position="5 5 5"></a-entity>
+      <a-entity light="color: white; intensity: 4.5" position="-5 5 15"></a-entity>
+      <a-entity light="color: white; type: ambient;"></a-entity>
 
       
       
@@ -57,7 +62,7 @@
 
 
           <a-entity gltf-model="#text" scale="25 25 25" position="1 3 -3"></a-entity>
-      
+      <a-entity gltf-model="#arena" scale="1 1 1" position="0 0 0"></a-entity>
 
                  <a-image material="alphaTest: 0.5" src="#left2" position="0 1 -2" height="2.464" width="1.632" scale="2 2 2" stereo="eye: left"  look-at="a-camera"
            ></a-image>
