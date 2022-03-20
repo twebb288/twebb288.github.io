@@ -51,20 +51,19 @@
 <img id="thumbEgypt" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/egypt.png">
           <a-asset-items id="text" src= "assets/fertext.gltf"></a-assets-items>
             <a-asset-items id="stand" src= "assets/Project Name (3)/Project Name.gltf"></a-assets-items>
-              <a-asset-items id="modelme" src= "assets/polyfer.glb"></a-assets-items>
+             
       </a-assets>
         <a-camera stereocam="eye:left" position="0 1 0"></a-camera>
           
-     
-
-     
-      
+       <a-entity light="type: ambient; color: #B9F8F8; intensity: 0.5"position="0 2 -3"></a-entity>
+<a-entity light="type: directional; color: #B9F8F8; intensity: 0.5" position="0 2 -3"></a-entity>
+    
 
       <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
 
 
           <a-entity gltf-model="#text" scale="3 3 3" position="0 1 -2" look-at="a-camera"></a-entity>
-           <a-entity gltf-model="#stand" scale="1 1 1" position="0 0 0" ></a-entity>
+         
            <a-entity gltf-model="#modelme" scale="1 1 1" position="0 0.8 -1" rotation="0 180 0"></a-entity>
       
 
@@ -74,11 +73,8 @@
       
      <a-cylinder radius="0.8" position="0.2 0 -3" height="0.3" color="#B9F8F8"></a-cylinder>
       
+      <a-cone color="white" radius-bottom="1" height="0.3" position="0 -0.3 0" radius-top="0.8"></a-cone> 
        
-
-
-<a-entity id="sounds" geometry="primitive: plane" material="color: blue"
-          position="0 0 0" sound="src: assets/downlifiting.mp3; autoplay: true"></a-entity>
  
       <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
       <a-entity oculus-touch-controls="hand: left"></a-entity>
