@@ -97,6 +97,22 @@
       <a-entity sprite-particles="texture: assets/sparkle.png; spawnRate: 20; lifeTime: 10; radialType: sphere; radialPosition: 5; color: white; scale: 1,1,1"></a-entity>
     </a-entity> 
           
+     <a-entity position="0 3 -3.2"
+        spe-particles="
+        texture: assets/sparkle.png;
+        color: #B9F8F8; 
+        distribution: sphere; 
+        randomize-velocity: true;
+        radius: 0.01; 
+        particle-count: 200; 
+        velocity: 1; 
+        velocity-spread: 10; 
+        drag: 1; 
+        max-age: 2;
+        blending: additive;
+        active-multiplier: 1000; 
+        size: 1, 1, 1, 0">
+    </a-entity>
         
     </a-scene>
   </body>
