@@ -8,6 +8,9 @@
     <script src="aframe-sprite-particles-component.js"></script>
     <script src="aframe-spe-particles-component.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+        <script src="https://unpkg.com/aframe-entity-generator-component@3.0.1/dist/aframe-entity-generator-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
+
 <script>
   AFRAME.registerComponent('audiohandler', {
   init:function() {
@@ -26,6 +29,40 @@
 })
 </script>
 
+<script>
+      AFRAME.registerComponent('random-material', {
+        init: function () {
+          this.el.setAttribute('material', {
+            color: this.getRandomColor(),
+            metalness: Math.random(),
+            roughness: Math.random()
+          });
+        },
+
+        getRandomColor: function () {
+          var letters = '0123456789ABCDEF'.split('');
+          var color = '#';
+          for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+        }
+      });
+
+      AFRAME.registerComponent('random-torus-knot', {
+        init: function () {
+          this.el.setAttribute('geometry', {
+            primitive: 'sphere',
+            radius: Math.random() * 10,
+            radiusTubular: Math.random() * .75,
+            p: Math.round(Math.random() * 10),
+            q: Math.round(Math.random() * 10)
+          });
+        }
+      });
+    </script>
+
+
   </head>
   <body>
     <a-scene
@@ -43,6 +80,11 @@
               <a-asset-items id="modelme" src= "assets/YMCA.glb"></a-assets-items>
                  <a-asset-items id="modelfer" src= "assets/Ferdance.glb"></a-assets-items>
               
+<a-mixin id="torusKnot"
+                 random-torus-knot
+                 random-material
+                 random-position="min: -60 -60 -80; max: 60 60 40"></a-mixin>
+
       </a-assets>
  
      
@@ -66,6 +108,7 @@
       
      <a-cylinder radius="1.2" position="0 -0.2 -2" height="0.3" color="#B9F8F8" audiohandler shadow="receive: true"></a-cylinder>
       
+      <a-entity entity-generator="mixin: torusKnot; num: 120"></a-entity>
      
        <a-sphere material="color:#B9F8F8;
                             roughness:0.5;
