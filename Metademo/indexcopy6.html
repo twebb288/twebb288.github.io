@@ -31,7 +31,8 @@
     <a-scene
     raycaster="far: 100;"
       cursor="rayOrigin: mouse"
-      antialias="true">
+      antialias="true"
+      a-scene shadow="autoUpdate: true">
       <a-assets>
         
         
@@ -48,8 +49,9 @@
 
         <a-camera stereocam="eye:left" position="0 1 0"></a-camera>
           
-       <a-entity light="type: ambient; color: #B9F8F8; intensity: 1"position="0 2 -3"></a-entity>
-<a-entity light="type: directional; color: #B9F8F8; intensity: 1" position="0 2 -3"></a-entity>
+       <a-entity light="type: ambient; color: #B9F8F8; intensity: 1"position="0 2 -3" castShadow:true;></a-entity>
+<a-entity light="type: directional; color: #B9F8F8; intensity: 1" position="0 2 -3" castShadow:true;></a-entity>
+<a-entity light="type: spot; color: #B9F8F8; intensity: 1" position="0 0 -2" rotation="90 0 0" castShadow:true;></a-entity>
     
 
       <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
@@ -62,7 +64,7 @@
       
 
       
-     <a-cylinder radius="1.2" position="0 -0.2 -2" height="0.3" color="#B9F8F8" audiohandler></a-cylinder>
+     <a-cylinder radius="1.2" position="0 -0.2 -2" height="0.3" color="#B9F8F8" audiohandler shadow="receive: true"></a-cylinder>
       
      
        <a-sphere material="color:#B9F8F8;
