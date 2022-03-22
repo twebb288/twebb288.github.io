@@ -8,9 +8,6 @@
     <script src="aframe-sprite-particles-component.js"></script>
     <script src="aframe-spe-particles-component.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-        <script src="https://unpkg.com/aframe-entity-generator-component@3.0.1/dist/aframe-entity-generator-component.min.js"></script>
-        <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
-
 <script>
   AFRAME.registerComponent('audiohandler', {
   init:function() {
@@ -29,40 +26,6 @@
 })
 </script>
 
-<script>
-      AFRAME.registerComponent('random-material', {
-        init: function () {
-          this.el.setAttribute('material', {
-            color: this.getRandomColor(),
-            metalness: Math.random(),
-            roughness: Math.random()
-          });
-        },
-
-        getRandomColor: function () {
-          var letters = '0123456789ABCDEF'.split('');
-          var color = '#';
-          for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-          }
-          return color;
-        }
-      });
-
-      AFRAME.registerComponent('random-torus-knot', {
-        init: function () {
-          this.el.setAttribute('geometry', {
-            primitive: 'sphere',
-            radius: Math.random() * 10,
-            radiusTubular: Math.random() * .75,
-            p: Math.round(Math.random() * 10),
-            q: Math.round(Math.random() * 10)
-          });
-        }
-      });
-    </script>
-
-
   </head>
   <body>
     <a-scene
@@ -80,15 +43,10 @@
               <a-asset-items id="modelme" src= "assets/YMCA.glb"></a-assets-items>
                  <a-asset-items id="modelfer" src= "assets/Ferdance.glb"></a-assets-items>
               
-<a-mixin id="torusKnot"
-                 random-torus-knot
-                 random-material
-                 random-position="min: -60 -60 -80; max: 60 60 40"></a-mixin>
-<a-mixin id="multipleme" gltf-model="#modelme" random-position="min: -6 -6 -8; max: 6 6 0" animation-mixer></a-mixin>
       </a-assets>
  
      
-<a-entity entity-generator="mixin: multipleme"></a-entity>
+
         <a-camera stereocam="eye:left" position="0 1 0"></a-camera>
           
        <a-entity light="type: ambient; color: #B9F8F8; intensity: 1"position="0 2 -3" castShadow:true;></a-entity>
@@ -101,14 +59,13 @@
 
           <a-entity gltf-model="#text" scale="5 5 5" position="0 2.7 -3" look-at="a-camera"></a-entity>
          
-           
+           <a-entity gltf-model="#modelme" scale="1 1 1" position="-0.5 0 -2" rotation="0 0 0" animation-mixer></a-entity>
            <a-entity gltf-model="#modelfer" scale="1 1 1" position="0.5 0 -2" rotation="0 0 0" animation-mixer></a-entity>
       
 
       
      <a-cylinder radius="1.2" position="0 -0.2 -2" height="0.3" color="#B9F8F8" audiohandler shadow="receive: true"></a-cylinder>
       
-     
      
        <a-sphere material="color:#B9F8F8;
                             roughness:0.5;
