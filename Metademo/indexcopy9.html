@@ -1,0 +1,75 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Fernanda Demo</title>
+     <meta name="description" content="Hello, World! - A-Frame">
+   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script src="aframe-sprite-particles-component.js"></script>
+    <script src="aframe-spe-particles-component.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script>
+  AFRAME.registerComponent('audiohandler', {
+  init:function() {
+     let playing = false;
+     let audio = document.querySelector("#audio");
+     this.el.addEventListener('click', () => {
+          if(!playing) {
+              audio.play();
+           } else {
+              audio.pause();
+              audio.currentTime = 0;
+           }
+           playing = !playing;
+     });
+  }
+})
+</script>
+
+  </head>
+  <body>
+    <a-scene
+    raycaster="far: 100;"
+      cursor="rayOrigin: mouse"
+      antialias="true"
+      a-scene shadow="autoUpdate: true">
+      <a-assets>
+        
+        
+        
+        <audio id="audio" src="assets/downlifiting.mp3" preload="auto"></audio>
+         
+      
+              <a-asset-items id="modelme" src= "assets/skate2.glb"></a-assets-items>
+                
+              
+      </a-assets>
+ 
+     
+
+        <a-camera stereocam="eye:left" position="0 1 0"></a-camera>
+          
+       <a-entity light="type: ambient; color: #B9F8F8; intensity: 1"position="0 2 -3" castShadow:true;></a-entity>
+<a-entity light="type: directional; color: #B9F8F8; intensity: 1" position="0 2 -3" castShadow:true;></a-entity>
+<a-entity light="type: spot; color: #B9F8F8; intensity: 1" position="0 0 -2" rotation="90 0 0" castShadow:true;></a-entity>
+    
+
+      <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
+
+
+         
+           <a-entity gltf-model="#modelme" scale="0.1 0.1 0.1" position="0 0 0" rotation="0 0 0"></a-entity>
+      
+       
+ 
+      <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
+      <a-entity oculus-touch-controls="hand: left"></a-entity>
+      <a-entity oculus-touch-controls="hand: right"></a-entity>
+        
+ 
+        
+    </a-scene>
+  </body>
+
+
+</html>
