@@ -38,9 +38,17 @@
 
 
          
-           <a-entity gltf-model="#modelme" scale="2 2 2" position="0 0 0" rotation="0 0 0"></a-entity>
-           <a-entity gltf-model="#modelme2" scale="1 1 1" position="0 0.2 0" rotation="0 0 0" animation-mixer></a-entity>
-      
+           <a-entity gltf-model="#modelme" scale="2 2 2" position="0 -0.2 0" rotation="0 0 0"></a-entity>
+
+
+           <a-entity animation="property: object3D.rotation.y;
+          to: 360; 
+          dir: ; 
+          dur: 6000; 
+          loop: true;
+          easing: linear">
+           <a-entity gltf-model="#modelme2" scale="1 1 1" position="3 -0.1 0" rotation="0 180 0" animation-mixer></a-entity>
+          </a-entity>
        
  
       <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
