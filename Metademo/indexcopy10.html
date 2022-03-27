@@ -8,7 +8,36 @@
     <script src="aframe-sprite-particles-component.js"></script>
     <script src="aframe-spe-particles-component.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script>
+  function pause() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: 0
+    });
+  }
 
+  function play() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: 1
+    });
+  }
+  function reverse() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: -0.2
+    });
+  }
+
+  
+</script>
+
+<button onclick="pause()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer;">
+Pause
+</button>
+<button onclick="play()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer; margin-left: 50px;">
+play
+</button>
+<button onclick="reverse()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer; margin-left: 100px;">
+reverse
+</button>
   </head>
   <body>
     <a-scene
@@ -20,14 +49,14 @@
 
       
               <a-asset-items id="modelme" src= "assets/skate2.glb"></a-assets-items>
-                 <a-asset-items id="modelme2" src= "assets/.glb"></a-assets-items>
-                  <a-asset-items id="modelme3" src= "assets/.glb"></a-assets-items>
+                 <a-asset-items id="modelme2" src= "assets/tomtrick.glb"></a-assets-items>
+                  <a-asset-items id="modelme3" src= "assets/tomhead.glb"></a-assets-items>
                    
                 
               
       </a-assets>
  
-     
+     <a-entity gltf-model="#modelme2" scale="1 1 1" position="0 -0.2 0" rotation="0 0 0" animation-mixer="timeScale: 0"></a-entity>
         <a-camera stereocam="eye:left" position="0 1 0" rotation="0 90 0"
          ></a-camera>
           
@@ -41,13 +70,13 @@
 
          
            <a-entity gltf-model="#modelme" scale="2 2 2" position="0 -0.2 0" rotation="0 0 0"></a-entity>
+            <a-entity gltf-model="#modelme3" scale="1 1 1" position="0 1.7 2" rotation="0 180 0"></a-entity>
 
 
           
         
-           <a-entity gltf-model="#modelme2" scale="0.01 0.01 0.01" position="1 -0.2 -0.5" rotation="0 0 0" animation-mixer></a-entity>
+           
 
-           <a-entity gltf-model="#modelme3" scale="0.01 0.01 0.01" position="0 -0.2 -0.5" rotation="0 0 0" animation-mixer></a-entity>
          
          
        
