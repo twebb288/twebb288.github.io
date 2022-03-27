@@ -8,6 +8,7 @@
     <script src="aframe-sprite-particles-component.js"></script>
     <script src="aframe-spe-particles-component.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
 <script>
   function pause() {
     document.querySelector("a-entity").setAttribute('animation-mixer', {
@@ -60,8 +61,8 @@ reverse
         <a-camera stereocam="eye:left" position="0 1 0" rotation="0 90 0"
          ></a-camera>
           
-       <a-entity light="type: ambient; color: #B9F8F8; intensity: 2"position="0 2 -3" castShadow:true;></a-entity>
-<a-entity light="type: directional; color: #B9F8F8; intensity: 2" position="0 2 -3" castShadow:true;></a-entity>
+       <a-entity light="type: ambient; color: #B9F8F8; intensity: 1.5"position="0 2 -3" castShadow:true;></a-entity>
+<a-entity light="type: directional; color: #B9F8F8; intensity: 1.5" position="0 2 -3" castShadow:true;></a-entity>
 <a-entity light="type: spot; color: #B9F8F8; intensity: 2.4" position="-0.5 1.86 1" rotation="90 0 0" castShadow:true;></a-entity>
     
 
@@ -70,7 +71,7 @@ reverse
 
          
            <a-entity gltf-model="#modelme" scale="2 2 2" position="0 -0.2 0" rotation="0 0 0"></a-entity>
-            <a-entity gltf-model="#modelme3" scale="1 1 1" position="0 1.7 2" rotation="0 180 0"></a-entity>
+            <a-entity gltf-model="#modelme3" scale="1 1 1" position="0 1 -0.5" rotation="0 0 0" look-at="a-camera"></a-entity>
 
 
           
