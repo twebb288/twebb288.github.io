@@ -1,0 +1,96 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Fernanda Demo</title>
+     <meta name="description" content="Hello, World! - A-Frame">
+   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script src="aframe-sprite-particles-component.js"></script>
+    <script src="aframe-spe-particles-component.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+     <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
+  <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script> 
+
+<script>
+  function pause() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: 0
+    });
+  }
+
+  function play() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: 1
+    });
+  }
+  function reverse() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: -0.2
+    });
+  }
+
+  
+</script>
+
+<button onclick="pause()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer;">
+Pause
+</button>
+<button onclick="play()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer; margin-left: 50px;">
+play
+</button>
+<button onclick="reverse()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer; margin-left: 100px;">
+reverse
+</button>
+  </head>
+  <body>
+    <a-scene
+      antialias="true"
+      gltf-model="dracoDecoderPath: assets/">
+      <a-assets>
+        
+        
+
+      
+              <a-asset-items id="ring" src= "assets/ring.glb"></a-assets-items>
+                 
+                
+              
+      </a-assets>
+ 
+
+        <a-camera stereocam="eye:left" position="0 1 0" rotation="0 0 0" orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"
+         ></a-camera>
+          
+       <a-entity light="type: ambient; color: #B9F8F8; intensity: 1.5"position="0 2 -3" castShadow:true;></a-entity>
+<a-entity light="type: directional; color: #B9F8F8; intensity: 1.5" position="0 2 -3" castShadow:true;></a-entity>
+<a-entity light="type: spot; color: #B9F8F8; intensity: 2.4" position="-0.5 1.86 1" rotation="90 0 0" castShadow:true;></a-entity>
+    
+
+      <a-sky color="black"></a-sky>
+
+
+         
+           <a-entity gltf-model="#ring" scale="1 1 1" position="0 0 0" rotation="0 0 0"></a-entity>
+           
+
+
+          
+        
+           
+
+         
+         
+       
+ 
+      <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
+      <a-entity oculus-touch-controls="hand: left"></a-entity>
+      <a-entity oculus-touch-controls="hand: right"></a-entity>
+        
+ 
+        
+    </a-scene>
+  </body>
+
+
+</html>
