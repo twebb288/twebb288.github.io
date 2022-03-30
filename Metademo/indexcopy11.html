@@ -11,6 +11,7 @@
      <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
      <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
   <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script> 
+  <script src="aframe-stereo-component.min.js"></script>
 
 <script>
   function pause() {
@@ -50,8 +51,8 @@ reverse
       <a-assets>
         
         
-
-      
+ <img id="left" src="assets/troopersteroL.jpg">
+          <img id="right" src="assets/troopersteroR.jpg">      
               <a-asset-items id="ring" src= "assets/ring.glb"></a-assets-items>
                  
                 
@@ -76,7 +77,10 @@ reverse
 
 
           
-        
+        <a-image material="alphaTest: 0.5" src="#left" position="0 1.5 -1" height="1.92" width="1.08" scale="1 1 1" stereo="eye: left"  look-at="a-camera"
+           ></a-image>
+          <a-image material="alphaTest: 0.5" src="#right" position="0 1.5 -1" height="1.92" width="1.08" scale="1 1 1" stereo="eye: right"  look-at="a-camera"
+          ></a-image>
            
 
          
