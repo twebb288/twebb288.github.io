@@ -26,22 +26,76 @@
   }
   function reverse() {
     document.querySelector("a-entity").setAttribute('animation-mixer', {
-      timeScale: -0.2
+      timeScale: -0.5
+    });
+  }
+
+    function forward() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: 1.5
     });
   }
 
   
 </script>
+<div class="btn-group" >
+<button class="reverse" onclick="reverse()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
 
-<button onclick="pause()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer;">
-Pause
 </button>
-<button onclick="play()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer; margin-left: 50px;">
-play
+<button class="play" onclick="play()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer;  ">
 </button>
-<button onclick="reverse()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer; margin-left: 100px;">
-reverse
+<button class="pause" onclick="pause()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer; ">
 </button>
+<button class="forward" onclick="forward()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
+</button>
+</div>
+
+<style>
+  button:active{opacity:50%}
+  .reverse {
+    background: url(assets/Subtract.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .play {
+    background: url(assets/play.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .pause {
+    background: url(assets/pause.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .forward {
+    background: url(assets/forward.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.btn-group {
+  z-index: 10000000;
+  margin-bottom:20px;
+  text-align: center;
+  position:absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+}
+</style>
+
+
   </head>
   <body>
     <a-scene
