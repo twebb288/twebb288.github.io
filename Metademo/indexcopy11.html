@@ -27,22 +27,74 @@
   }
   function reverse() {
     document.querySelector("a-entity").setAttribute('animation-mixer', {
-      timeScale: -0.2
+      timeScale: -0.5
+    });
+  }
+
+    function forward() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: 1.5
     });
   }
 
   
 </script>
+<div class="btn-group" >
+<button class="reverse" onclick="reverse()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
 
-<button onclick="pause()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer;">
-Pause
 </button>
-<button onclick="play()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer; margin-left: 50px;">
-play
+<button class="play" onclick="play()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer;  ">
 </button>
-<button onclick="reverse()" style="z-index: 10000000; position: fixed; margin-top: 0px; cursor: pointer; margin-left: 100px;">
-reverse
+<button class="pause" onclick="pause()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer; ">
 </button>
+<button class="forward" onclick="forward()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
+</button>
+</div>
+
+<style>
+  button:active{opacity:50%}
+  .reverse {
+    background: url(assets/Subtract.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .play {
+    background: url(assets/play.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .pause {
+    background: url(assets/pause.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .forward {
+    background: url(assets/forward.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.btn-group {
+  z-index: 10000000;
+  margin-bottom:20px;
+  text-align: center;
+  position:absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+}
+</style>
   </head>
   <body>
     <a-scene
@@ -51,14 +103,14 @@ reverse
       <a-assets>
         
         
- <img id="left" src="assets/chimp_L.jpg">
-          <img id="right" src="assets/chimp_R.jpg">      
+      
               <a-asset-items id="ring" src= "assets/ring.glb"></a-assets-items>
+                <a-asset-items id="boxer" src= "assets/box.glb"></a-assets-items>
                  
                 
               
       </a-assets>
- 
+ <a-entity gltf-model="#boxer" scale="0.9 0.9 0.9" position="0 0 0" rotation="0 0 0" animation-mixer></a-entity>
 
         <a-camera stereocam="eye:left" position="0 1 0" rotation="0 0 0" orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"
          ></a-camera>
@@ -74,16 +126,6 @@ reverse
          
            <a-entity gltf-model="#ring" scale="0.3 0.3 0.3" position="0 0 0" rotation="0 0 0"></a-entity>
            
-
-
-          
-        <a-image material="alphaTest: 0.5" src="#left" position="0 1.5 -1" height="1.08" width="1.92" scale="1 1 1" stereo="eye: left"  look-at="a-camera"
-           ></a-image>
-          <a-image material="alphaTest: 0.5" src="#right" position="0 1.5 -1" height="1.08" width="1.92" scale="1 1 1" stereo="eye: right"  look-at="a-camera"
-          ></a-image>
-           
-
-         
          
        
  
