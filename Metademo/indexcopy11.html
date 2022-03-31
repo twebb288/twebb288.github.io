@@ -32,6 +32,17 @@
 });</script>
 
 <script>
+ AFRAME.registerComponent('disable-culling', {
+  init: function(){
+    var object3D = this.el.sceneEl.object3D;
+    object3D.traverse((node) => {
+      node.frustumCulled = false
+    })
+  }
+})
+</script>
+
+<script>
   function pause() {
     document.querySelector("a-entity").setAttribute('animation-mixer', {
       timeScale: 0
@@ -118,13 +129,14 @@
     <a-scene
       antialias="true"
       gltf-model="dracoDecoderPath: assets/"
+      cursor="rayOrigin: mouse; fuse: false"
      >
       <a-assets>
         
         
       
               <a-asset-items id="ring" src= "assets/ring.glb"></a-assets-items>
-                <a-asset-items id="boxer" src= "assets/box.glb"></a-assets-items>
+                <a-asset-items id="boxer" src= "assets/box2.glb"></a-assets-items>
                  
                 
               
