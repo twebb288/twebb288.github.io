@@ -58,14 +58,14 @@
   
 </script>
 <div class="btn-group" >
-<button class="reverse" onclick="reverse()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
+<button class="reverse" onclick="reverse()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
 
 </button>
-<button class="play" onclick="play()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer;  ">
+<button class="play" onclick="play()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer;  ">
 </button>
-<button class="pause" onclick="pause()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer; ">
+<button class="pause" onclick="pause()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ">
 </button>
-<button class="forward" onclick="forward()" style="z-index: 10000000; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
+<button class="forward" onclick="forward()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
 </button>
 </div>
 
@@ -146,7 +146,7 @@
            <a-entity gltf-model="#ring" scale="0.3 0.3 0.3" position="0 0 0" rotation="0 0 0"></a-entity>
            
          
-       <a-video src="#video1" width="16" height="9" scale="0.6 0.6 0.6" position="0 3 -4 " play-on-click></a-video>
+       
  
       <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
       <a-entity oculus-touch-controls="hand: left"></a-entity>
