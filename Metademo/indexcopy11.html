@@ -135,15 +135,13 @@ model.traverse((object) => {
       
               <a-asset-items id="ring" src= "assets/ring.glb"></a-assets-items>
                 <a-asset-items id="boxer" src= "assets/KO.glb"></a-assets-items>
-                 
+                    <a-asset-items id="stadium" src= "assets/eden_arena/scene.gltf"></a-assets-items>
                 
               
       </a-assets>
  <a-entity gltf-model="#boxer" scale="0.9 0.9 0.9" position="0 0 0" rotation="0 0 0" animation-mixer disable-culling></a-entity>
+ <a-entity gltf-model="#stadium" scale="1 1 1" position="6 -1 105" rotation="0 0 0" animation-mixer disable-culling></a-entity>
 
- <a-entity
-        geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" position="0 -1 0"
-        material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; "></a-entity>
 
 <a-entity>
         <a-camera camera="near:0.0005" stereocam="eye:left" position="0 1 0" rotation="0 0 0" orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"
