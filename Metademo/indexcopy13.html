@@ -14,105 +14,21 @@
   <script src="aframe-stereo-component.min.js"></script>
 
 
-<script>
-  function pause1() {
-    document.querySelector("a-entity").setAttribute('animation-mixer', {
-      timeScale: 0
-    });
-  }
-
-  function play1() {
-    document.querySelector("a-entity").setAttribute('animation-mixer', {
-      timeScale: 1
-    });
-  }
-  function reverse1() {
-    document.querySelector("a-entity").setAttribute('animation-mixer', {
-      timeScale: -0.5
-    });
-  }
-
-    function forward1() {
-    document.querySelector("a-entity").setAttribute('animation-mixer', {
-      timeScale: 1.5
-    });
-  }
-
-  
-</script>
-<div class="btn-group" >
-<button class="reverse" onclick="reverse1()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
-
-</button>
-<button class="play" onclick="play1()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer;  ">
-</button>
-<button class="pause" onclick="pause1()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ">
-</button>
-<button class="forward" onclick="forward1()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
-</button>
-</div>
-
-<style>
-  button:active{opacity:50%}
-  .reverse {
-    background: url(assets/Subtract.svg);
-    background-size: contain;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-}
-
- .play {
-    background: url(assets/play.svg);
-    background-size: contain;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-}
-
- .pause {
-    background: url(assets/pause.svg);
-    background-size: contain;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-}
-
- .forward {
-    background: url(assets/forward.svg);
-    background-size: contain;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-}
-
-.btn-group {
-  z-index: 1;
-  margin-bottom:20px;
-  text-align: center;
-  position:absolute;
-  bottom:0;
-  left: 0;
-  right: 0;
-}
-</style>
   </head>
   <body>
     <a-scene
       antialias="true"
       gltf-model="dracoDecoderPath: assets/"
       cursor="rayOrigin: mouse; fuse: false"
-      device-orientation-permission-ui="enabled: false"
-     >
+      device-orientation-permission-ui="enabled: false">
+      
       <a-assets>
         
          <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
       
               <a-asset-items id="ring" src= "assets/ring.glb"></a-assets-items>
-                <a-asset-items id="boxer" src= "assets/KO.glb"></a-assets-items>
-                  
-                    <a-asset-items id="text" src= "assets/fertext.glb"></a-assets-items>
-                   
+              <a-asset-items id="text" src= "assets/fertext.glb"></a-assets-items>
+                     <a-asset-items id="tom" src= "assets/tomhead2.glb"></a-assets-items>
 
                     <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
         <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
@@ -121,9 +37,8 @@
                 
               
       </a-assets>
- <a-entity gltf-model="#boxer" scale="0.9 0.9 0.9" position="0 0 0" rotation="0 0 0" animation-mixer ></a-entity>
-  
-  <a-entity gltf-model="#text" scale="10 10 10" position="0 2 0" rotation="0 0 0"></a-entity>
+
+<a-entity gltf-model="#text" scale="10 10 10" position="0 2 -3" rotation="0 0 0" ></a-entity>
 
 
 <a-entity>
@@ -132,15 +47,20 @@
           </a-entity>
        
 
-     <a-entity
+        <a-entity
         geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" position="0 -1 0"
         material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
 
        <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
-
+  <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+      <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+      <a-entity light="color: white; type: ambient;"></a-entity>
          
            <a-entity gltf-model="#ring" scale="0.3 0.3 0.3" position="0 0 0" rotation="0 0 0" ></a-entity>
+           <a-entity gltf-model="#tom" scale="15 15 15" position="3 -20 -8" rotation="0 -90 0" ></a-entity>
+            <a-entity gltf-model="#tom" scale="15 15 15" position="-3 -20 -8" rotation="0 90 0" ></a-entity>
            
          
        
