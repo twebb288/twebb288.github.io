@@ -1,0 +1,152 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Fernanda Demo</title>
+     <meta name="description" content="Hello, World! - A-Frame">
+   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script src="aframe-sprite-particles-component.js"></script>
+    <script src="aframe-spe-particles-component.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+     <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
+  <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script> 
+  <script src="aframe-stereo-component.min.js"></script>
+
+
+<script>
+  function pause1() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: 0
+    });
+  }
+
+  function play1() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: 1
+    });
+  }
+  function reverse1() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: -0.5
+    });
+  }
+
+    function forward1() {
+    document.querySelector("a-entity").setAttribute('animation-mixer', {
+      timeScale: 1.5
+    });
+  }
+
+  
+</script>
+<div class="btn-group" >
+<button class="reverse" onclick="reverse1()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
+
+</button>
+<button class="play" onclick="play1()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer;  ">
+</button>
+<button class="pause" onclick="pause1()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ">
+</button>
+<button class="forward" onclick="forward1()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ;">
+</button>
+</div>
+
+<style>
+  button:active{opacity:50%}
+  .reverse {
+    background: url(assets/Subtract.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .play {
+    background: url(assets/play.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .pause {
+    background: url(assets/pause.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .forward {
+    background: url(assets/forward.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.btn-group {
+  z-index: 1;
+  margin-bottom:20px;
+  text-align: center;
+  position:absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+}
+</style>
+  </head>
+  <body>
+    <a-scene
+      antialias="true"
+      gltf-model="dracoDecoderPath: assets/"
+      cursor="rayOrigin: mouse; fuse: false"
+      device-orientation-permission-ui="enabled: false"
+     >
+      <a-assets>
+        
+         <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+      <a-asset-items id="boxer" src= "assets/KO.glb"></a-assets-items>
+           
+                  <a-asset-items id="lounge" src= "assets/lounge.glb"></a-assets-items>
+                   
+
+                    <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+        <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+        <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+                
+              
+      </a-assets>
+
+
+<a-entity gltf-model="#boxer" scale="0.8 0.8 0.8" position="-2.5 0 -1.5" rotation="0 0 0" animation-mixer ></a-entity>
+<a-entity>
+        <a-camera camera="near:0.0005" stereocam="eye:left" position="0 1 0" rotation="0 0 0" orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"
+         ></a-camera>
+          </a-entity>
+       
+
+    
+
+       <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+
+
+         
+           <a-entity gltf-model="#lounge" scale="1 1 1" position="0 0 0" rotation="0 0 0" ></a-entity>
+           
+         
+       
+ 
+      <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
+      <a-entity oculus-touch-controls="hand: left"></a-entity>
+      <a-entity oculus-touch-controls="hand: right"></a-entity>
+        
+ 
+        
+    </a-scene>
+  </body>
+
+
+</html>
