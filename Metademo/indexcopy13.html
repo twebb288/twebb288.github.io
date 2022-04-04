@@ -36,7 +36,7 @@
       antialias="true"
       gltf-model="dracoDecoderPath: assets/"
       cursor="rayOrigin: mouse; fuse: false"
-      >
+      device-orientation-permission-ui="enabled: false">
       
       <a-assets>
         
@@ -79,9 +79,9 @@
             <a-entity gltf-model="#tom" scale="15 15 15" position="-3 -20 -8" rotation="0 0 0" ></a-entity>
            
          
-       <a-video src="#video1" width="16" height="9" scale="0.6 0.6 0.6" position="-8 3 -4 " rotation="10 90 0" play-on-click></a-video>
+       <a-video src="#video1" width="16" height="9" scale="0.6 0.6 0.6" position="-8 3 -4 " rotation="0 90 0" play-on-click></a-video>
 
-        <a-video src="#video1" width="16" height="9" scale="0.6 0.6 0.6" position="8 3 -4 " rotation="-10 90 0" play-on-click></a-video>
+        <a-video src="#video1" width="16" height="9" scale="0.6 0.6 0.6" position="8 3 -4 " rotation="0 270 0" play-on-click></a-video>
  
       <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity>
       <a-entity oculus-touch-controls="hand: left"></a-entity>
