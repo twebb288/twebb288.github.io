@@ -29,6 +29,7 @@
               <a-asset-items id="ring" src= "assets/ring.glb"></a-assets-items>
               <a-asset-items id="text" src= "assets/fertext.glb"></a-assets-items>
                      <a-asset-items id="tom" src= "assets/tomhead2.glb"></a-assets-items>
+                      <a-asset-items id="boxer" src= "assets/boxer.glb"></a-assets-items>
 
                     <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
         <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
@@ -38,7 +39,7 @@
               
       </a-assets>
 
-<a-entity gltf-model="#text" scale="15 15 15" position="0 2 -5" rotation="0 0 0" ></a-entity>
+<a-entity gltf-model="#text" scale="17 17 17" position="0 1.5 -4" rotation="0 0 0" ></a-entity>
 
 
 <a-entity>
@@ -53,15 +54,16 @@
 
        <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
-  <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+  <a-entity light="color: #ccccff; intensity: 0.5; type: ambient;" visible=""></a-entity>
+  <a-entity light="color: #ccccff; intensity: 4.3; type: spot; angle:25; distance:35;" position="0 10 0.8" rotation="-40 0 0" angle="25" intentsity="4.3"></a-entity>
+      <a-entity light="color: ffaaff; intensity: 0.5" position="5 5 5"></a-entity>
       <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
       <a-entity light="color: white; type: ambient;"></a-entity>
          
            <a-entity gltf-model="#ring" scale="0.3 0.3 0.3" position="0 0 0" rotation="0 0 0" ></a-entity>
-           <a-entity gltf-model="#tom" scale="15 15 15" position="3 -20 -8" rotation="0 0 0" ></a-entity>
-            <a-entity gltf-model="#tom" scale="15 15 15" position="-3 -20 -8" rotation="0 0 0" ></a-entity>
-           
+          
+           <a-entity gltf-model="#boxer" scale="1 1 1" position="-0.5 0 0" rotation="0 90 0" animation-mixer="timeScale:0.5"></a-entity>
+           <a-entity gltf-model="#boxer" scale="1 1 1" position="0.5 0 0" rotation="0 -90 0" animation-mixer="timeScale:0.5"></a-entity>
          
        
  
