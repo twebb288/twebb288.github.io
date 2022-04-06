@@ -7,6 +7,10 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
   <script src="aframe-stereo-component.min.js"></script>
   <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="controller-listener.js"></script>
+  <script src="player-move.js"></script>
+    <script src="raycaster-extras.js"></script>
 
   <script >AFRAME.registerComponent('play-on-click', {
   init: function () {
@@ -28,12 +32,19 @@
 
   </head>
   <body>
-    <a-scene>
+    <a-scene
+    renderer="colorManagement: true"
+      antialias="true"
+      gltf-model="dracoDecoderPath: assets/"
+      cursor="rayOrigin: mouse; fuse: false"
+      device-orientation-permission-ui="enabled: false">
+
+
       <a-assets>
         <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
         <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
         <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
-        <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+        <img id="sky" src="assets/Group184.webp" crossorigin="anonymous" />
         
          
           <img id="logo" src="assets/logo1.jpg">
@@ -44,9 +55,38 @@
           <img id="left3" src="https://spestect.sirv.com/Spins/DSC_L.webp">
           <img id="right3" src="https://spestect.sirv.com/Spins/DSC_R.webp">
 
-          
+          <a-asset-items id="YMCA" src= "assets/YMCA.glb"></a-assets-items>
       </a-assets>
-        <a-camera stereocam="eye:left" position="0 1 0"></a-camera>
+      
+
+      <a-entity 
+        id="player" 
+        position="0 0 0" 
+        player-move="controllerListenerId: #controller-data;
+                     navigationMeshClass: environmentGround;">
+        
+        <a-camera orbit-controls="target: 0 1.6 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0.5 3"></a-camera>
+    
+        <a-entity 
+            id="controller-data" 
+            controller-listener="leftControllerId:  #left-controller; 
+                                 rightControllerId: #right-controller;">
+        </a-entity>
+
+        <a-entity 
+            id="left-controller"
+            oculus-touch-controls="hand: left">
+        </a-entity>
+
+        <a-entity
+            id="right-controller"
+            oculus-touch-controls="hand: right"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;">
+        </a-entity>
+
+    </a-entity>
           
      
 
@@ -58,15 +98,21 @@
       <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
 
 
-         
+         <a-plane height="1000" width="2" rotation="-90 0 0"></a-plane>
       
 
-                 <a-image material="alphaTest: 0.5" src="#left2" position="0 1.5 -10" height="1.920" width="1.080" scale="10 10 10" stereo="eye: left"  look-at="a-camera"
-           ></a-image>
-          <a-image material="alphaTest: 0.5" src="#right2" position="0 1.5 -10" height="1.920" width="1.080" scale="10 10 10" stereo="eye: right"  look-at="a-camera"
-          ></a-image>
+                 <a-image src="#left2" position="2 1.5 -3" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
+                 <a-image src="#left2" position="-2 1.5 -3" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
+
+<a-plane height="1000" width="1000" rotation="0 0 0" position="0 0 -10" color="black" material="side:double"></a-plane>
+          
       
-       
+                 <a-image src="#left2" position="2 1.5 -15" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
+                 <a-image src="#left2" position="-2 1.5 -15" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
+ 
+ <a-plane height="1000" width="1000" rotation="0 0 0" position="0 0 -20" color="black" material="side:double"></a-plane>      
+
+  <a-entity gltf-model="#YMCA" scale="1 1 1" position="0 0 -25" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
      
     </a-scene>
   </body>
