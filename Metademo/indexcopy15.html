@@ -57,6 +57,7 @@
           <img id="normalmap" src="assets/Wood_Floor_011_normal.jpg">
 
           <a-asset-items id="YMCA" src= "assets/YMCA.glb"></a-assets-items>
+            <a-asset-items id="shoes" src= "assets/air_jordan_1_877294.glb"></a-assets-items>
       </a-assets>
       
 
@@ -114,7 +115,7 @@
                  <a-image src="#left2" position="2 1.5 -3" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
                  <a-image src="#left2" position="-2 1.5 -3" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
 
-<a-plane height="1000" width="1000" rotation="0 0 0" position="0 0 -10" color="black" material="side:double"></a-plane>
+<a-plane height="1000" width="1000" rotation="0 0 0" position="0 0 -10" color="black"></a-plane>
           
       
                  <a-image src="#left2" position="2 1.5 -15" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
@@ -123,6 +124,7 @@
  <a-plane height="1000" width="1000" rotation="0 0 0" position="0 0 -20" color="black" material="side:double"></a-plane>      
 
   <a-entity gltf-model="#YMCA" scale="1 1 1" position="0 0 -25" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
+   <a-entity gltf-model="#shoes" scale="0.01 0.01 0.01" position="0 1.6 -23" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
      
     </a-scene>
   </body>
