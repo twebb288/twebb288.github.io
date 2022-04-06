@@ -52,8 +52,9 @@
           <img id="right" src="https://spestect.sirv.com/Spins/DSC_right.webp">
           <img id="left2" src="assets/jordans_L.jpg">
           <img id="right2" src="assets/jordans_R.jpg">
-          <img id="left3" src="https://spestect.sirv.com/Spins/DSC_L.webp">
-          <img id="right3" src="https://spestect.sirv.com/Spins/DSC_R.webp">
+          <img id="ground" src="assets/Wood_Floor_011_basecolor.jpg">
+          <img id="occmap" src="assets/Wood_Floor_011_ambientOcclusion.jpg">
+          <img id="normalmap" src="assets/Wood_Floor_011_normal.jpg">
 
           <a-asset-items id="YMCA" src= "assets/YMCA.glb"></a-assets-items>
       </a-assets>
@@ -98,7 +99,16 @@
       <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
 
 
-         <a-plane height="1000" width="2" rotation="-90 0 0"></a-plane>
+         <a-plane height="1000" width="2" rotation="-90 0 0" 
+          material=
+          "src:#ground; 
+          repeat:2 1000;
+          ambientOcclusionMap:#ocmap;
+          normalMap:#normalmap;
+          normalTextureRepeat:2 1000;
+          ambientOcclusionMap:#occmap;
+          ambientOcclusionTextureRepeat:2 1000"
+          ></a-plane>
       
 
                  <a-image src="#left2" position="2 1.5 -3" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
