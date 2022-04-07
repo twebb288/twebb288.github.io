@@ -11,6 +11,8 @@
   <script src="controller-listener.js"></script>
   <script src="player-move.js"></script>
     <script src="raycaster-extras.js"></script>
+        <script src="aframe-sprite-particles-component.js"></script>
+    <script src="aframe-spe-particles-component.js"></script>
 
   <script >AFRAME.registerComponent('play-on-click', {
   init: function () {
@@ -52,10 +54,9 @@
           <img id="right" src="https://spestect.sirv.com/Spins/DSC_right.webp">
           <img id="left2" src="assets/jordans_L.jpg">
           <img id="right2" src="assets/jordans_R.jpg">
-          <img id="ground" src="assets/Abstract_006_COLOR.jpg">
-          <img id="occmap" src="assets/Abstract_006_OCC.jpg">
-          <img id="normalmap" src="assets/Abstract_006_NORM.jpg">
-          <img id="dispmap" src="assets/Abstract_006_DISP.png">
+          <img id="ground" src="assets/Wood_Floor_011_basecolor.jpg">
+          <img id="occmap" src="assets/Wood_Floor_011_ambientOcclusion.jpg">
+          <img id="normalmap" src="assets/Wood_Floor_011_normal.jpg">
 
           <a-asset-items id="YMCA" src= "https://api.rapidcompact.com/viewer?id=7hsDu2DwZg"></a-assets-items>
             <a-asset-items id="shoes" src= "assets/air_jordan_1_877294.glb"></a-assets-items>
@@ -68,7 +69,7 @@
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
-        <a-camera orbit-controls="target: 0 1.6 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0.5 3"></a-camera>
+        <a-camera stereocam="eye:left" orbit-controls="target: 0 1.6 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0.5 3"></a-camera>
     
         <a-entity 
             id="controller-data" 
@@ -109,10 +110,7 @@
           normalMap:#normalmap;
           normalTextureRepeat:2 1000;
           ambientOcclusionMap:#occmap;
-          ambientOcclusionTextureRepeat:2 1000;
-          displacementMap:#dispmap
-          displacementTextureRepeat: 2 1000;
-          "
+          ambientOcclusionTextureRepeat:2 1000"
           ></a-plane>
       
 
@@ -120,7 +118,7 @@
                  <a-image src="#left2" position="-2 1.5 -3" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
 
 <a-plane height="1000" width="1000" rotation="0 0 0" position="0 0 -10" color="black"></a-plane>
-          
+          <a-circle radius="2" position="0 2 -9.98"></a-circle>
       
                  <a-image src="#left2" position="2 1.5 -15" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
                  <a-image src="#left2" position="-2 1.5 -15" height="1.920" width="1.080" scale="2 2 2" look-at="a-camera"></a-image>
@@ -129,7 +127,33 @@
 
   <a-entity gltf-model="#YMCA" scale="1 1 1" position="0 0 -25" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
    <a-entity gltf-model="#shoes" scale="0.01 0.01 0.01" position="0 1.6 -23" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
+
+   <a-entity position="0 2.5 -3">
+      <a-entity sprite-particles="texture: assets/sparkle.png; spawnRate: 20; lifeTime: 10; radialType: sphere; radialPosition: 5; color: white; scale: 1,1,1"></a-entity>
+    </a-entity> 
+          
+     <a-entity position="0 3.5 -3.2"
+        spe-particles="
+        texture: assets/sparkle.png;
+        color: #B9F8F8; 
+        distribution: sphere; 
+        randomize-velocity: true;
+        radius: 0.01; 
+        particle-count: 100; 
+        velocity: 0.5; 
+        velocity-spread: 10; 
+        drag: 1; 
+        max-age: 3;
+        blending: additive;
+        active-multiplier: 1000; 
+        size: 1, 1, 1, 0">
+    </a-entity>
      
+
+                      <a-image material="alphaTest: 0.5" src="#left" position="-2.2 2 -5" height="2.464" width="1.632" scale="2 2 2" stereo="eye: left"  look-at="a-camera"
+           ></a-image>
+          <a-image material="alphaTest: 0.5" src="#right" position="-2.2 2 -5" height="2.464" width="1.632" scale="2 2 2" stereo="eye: right"  look-at="a-camera"></a-image>
+
     </a-scene>
   </body>
 </html> 
