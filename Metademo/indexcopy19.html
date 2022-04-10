@@ -1,0 +1,155 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Vaporwave - A-Frame</title>
+     <meta name="description" content="Hello, World! - A-Frame">
+   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script src="aframe-stereo-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+         <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
+  <script src="controller-listener.js"></script>
+  <script src="player-move.js"></script>
+    <script src="raycaster-extras.js"></script>
+        <script src="aframe-sprite-particles-component.js"></script>
+    <script src="aframe-spe-particles-component.js"></script>
+
+
+
+  </head>
+  <body>
+    <a-scene
+    renderer="colorManagement: true"
+      antialias="true"
+      gltf-model="dracoDecoderPath: assets/"
+      cursor="rayOrigin: mouse; fuse: false"
+      device-orientation-permission-ui="enabled: false">
+
+
+      <a-assets>
+
+         
+            
+              <a-asset-items id="logo" src= "assets/Qatar2022 (1).glb"></a-assets-items>
+                <img id="A" src="https://spestect.sirv.com/WC_Groups/GroupA.webp"/>
+                <img id="B" src="https://spestect.sirv.com/WC_Groups/GroupB.webp"/>
+                <img id="C" src="https://spestect.sirv.com/WC_Groups/GroupC.webp"/>
+                <img id="D" src="https://spestect.sirv.com/WC_Groups/GroupD.webp"/>
+                <img id="E" src="https://spestect.sirv.com/WC_Groups/GroupE.webp"/>
+                <img id="F" src="https://spestect.sirv.com/WC_Groups/GroupF.webp"/>
+                <img id="G" src="https://spestect.sirv.com/WC_Groups/GroupG.webp"/>
+                <img id="H" src="https://spestect.sirv.com/WC_Groups/GroupH.webp"/>
+      </a-assets>
+      
+
+      <a-entity 
+        id="player" 
+        position="0 0 0" 
+        player-move="controllerListenerId: #controller-data;
+                     navigationMeshClass: environmentGround;">
+        
+        <a-camera stereocam="eye:left" orbit-controls="target: 0 0 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0 -6"></a-camera>
+    
+        <a-entity 
+            id="controller-data" 
+            controller-listener="leftControllerId:  #left-controller; 
+                                 rightControllerId: #right-controller;">
+        </a-entity>
+
+        <a-entity 
+            id="left-controller"
+            oculus-touch-controls="hand: left">
+        </a-entity>
+
+        <a-entity
+            id="right-controller"
+            oculus-touch-controls="hand: right"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;">
+        </a-entity>
+
+    </a-entity>
+          
+     
+
+      <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+      <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+      <a-entity light="color: white; type: ambient;"></a-entity>   
+
+      <a-sky material="shader:gradient;topColor:255, 0, 76;bottomColor:157, 18, 60;"></a-sky>
+
+<a-entity gltf-model="#logo" scale="6 6 6" position="0 3 0" rotation="0 180 0" animation="property: object3D.position.y;
+          to: 2.5; 
+          dir: alternate; 
+          dur: 3000; 
+          loop: true"></a-entity>
+
+<a-entity position="0 0 0" rotation="0 0 0">
+
+
+
+<a-entity id="group1" position="0 0 -3.5" rotation="0 0 0">
+<a-image src="#A" scale="2 2 2" material=" side: front"></a-image>
+<a-image src="#A" scale="2 2 2" material=" side: front" rotation="0 180 0"></a-image>
+</a-entity>
+
+<a-entity position="0 0 0" rotation="0 45 0">
+<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
+<a-image src="#B" scale="2 2 2" material=" side: front"></a-image>
+<a-image src="#B" scale="2 2 2" material=" side: front" rotation="0 180 0"></a-image>
+</a-entity>
+</a-entity>
+
+<a-entity position="0 0 0" rotation="0 90 0">
+<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
+<a-image src="#C" scale="2 2 2" material=" side: front"></a-image>
+<a-image src="#C" scale="2 2 2" material=" side: front" rotation="0 180 0"></a-image>
+</a-entity>
+</a-entity>
+
+<a-entity position="0 0 0" rotation="0 135 0">
+<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
+<a-image src="#D" scale="2 2 2" material=" side: front"></a-image>
+<a-image src="#D" scale="2 2 2" material=" side: front" rotation="0 180 0"></a-image>
+</a-entity>
+</a-entity>
+
+<a-entity position="0 0 0" rotation="0 180 0">
+<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
+<a-image src="#E" scale="2 2 2" material=" side: front"></a-image>
+<a-image src="#E" scale="2 2 2" material=" side: front" rotation="0 180 0"></a-image>
+</a-entity>
+</a-entity>
+
+<a-entity position="0 0 0" rotation="0 225 0">
+<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
+<a-image src="#F" scale="2 2 2" material=" side: front"></a-image>
+<a-image src="#F" scale="2 2 2" material=" side: front" rotation="0 180 0"></a-image>
+</a-entity>
+</a-entity>
+
+<a-entity position="0 0 0" rotation="0 270 0">
+<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
+<a-image src="#G" scale="2 2 2" material=" side: front"></a-image>
+<a-image src="#G" scale="2 2 2" material=" side: front" rotation="0 180 0"></a-image>
+</a-entity>
+</a-entity>
+
+<a-entity position="0 0 0" rotation="0 315 0">
+<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
+<a-image src="#H" scale="2 2 2" material=" side: front"></a-image>
+<a-image src="#H" scale="2 2 2" material=" side: front" rotation="0 180 0"></a-image>
+</a-entity>
+</a-entity>
+
+
+
+
+</a-entity>
+
+    </a-scene>
+  </body>
+</html> 
