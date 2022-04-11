@@ -28,18 +28,7 @@
 
 
       <a-assets>
-
-         
-            <a-asset-items id="shoes" src= "assets/air_jordan_1_877294.glb"></a-assets-items>
-              <a-asset-items id="logo" src= "assets/Nike Logo.glb"></a-assets-items>
-                <img src="https://spestect.sirv.com/WC_Groups/GroupA.webp"/>
-                <img src="https://spestect.sirv.com/WC_Groups/GroupB.webp"/>
-                <img src="https://spestect.sirv.com/WC_Groups/GroupC.webp"/>
-                <img src="https://spestect.sirv.com/WC_Groups/GroupD.webp"/>
-                <img src="https://spestect.sirv.com/WC_Groups/GroupE.webp"/>
-                <img src="https://spestect.sirv.com/WC_Groups/GroupF.webp"/>
-                <img src="https://spestect.sirv.com/WC_Groups/GroupG.webp"/>
-                <img src="https://spestect.sirv.com/WC_Groups/GroupH.webp"/>
+              <img src="https://spestect.sirv.com/WC_Groups/GroupA.webp"/>
       </a-assets>
       
 
@@ -49,7 +38,7 @@
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
-        <a-camera stereocam="eye:left" position="5 0 0" rotation="0 0 -90"></a-camera>
+        <a-camera stereocam="eye:left" position="0 -5 0" rotation="0 0 -90" orbit-controls></a-camera>
     
         <a-entity 
             id="controller-data" 
@@ -72,10 +61,14 @@
 
     </a-entity>
           
-     <a-torus rotation="90 0 0" color="#43A367" arc="360" radius="5" radius-tubular="0.4" material="side:double" animation="property: object3D.rotation.y;
+     <a-torus rotation="0 0 0" arc="360" radius="5" radius-tubular="0.4" material="side:double; transparent: true; repeat:5 5" src="assets/Group 185.png" animation="property: object3D.rotation.y;
           to: 360;  
           dur: 15000; 
-          loop: true"><a-entity spe-particles="texture: assets/blob.png; position-spread: 1 10 0; velocity: 0 0 0; distribution: disc; radius: 5; randomize-position: true"></a-torus>
+          loop: true"><a-entity></a-torus>
+            <a-torus position ="0.2 0 0" rotation="90 0 0" arc="360" radius="5" radius-tubular="0.4" material="side:double; transparent: true; repeat:5 5" src="assets/Group 185.png" animation="property: object3D.rotation.y;
+          to: 360;  
+          dur: 15000; 
+          loop: true"><a-entity></a-torus>
 
 
       <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
@@ -83,92 +76,11 @@
       <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
       <a-entity light="color: white; type: ambient;"></a-entity>
 
-      <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
+      <a-sky color="black"></a-sky>
 
 
 
-<a-entity position="0 0 0" rotation="0 0 0">
 
-
-
-<a-entity id="group1" position="0 0 -3.5" rotation="0 0 0">
-<a-box height="0.2" width="2" depth="0.1" position="0 1.2 0" text="value: Hello World;"></a-box>
-
-<a-box height="0.2" width="2" depth="0.1" position="0 0.9 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.6 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.3 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0 0"></a-box>
-</a-entity>
-
-<a-entity position="0 0 0" rotation="0 45 0">
-<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
-<a-box height="0.2" width="2" depth="0.1" position="0 1.2 0">Group2</a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.9 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.6 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.3 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0 0"></a-box>
-</a-entity>
-</a-entity>
-
-<a-entity position="0 0 0" rotation="0 90 0">
-<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
-<a-box height="0.2" width="2" depth="0.1" position="0 1.2 0">Group3</a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.9 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.6 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.3 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0 0"></a-box>
-</a-entity>
-</a-entity>
-
-<a-entity position="0 0 0" rotation="0 135 0">
-<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
-<a-box height="0.2" width="2" depth="0.1" position="0 1.2 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.9 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.6 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.3 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0 0"></a-box>
-</a-entity>
-</a-entity>
-
-<a-entity position="0 0 0" rotation="0 180 0">
-<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
-<a-box height="0.2" width="2" depth="0.1" position="0 1.2 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.9 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.6 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.3 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0 0"></a-box>
-</a-entity>
-</a-entity>
-
-<a-entity position="0 0 0" rotation="0 225 0">
-<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
-<a-box height="0.2" width="2" depth="0.1" position="0 1.2 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.9 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.6 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.3 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0 0"></a-box>
-</a-entity>
-</a-entity>
-
-<a-entity position="0 0 0" rotation="0 270 0">
-<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
-<a-box height="0.2" width="2" depth="0.1" position="0 1.2 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.9 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.6 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.3 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0 0"></a-box>
-</a-entity>
-</a-entity>
-
-<a-entity position="0 0 0" rotation="0 315 0">
-<a-entity id="group2" position="0 0 -3.5" rotation="0 0 0">
-<a-box height="0.2" width="2" depth="0.1" position="0 1.2 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.9 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.6 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0.3 0"></a-box>
-<a-box height="0.2" width="2" depth="0.1" position="0 0 0"></a-box>
-</a-entity>
-</a-entity>
 
 
 

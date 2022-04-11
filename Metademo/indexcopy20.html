@@ -34,6 +34,10 @@
               <a-asset-items id="kit" src= "assets/ACKIT.glb"></a-assets-items>
               <img id="bg" src="https://spestect.sirv.com/image%2095.webp?profile=Image%20border"/>
       </a-assets>
+
+      <a-entity position="0 0 0">
+        <a-camera stereocam="eye:left" orbit-controls="target: 0 1.6 0; minDistance: 1; maxDistance: 10; initialPosition: 0 0 -3"></a-camera>
+      </a-entity>
       
 
       <a-entity 
@@ -42,7 +46,7 @@
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
-        <a-camera stereocam="eye:left" orbit-controls="target: 0 0 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0 -3"></a-camera>
+        
     
         <a-entity 
             id="controller-data" 
@@ -77,18 +81,130 @@
 
 <a-entity gltf-model="#kit" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 180 0" animation-mixer></a-entity>
 
-
+<a-cylinder src="https://spestect.sirv.com/image%2095.webp" radius="1" height="0.1" rotation="0 -90 0"  position="0 -0.1 0"></a-cylinder>
 
     <a-curvedimage
             src="#bg"
-            radius="0.5"
+            radius="1"
             theta-length="120"
-            height="0.7"
+            height="0.8"
             rotation="0 -60 0"
             scale="5 5 5"
             position="0 1 0"
             >        
         </a-curvedimage>
+
+        <a-entity animation="property: object3D.rotation.y;
+          to: 360;  
+          dur: 15000; 
+          loop: true">
+    <a-entity position="0 0 0">
+        <a-sphere material="color:#87000C;
+                            roughness:0.5;
+                            shader:standard;
+                             opacity:0.5"
+                  radius="2"
+                  position="15 0 -1"></a-sphere>
+    </a-entity>
+</a-entity>
+
+<a-entity animation="property: object3D.rotation.y;
+          to: 360;  
+          dur: 20000; 
+          loop: true">
+    <a-entity position="0 0 0">
+        <a-sphere material="color:#87000C;
+                            roughness:0.5;
+                            shader:standard;
+                             opacity:0.5"
+                  radius="1"
+                  position="-10 3 0"></a-sphere>
+    </a-entity>
+</a-entity>
+
+<a-entity animation="property: object3D.rotation.y;
+          to: 360;  
+          dur: 15000; 
+          loop: true">
+    <a-entity position="0 0 0">
+        <a-sphere material="color:black;
+                            roughness:0.5;
+                            shader:standard;
+                             opacity:0.5"
+                  radius="2"
+                  position="8 -3 -5"></a-sphere>
+    </a-entity>
+</a-entity>
+
+<a-entity animation="property: object3D.rotation.y;
+          to: 360;  
+          dur: 20000; 
+          loop: true">
+    <a-entity position="0 0 0">
+        <a-sphere material="color:#87000C;
+                            roughness:0.5;
+                            shader:standard;
+                             opacity:0.5"
+                  radius="1"
+                  position="0 6 6"></a-sphere>
+    </a-entity>
+</a-entity>
+
+<a-entity animation="property: object3D.rotation.y;
+          to: 360;  
+          dur: 10000; 
+          loop: true">
+    <a-entity position="0 0 0">
+        <a-sphere material="color:black;
+                            roughness:0.5;
+                            shader:standard;
+                             opacity:0.5"
+                  radius="2"
+                  position="-15 2 -1"></a-sphere>
+    </a-entity>
+</a-entity>
+
+<a-entity animation="property: object3D.rotation.y;
+          to: 360;  
+          dur: 25000; 
+          loop: true">
+    <a-entity position="0 0 0">
+        <a-sphere material="color:#87000C;
+                            roughness:0.5;
+                            shader:standard;
+                             opacity:0.5"
+                  radius="1"
+                  position="-18 4 0"></a-sphere>
+    </a-entity>
+</a-entity>
+
+<a-entity animation="property: object3D.rotation.y;
+          to: 360;  
+          dur: 15000; 
+          loop: true">
+    <a-entity position="0 0 0">
+        <a-sphere material="color:black;
+                            roughness:0.5;
+                            shader:standard;
+                             opacity:0.5"
+                  radius="2"
+                  position="-8 3 -5"></a-sphere>
+    </a-entity>
+</a-entity>
+
+<a-entity animation="property: object3D.rotation.y;
+          to: 360;  
+          dur: 25000; 
+          loop: true">
+    <a-entity position="0 0 0">
+        <a-sphere material="color:#87000C;
+                            roughness:0.5;
+                            shader:standard;
+                             opacity:0.5"
+                  radius="1"
+                  position="0 -6 -6"></a-sphere>
+    </a-entity>
+</a-entity>
     </a-scene>
   </body>
 </html> 
