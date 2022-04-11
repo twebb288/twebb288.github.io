@@ -38,7 +38,7 @@
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
-        <a-camera stereocam="eye:left" position="0 -5 0" rotation="0 0 -90" orbit-controls></a-camera>
+        <a-camera stereocam="eye:left" position="0 -10 0" rotation="0 0 90"></a-camera>
     
         <a-entity 
             id="controller-data" 
@@ -61,14 +61,11 @@
 
     </a-entity>
           
-     <a-torus rotation="0 0 0" arc="360" radius="5" radius-tubular="0.4" material="side:double; transparent: true; repeat:5 5" src="assets/Group 185.png" animation="property: object3D.rotation.y;
+     <a-torus rotation="0 0 0" arc="360" radius="10" radius-tubular="0.4" material="side:double; transparent: true; repeat:40 1; easing:linear" src="assets/Group 185.png" animation="property: object3D.rotation.z;
           to: 360;  
-          dur: 15000; 
+          dur: 70000; 
           loop: true"><a-entity></a-torus>
-            <a-torus position ="0.2 0 0" rotation="90 0 0" arc="360" radius="5" radius-tubular="0.4" material="side:double; transparent: true; repeat:5 5" src="assets/Group 185.png" animation="property: object3D.rotation.y;
-          to: 360;  
-          dur: 15000; 
-          loop: true"><a-entity></a-torus>
+            
 
 
       <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
