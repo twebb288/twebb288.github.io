@@ -106,7 +106,8 @@ AFRAME.registerComponent("physics-grab", {
 
 <a-box physx-body="type: kinematic;"
             raycaster-target="canGrab: true;"
-            physics-grab >
+            physics-grab 
+            material="opacity: 0.0; transparent: true">
 <a-entity 
             gltf-model="#kit" 
             scale="0.01 0.01 0.01" 
