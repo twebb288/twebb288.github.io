@@ -109,6 +109,8 @@ AFRAME.registerComponent("physics-grab", {
 <a-cylinder physx-body="type: static;" src="https://spestect.sirv.com/image%2095.webp" radius="1" height="0.1" rotation="0 -270 0"  position="0 -0.1 0"></a-cylinder>
 
     <a-curvedimage
+            physx-body="type: kinematic;"
+            raycaster-target="canGrab: true;"
             src="#bg"
             radius="1"
             theta-length="120"
