@@ -7,26 +7,81 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="raycaster-extras.js"></script>
+      <script src="controller-listener.js"></script>
+  <script src="player-move.js"></script>
+  <script>
+
+AFRAME.registerComponent("physics-grab", {
+    init: function () 
+    {
+        let self = this;
+
+        this.el.addEventListener("raycaster-grabbed", function() {
+           self.el.addState("grabbed"); 
+        });
+
+        this.el.addEventListener("raycaster-released", function() {
+           self.el.removeState("grabbed"); 
+        });
+    },
+
+    tick: function()
+    {
+
+    }
+});
+
+
+</script>
+
   </head>
   <body>
     <!-- Moon gravity -->
-    <a-scene physics="gravity: -1.6" renderer="antialias: true">
-      <!-- Player -->
-      <a-entity camera look-controls wasd-controls></a-entity>
-      <a-entity
-        id="leftController"
-        static-body="shape: sphere; sphereRadius: 0.02;"
+    <a-scene physics="gravity: -1.6" renderer="antialias: true" cursor="rayOrigin: mouse; fuse: false">
+
+       <a-entity 
+        id="player" 
+        position="0 0 0"
+        player-move="controllerListenerId: #controller-data;
+                     navigationMeshClass: environmentGround;">
+        
+        
+        <a-camera stereocam="eye:left" orbit-controls="target: 0 1.6 0; minDistance: 1; maxDistance: 10; initialPosition: 0 0 -3"></a-camera>
+    
+        <a-entity 
+            id="controller-data" 
+            controller-listener="leftControllerId:  #left-controller; 
+                                 rightControllerId: #right-controller;">
+        </a-entity>
+
+        <a-entity 
+            id="left-controller"
+            oculus-touch-controls="hand: left"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;"
+                              static-body="shape: sphere; sphereRadius: 0.02;"
         vive-controls="hand: left"
         sphere-collider="objects: .throwable"
-        grab
-      ></a-entity>
-      <a-entity
-        id="rightController"
-        static-body="shape: sphere; sphereRadius: 0.02;"
+        grab>
+        </a-entity>
+
+        <a-entity
+            id="right-controller"
+            oculus-touch-controls="hand: right"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;"
+                                static-body="shape: sphere; sphereRadius: 0.02;"
         vive-controls="hand: right"
         sphere-collider="objects: .throwable"
-        grab
-      ></a-entity>
+        grab>
+        </a-entity>
+
+    </a-entity>
+      <!-- Player -->
+      
 
       <!-- Ammo -->
       <a-sphere
