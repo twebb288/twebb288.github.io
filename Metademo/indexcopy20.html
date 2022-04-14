@@ -59,9 +59,7 @@ AFRAME.registerComponent("physics-grab", {
               <img id="bg" src="https://spestect.sirv.com/image%2095.webp?profile=Image%20border"/>
       </a-assets>
 
-      <a-entity position="0 0 0">
-        <a-camera stereocam="eye:left" orbit-controls="target: 0 1.6 0; minDistance: 1; maxDistance: 10; initialPosition: 0 0 -3"></a-camera>
-      </a-entity>
+      
       
 
       <a-entity 
@@ -71,6 +69,7 @@ AFRAME.registerComponent("physics-grab", {
                      navigationMeshClass: environmentGround;">
         
         
+        <a-camera stereocam="eye:left" orbit-controls="target: 0 1.6 0; minDistance: 1; maxDistance: 10; initialPosition: 0 0 -3"></a-camera>
     
         <a-entity 
             id="controller-data" 
