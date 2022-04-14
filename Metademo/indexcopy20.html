@@ -16,6 +16,7 @@
   <script src="aframe-spe-particles-component.js"></script>
   <script src="physx.release.js"></script>
   <script src="physics.js"></script>
+  <script src="music-player.js"></script>
 
 <script>
 
@@ -42,7 +43,16 @@ AFRAME.registerComponent("physics-grab", {
 
 </script>
 
-
+<script>
+// load music into global variable for access by music-player component
+window["MusicData"] = [
+    {
+        audioURL: "assets/ttsMP3.com_VoiceText_2022-4-14_17_56_17.mp3", 
+        imageURL: "music/ChauSara/image.jpg", 
+        songText: "Artist: Brian --- Song: Test \n "
+    },
+];
+</script>
   </head>
   <body>
     <a-scene
@@ -95,7 +105,10 @@ AFRAME.registerComponent("physics-grab", {
 
     </a-entity>
           
-
+<a-entity
+        position = "0 2 -3"
+        music-player="controllerListenerId: #controller-data;
+                      musicDataVariableName: MusicData;"></a-entity>
 
       <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
       <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
