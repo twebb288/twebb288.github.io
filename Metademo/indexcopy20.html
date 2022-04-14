@@ -115,12 +115,10 @@ AFRAME.registerComponent("physics-grab", {
             position="0 0 0" 
             material="src:#bg"
             >
+            <a-entity>
  
 
     <a-curvedimage
-            physx-body="type: kinematic;"
-            raycaster-target="canGrab: true;"
-            physics-grab
             src="#bg"
             radius="1"
             theta-length="120"
