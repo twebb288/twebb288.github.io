@@ -14,7 +14,33 @@
     <script src="raycaster-extras.js"></script>
         <script src="aframe-sprite-particles-component.js"></script>
     <script src="aframe-spe-particles-component.js"></script>
+    <script src="physx.release.js"></script>
+    <script src="physics.js"></script>
 
+<script>
+
+AFRAME.registerComponent("physics-grab", {
+    init: function () 
+    {
+        let self = this;
+
+        this.el.addEventListener("raycaster-grabbed", function() {
+           self.el.addState("grabbed"); 
+        });
+
+        this.el.addEventListener("raycaster-released", function() {
+           self.el.removeState("grabbed"); 
+        });
+    },
+
+    tick: function()
+    {
+
+    }
+});
+
+
+</script>
 
 
   </head>
@@ -24,13 +50,11 @@
       antialias="true"
       gltf-model="dracoDecoderPath: assets/"
       cursor="rayOrigin: mouse; fuse: false"
-      device-orientation-permission-ui="enabled: false">
+      device-orientation-permission-ui="enabled: false"
+      physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;">
 
 
-      <a-assets>
-
-         
-           
+      <a-assets>           
               <a-asset-items id="kit" src= "assets/ACKIT.glb"></a-assets-items>
               <img id="bg" src="https://spestect.sirv.com/image%2095.webp?profile=Image%20border"/>
       </a-assets>
@@ -42,7 +66,7 @@
 
       <a-entity 
         id="player" 
-        position="0 0 0" 
+        position="0 0 0"
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
@@ -79,16 +103,18 @@
       <a-sky color="black" material="shader:gradient;bottomColor:0, 0, 0;top:208, 52, 53;"></a-sky>
 
 
-<a-entity gltf-model="#kit" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 180 0" animation-mixer></a-entity>
+<a-entity physx-body="type: dynamic;"
+            raycaster-target="canGrab: true;"
+            physics-grab gltf-model="#kit" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 180 0" animation-mixer></a-entity>
 
-<a-cylinder src="https://spestect.sirv.com/image%2095.webp" radius="1" height="0.1" rotation="0 -90 0"  position="0 -0.1 0"></a-cylinder>
+<a-cylinder src="https://spestect.sirv.com/image%2095.webp" radius="1" height="0.1" rotation="0 -270 0"  position="0 -0.1 0"></a-cylinder>
 
     <a-curvedimage
             src="#bg"
             radius="1"
             theta-length="120"
-            height="0.8"
-            rotation="0 -60 0"
+            height="1.2"
+            rotation="0 120  0"
             scale="5 5 5"
             position="0 1 0"
             >        
