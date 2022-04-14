@@ -104,18 +104,20 @@ AFRAME.registerComponent("physics-grab", {
 
       <a-sky color="black" material="shader:gradient;bottomColor:0, 0, 0;top:208, 52, 53;"></a-sky>
 
-<a-box physx-body="type: dynamic;"
+<a-cylinder physx-body="type: dynamic;"
             raycaster-target="canGrab: true;"
             physics-grab 
-            material="opacity: 0.0; transparent: true"
-            position="0 2 0">
+            material="opacity: 0.0;"
+            position="0 2 0"
+            height="0.1"
+            radius="0.3">
 <a-entity 
             gltf-model="#kit" 
             scale="0.01 0.01 0.01" 
             position="0 0 0" 
             rotation="0 0 0" 
             animation-mixer></a-entity>
-          </a-box>
+          </a-cylinder>
 
 <a-cylinder physx-body="type: static;" src="https://spestect.sirv.com/image%2095.webp" radius="1" height="0.1" rotation="0 -270 0"  position="0 -0.1 0"></a-cylinder>
 
@@ -123,9 +125,6 @@ AFRAME.registerComponent("physics-grab", {
  
 
     <a-curvedimage
-    physx-body="type: kinematic;"
-            raycaster-target="canGrab: true;"
-            physics-grab
             src="#bg"
             radius="1"
             theta-length="120"
