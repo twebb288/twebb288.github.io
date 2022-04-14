@@ -104,9 +104,9 @@ AFRAME.registerComponent("physics-grab", {
 
 <a-entity physx-body="type: dynamic;"
             raycaster-target="canGrab: true;"
-            physics-grab gltf-model="#kit" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 180 0" animation-mixer></a-entity>
+            physics-grab gltf-model="#kit" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 0 0" animation-mixer></a-entity>
 
-<a-cylinder src="https://spestect.sirv.com/image%2095.webp" radius="1" height="0.1" rotation="0 -270 0"  position="0 -0.1 0"></a-cylinder>
+<a-cylinder physx-body="type: static;" src="https://spestect.sirv.com/image%2095.webp" radius="1" height="0.1" rotation="0 -270 0"  position="0 -0.1 0"></a-cylinder>
 
     <a-curvedimage
             src="#bg"
