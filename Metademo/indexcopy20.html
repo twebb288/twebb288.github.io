@@ -101,15 +101,16 @@ AFRAME.registerComponent("physics-grab", {
 
       <a-sky color="black" material="shader:gradient;bottomColor:0, 0, 0;top:208, 52, 53;"></a-sky>
 
-
-<a-entity physx-body="type: dynamic;"
+<a-box physx-body="type: kinematic;"
             raycaster-target="canGrab: true;"
-            physics-grab 
+            physics-grab >
+<a-entity 
             gltf-model="#kit" 
             scale="0.01 0.01 0.01" 
             position="0 0 0" 
             rotation="0 0 0" 
             animation-mixer></a-entity>
+          </a-box>
 
 <a-cylinder physx-body="type: static;" src="https://spestect.sirv.com/image%2095.webp" radius="1" height="0.1" rotation="0 -270 0"  position="0 -0.1 0"></a-cylinder>
 
@@ -123,7 +124,6 @@ AFRAME.registerComponent("physics-grab", {
  
 
     <a-curvedimage
-    physx-body="type: static;"
             src="#bg"
             radius="1"
             theta-length="120"
@@ -153,7 +153,7 @@ AFRAME.registerComponent("physics-grab", {
           dur: 20000; 
           loop: true">
     <a-entity position="0 0 0">
-        <a-sphere physx-body="type: static;" material="color:#87000C;
+        <a-sphere material="color:#87000C;
                             roughness:0.5;
                             shader:standard;
                              opacity:0.5"
@@ -167,7 +167,7 @@ AFRAME.registerComponent("physics-grab", {
           dur: 15000; 
           loop: true">
     <a-entity position="0 0 0">
-        <a-sphere physx-body="type: static;" material="color:black;
+        <a-sphere  material="color:black;
                             roughness:0.5;
                             shader:standard;
                              opacity:0.5"
@@ -181,7 +181,7 @@ AFRAME.registerComponent("physics-grab", {
           dur: 20000; 
           loop: true">
     <a-entity position="0 0 0">
-        <a-sphere physx-body="type: static;" material="color:#87000C;
+        <a-sphere material="color:#87000C;
                             roughness:0.5;
                             shader:standard;
                              opacity:0.5"
@@ -195,7 +195,7 @@ AFRAME.registerComponent("physics-grab", {
           dur: 10000; 
           loop: true">
     <a-entity position="0 0 0">
-        <a-sphere physx-body="type: static;" material="color:black;
+        <a-sphere material="color:black;
                             roughness:0.5;
                             shader:standard;
                              opacity:0.5"
@@ -209,7 +209,7 @@ AFRAME.registerComponent("physics-grab", {
           dur: 25000; 
           loop: true">
     <a-entity position="0 0 0">
-        <a-sphere physx-body="type: static;" material="color:#87000C;
+        <a-sphere material="color:#87000C;
                             roughness:0.5;
                             shader:standard;
                              opacity:0.5"
@@ -223,7 +223,7 @@ AFRAME.registerComponent("physics-grab", {
           dur: 15000; 
           loop: true">
     <a-entity position="0 0 0">
-        <a-sphere physx-body="type: static;" material="color:black;
+        <a-sphere material="color:black;
                             roughness:0.5;
                             shader:standard;
                              opacity:0.5"
@@ -237,7 +237,7 @@ AFRAME.registerComponent("physics-grab", {
           dur: 25000; 
           loop: true">
     <a-entity position="0 0 0">
-        <a-sphere physx-body="type: static;" material="color:#87000C;
+        <a-sphere material="color:#87000C;
                             roughness:0.5;
                             shader:standard;
                              opacity:0.5"
