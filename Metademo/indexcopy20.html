@@ -104,10 +104,11 @@ AFRAME.registerComponent("physics-grab", {
 
       <a-sky color="black" material="shader:gradient;bottomColor:0, 0, 0;top:208, 52, 53;"></a-sky>
 
-<a-box physx-body="type: kinematic;"
+<a-box physx-body="type: dynamic;"
             raycaster-target="canGrab: true;"
             physics-grab 
-            material="opacity: 0.0; transparent: true">
+            material="opacity: 0.0; transparent: true"
+            position="0 2 0">
 <a-entity 
             gltf-model="#kit" 
             scale="0.01 0.01 0.01" 
