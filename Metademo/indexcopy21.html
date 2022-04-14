@@ -10,6 +10,9 @@
     <script src="raycaster-extras.js"></script>
       <script src="controller-listener.js"></script>
   <script src="player-move.js"></script>
+    <script src="physx.release.js"></script>
+  <script src="physics.js"></script>
+
   <script>
 
 AFRAME.registerComponent("physics-grab", {
@@ -35,10 +38,11 @@ AFRAME.registerComponent("physics-grab", {
 
 </script>
 
+
   </head>
   <body>
     <!-- Moon gravity -->
-    <a-scene physics="gravity: -1.6" renderer="antialias: true" cursor="rayOrigin: mouse; fuse: false">
+    <a-scene physics="gravity: -1.6" renderer="antialias: true" cursor="rayOrigin: mouse; fuse: false" physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;">
 
        <a-entity 
         id="player" 
@@ -85,6 +89,9 @@ AFRAME.registerComponent("physics-grab", {
 
       <!-- Ammo -->
       <a-sphere
+      physx-body="type: dynamic;"
+            raycaster-target="canGrab: true;"
+            physics-grab
         class="throwable"
         dynamic-body
         position="0 0.25 -0.5"
@@ -92,6 +99,9 @@ AFRAME.registerComponent("physics-grab", {
         color="green"
       ></a-sphere>
       <a-sphere
+      physx-body="type: dynamic;"
+            raycaster-target="canGrab: true;"
+            physics-grab
         class="throwable"
         dynamic-body
         position="0.25 0.25 -0.5"
@@ -99,6 +109,9 @@ AFRAME.registerComponent("physics-grab", {
         color="green"
       ></a-sphere>
       <a-sphere
+      physx-body="type: dynamic;"
+            raycaster-target="canGrab: true;"
+            physics-grab
         class="throwable"
         dynamic-body
         position="-0.25 0.25 -0.5"
