@@ -114,9 +114,10 @@ AFRAME.registerComponent("physics-grab", {
   <a-box physics-grab
         class="throwable"
         dynamic-body
-        position="0 0 -5">
-      <a-entity gltf-model="#shoes" scale="0.1 0.1 0.1" position="0 0 0" rotation="20 0 0" shadow="receive:true" physx-body="type: dynamic;"
-            raycaster-target="canGrab: true;"
+        position="0 0 -5"
+        physx-body="type: kinematic;"
+            raycaster-target="canGrab: true;">
+      <a-entity gltf-model="#shoes" scale="0.1 0.1 0.1" position="0 0 0" rotation="20 0 0" shadow="receive:true" 
             ></a-entity>
       </a-box>
 
