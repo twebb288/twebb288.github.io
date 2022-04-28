@@ -44,6 +44,9 @@ AFRAME.registerComponent("physics-grab", {
     <!-- Moon gravity -->
     <a-scene physics="gravity: -1.6" renderer="antialias: true" cursor="rayOrigin: mouse; fuse: false" physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;">
 
+  <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
+  <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
+
        <a-entity 
         id="player" 
         position="0 0 0"
