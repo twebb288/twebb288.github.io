@@ -1,0 +1,140 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Vaporwave - A-Frame</title>
+     <meta name="description" content="Hello, World! - A-Frame">
+   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script src="aframe-stereo-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="controller-listener.js"></script>
+  <script src="player-move.js"></script>
+    <script src="raycaster-extras.js"></script>
+        <script src="aframe-sprite-particles-component.js"></script>
+    <script src="aframe-spe-particles-component.js"></script>
+
+  <script >AFRAME.registerComponent('play-on-click', {
+  init: function () {
+    this.onClick = this.onClick.bind(this);
+  },
+  play: function () {
+    window.addEventListener('click', this.onClick);
+  },
+  pause: function () {
+    window.removeEventListener('click', this.onClick);
+  },
+  onClick: function (evt) {
+    var videoEl = this.el.getAttribute('material').src;
+    if (!videoEl) { return; }
+    this.el.object3D.visible = true;
+    videoEl.play();
+  }
+});</script>
+
+  </head>
+  <body>
+    <a-scene
+    renderer="colorManagement: true"
+      antialias="true"
+      gltf-model="dracoDecoderPath: assets/"
+      cursor="rayOrigin: mouse; fuse: false"
+      device-orientation-permission-ui="enabled: false">
+
+
+      <a-assets>
+        <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+        <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+        <img id="sky" src="assets/Group184.webp" crossorigin="anonymous" />
+        
+         
+          <img id="logo" src="assets/logo1.jpg">
+          <img id="left" src="https://spestect.sirv.com/Spins/DSC_left.webp">
+          <img id="right" src="https://spestect.sirv.com/Spins/DSC_right.webp">
+          <img id="left2" src="assets/jordans_L.jpg">
+          <img id="right2" src="assets/jordans_R.jpg">
+          <img id="ground" src="assets/Wood_Floor_011_basecolor.jpg">
+          <img id="occmap" src="assets/Wood_Floor_011_ambientOcclusion.jpg">
+          <img id="normalmap" src="assets/Wood_Floor_011_normal.jpg">
+
+         
+            <a-asset-items id="shoes" src= "assets/air_jordan_1_877294.glb"></a-assets-items>
+            	<a-asset-items id="scene" src= "assets/vrgallery.glb"></a-assets-items>
+      </a-assets>
+      
+
+      <a-entity 
+        id="player" 
+        position="0 0 0" 
+        player-move="controllerListenerId: #controller-data;
+                     navigationMeshClass: environmentGround;">
+        
+        <a-camera stereocam="eye:left" orbit-controls="target: 0 1.6 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0.5 3"></a-camera>
+    
+        <a-entity 
+            id="controller-data" 
+            controller-listener="leftControllerId:  #left-controller; 
+                                 rightControllerId: #right-controller;">
+        </a-entity>
+
+        <a-entity 
+            id="left-controller"
+            oculus-touch-controls="hand: left">
+        </a-entity>
+
+        <a-entity
+            id="right-controller"
+            oculus-touch-controls="hand: right"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;">
+        </a-entity>
+
+    </a-entity>
+          
+     
+
+      <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+      <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+      <a-entity light="color: white; type: ambient;"></a-entity>
+
+      <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
+
+
+     
+ 
+            <a-cylinder radius="7"  height="0.1" rotation="0 0 0" position="0 5 0"
+          color="black"
+          ></a-cylinder>
+
+          
+      
+            <a-cylinder radius="7"  height="0.1" rotation="0 0 0" position="0 0 0"
+          material=
+          "side:double;
+          src:#ground; 
+          repeat:5 5;
+          ambientOcclusionMap:#ocmap;
+          normalMap:#normalmap;
+          normalTextureRepeat:5 5;
+          ambientOcclusionMap:#occmap;
+          ambientOcclusionTextureRepeat:5 5"
+          ></a-cylinder>
+
+
+       <a-cylinder color="black" radius="7" height ="5" position="0 2.5 0" material="side:double;" shadow="receive:true" open-ended="true"></a-cylinder>
+<a-box height="1" depth="0.5" width= "0.5" position="0 0.5 0"
+
+          material="shader: flat; color: black"
+          shadow="receive:true">	</a-box>
+ 
+   <a-entity gltf-model="#shoes" scale="0.01 0.01 0.01" position="0 1.2 0" rotation="40 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
+   <a-entity gltf-model="#scene" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
+
+     
+
+    </a-scene>
+  </body>
+</html> 
