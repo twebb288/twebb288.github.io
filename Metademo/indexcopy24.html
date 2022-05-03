@@ -46,7 +46,7 @@
       <a-assets>
      
          
-            <a-asset-items id="shoes" src= "assets/air_jordan_1_877294.glb"></a-assets-items>
+            <a-asset-items id="shoes" src= "assets/prada.glb"></a-assets-items>
             	<a-asset-items id="scene" src= "assets/vrgallery.glb"></a-assets-items>
       </a-assets>
       
@@ -93,7 +93,11 @@
  
             
  
-   <a-entity gltf-model="#shoes" scale="0.01 0.01 0.01" position="0 1.2 0" rotation="40 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
+   <a-entity gltf-model="#shoes" scale="5 5 5" position="0 0.9   0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" animation="property: object3D.position.y;
+          to: 0.95; 
+          dir: alternate; 
+          dur: 3000; 
+          loop: true"></a-entity>
    <a-entity gltf-model="#scene" scale="6 6 6" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
 
      
