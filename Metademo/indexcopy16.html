@@ -110,9 +110,16 @@ AFRAME.registerComponent("physics-grab", {
                                  rightControllerId: #right-controller;">
         </a-entity>
 
-        <a-entity 
+ <a-entity 
             id="left-controller"
-            oculus-touch-controls="hand: left">
+            oculus-touch-controls="hand: left"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;"
+                              static-body="shape: sphere; sphereRadius: 0.02;"
+        vive-controls="hand: left"
+        sphere-collider="objects: .throwable"
+        grab>
         </a-entity>
 
         <a-entity
@@ -120,8 +127,13 @@ AFRAME.registerComponent("physics-grab", {
             oculus-touch-controls="hand: right"
             raycaster="objects: .raycaster-target, .environmentGround;"
             raycaster-extras="controllerListenerId: #controller-data; 
-                              beamImageSrc: #gradient; beamLength: 0.5;">
+                              beamImageSrc: #gradient; beamLength: 0.5;"
+                                static-body="shape: sphere; sphereRadius: 0.02;"
+        vive-controls="hand: right"
+        sphere-collider="objects: .throwable"
+        grab>
         </a-entity>
+
 
     </a-entity>
           
@@ -237,7 +249,14 @@ AFRAME.registerComponent("physics-grab", {
         static-body>        
         </a-curvedimage>
 
-
+ <a-plane
+      physx-body="type: static;"
+        static-body
+        rotation="-90 0 0"
+        width="10"
+        height="10"
+        color="black"
+      ></a-plane>
  
 <a-cylinder radius="0.4" height ="1" position="0 0.5 0" material=
           "side:double;
