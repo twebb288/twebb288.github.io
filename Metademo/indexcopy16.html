@@ -13,7 +13,8 @@
     <script src="raycaster-extras.js"></script>
         <script src="aframe-sprite-particles-component.js"></script>
     <script src="aframe-spe-particles-component.js"></script>
-  
+      <script src="physx.release.js"></script>
+  <script src="physics.js"></script>
 
 
   <script >AFRAME.registerComponent('play-on-click', {
@@ -40,8 +41,9 @@
     renderer="colorManagement: true"
       antialias="true"
       gltf-model="dracoDecoderPath: assets/"
-      cursor="rayOrigin: mouse; fuse: false"
-      device-orientation-permission-ui="enabled: false">
+      cursor="rayOrigin: mouse; fuse: false" physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;"
+      device-orientation-permission-ui="enabled: false"
+      physics="gravity: -1.6">
 
 
       <a-assets>
@@ -107,7 +109,16 @@
 
       <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
 
-
+<a-sphere
+      physx-body="type: dynamic;"
+            raycaster-target="canGrab: true;"
+            physics-grab
+        class="throwable"
+        dynamic-body
+        position="0 0.25 -0.5"
+        radius="0.10"
+        color="green"
+      ></a-sphere>
        
       
             <a-cylinder height="0.1" radius="5" rotation="0 0 0" position="0 0 0"
@@ -120,7 +131,8 @@
           normalTextureRepeat:5 5;
           ambientOcclusionMap:#occmap;
           ambientOcclusionTextureRepeat:5 5"
-          ></a-cylinder>
+          physx-body="type: static;"
+        static-body></a-cylinder>
 
 
             <a-cylinder height="0.1" radius="5" rotation="0 0 0" position="0 5 0"
@@ -133,7 +145,8 @@
           normalTextureRepeat:5 5;
           ambientOcclusionMap:#occmap;
           ambientOcclusionTextureRepeat:5 5"
-          ></a-cylinder>
+          physx-body="type: static;"
+        static-body></a-cylinder>
 
      <a-cylinder radius="5" height ="5" position="0 2.5 0" material=
           "side:double;
@@ -144,7 +157,8 @@
           normalTextureRepeat:10 1;
           ambientOcclusionMap:#occmap;
           ambientOcclusionTextureRepeat:10 1"
-           shadow="receive:true"open-ended="true"></a-cylinder>
+           shadow="receive:true"open-ended="true" physx-body="type: static;"
+        static-body></a-cylinder>
 
   <a-curvedimage
             src="#video"
@@ -154,7 +168,9 @@
             rotation="0 150 0"
             scale="1 1 1"
             position="0 2.5 0"
-            play-on-click>        
+            play-on-click
+            physx-body="type: static;"
+        static-body>        
         </a-curvedimage>
 
         <a-curvedimage
@@ -165,7 +181,9 @@
             rotation="0 60 0"
             scale="1 1 1"
             position="0 2.5 0"
-            play-on-click>        
+            play-on-click
+            physx-body="type: static;"
+        static-body>        
         </a-curvedimage>
 
            <a-curvedimage
@@ -176,7 +194,9 @@
             rotation="0 240 0"
             scale="1 1 1"
             position="0 2.5 0"
-            play-on-click>        
+            play-on-click
+            physx-body="type: static;"
+        static-body>        
         </a-curvedimage>
 
           <a-curvedimage
@@ -187,7 +207,9 @@
             rotation="0 330 0"
             scale="1 1 1"
             position="0 2.5 0"
-            play-on-click>        
+            play-on-click
+            physx-body="type: static;"
+        static-body>        
         </a-curvedimage>
 
 
@@ -201,7 +223,9 @@
           normalTextureRepeat:1 1;
           ambientOcclusionMap:#occmap;
           ambientOcclusionTextureRepeat:1 1"
-           shadow="receive:true"></a-cylinder>
+           shadow="receive:true"
+           physx-body="type: static;"
+        static-body></a-cylinder>
 
    <a-entity gltf-model="#shoes" scale="0.01 0.01 0.01" position="0 1.4 0" rotation="40 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
    
