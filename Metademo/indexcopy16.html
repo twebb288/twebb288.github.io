@@ -35,6 +35,31 @@
   }
 });</script>
 
+<script>
+
+AFRAME.registerComponent("physics-grab", {
+    init: function () 
+    {
+        let self = this;
+
+        this.el.addEventListener("raycaster-grabbed", function() {
+           self.el.addState("grabbed"); 
+        });
+
+        this.el.addEventListener("raycaster-released", function() {
+           self.el.removeState("grabbed"); 
+        });
+    },
+
+    tick: function()
+    {
+
+    }
+});
+
+
+</script>
+
   </head>
   <body>
     <a-scene
@@ -115,7 +140,7 @@
             physics-grab
         class="throwable"
         dynamic-body
-        position="0 0.25 -0.5"
+        position="0 1 0.5"
         radius="0.10"
         color="green"
       ></a-sphere>
