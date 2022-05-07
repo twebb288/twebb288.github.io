@@ -13,6 +13,7 @@
     <script src="raycaster-extras.js"></script>
         <script src="aframe-sprite-particles-component.js"></script>
     <script src="aframe-spe-particles-component.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
 
   <script >AFRAME.registerComponent('play-on-click', {
   init: function () {
@@ -69,7 +70,7 @@
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
-        <a-camera stereocam="eye:left" orbit-controls="target: 0 1.6 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0.5 3"></a-camera>
+        <a-entity camera orbit-controls="target: 0 1.4 0; minDistance: 0; maxDistance: 5; initialPosition: 0.2 1.4 0.2"></a-entity>
     
         <a-entity 
             id="controller-data" 
