@@ -194,8 +194,7 @@ AFRAME.registerComponent("physics-grab", {
           normalTextureRepeat:10 1;
           ambientOcclusionMap:#occmap;
           ambientOcclusionTextureRepeat:10 1"
-           shadow="receive:true"open-ended="true" physx-body="type: static;"
-        static-body></a-cylinder>
+           shadow="receive:true"open-ended="true" ></a-cylinder>
 
   <a-curvedimage
             src="#video"
@@ -206,8 +205,7 @@ AFRAME.registerComponent("physics-grab", {
             scale="1 1 1"
             position="0 2.5 0"
             play-on-click
-            physx-body="type: static;"
-        static-body>        
+            >        
         </a-curvedimage>
 
         <a-curvedimage
@@ -219,8 +217,7 @@ AFRAME.registerComponent("physics-grab", {
             scale="1 1 1"
             position="0 2.5 0"
             play-on-click
-            physx-body="type: static;"
-        static-body>        
+            >        
         </a-curvedimage>
 
            <a-curvedimage
@@ -232,8 +229,7 @@ AFRAME.registerComponent("physics-grab", {
             scale="1 1 1"
             position="0 2.5 0"
             play-on-click
-            physx-body="type: static;"
-        static-body>        
+            >        
         </a-curvedimage>
 
           <a-curvedimage
@@ -245,18 +241,10 @@ AFRAME.registerComponent("physics-grab", {
             scale="1 1 1"
             position="0 2.5 0"
             play-on-click
-            physx-body="type: static;"
-        static-body>        
+            >        
         </a-curvedimage>
 
- <a-plane
-      physx-body="type: static;"
-        static-body
-        rotation="-90 0 0"
-        width="10"
-        height="10"
-        color="black"
-      ></a-plane>
+ 
  
 <a-cylinder radius="0.4" height ="1" position="0 0.5 0" material=
           "side:double;
@@ -268,8 +256,7 @@ AFRAME.registerComponent("physics-grab", {
           ambientOcclusionMap:#occmap;
           ambientOcclusionTextureRepeat:1 1"
            shadow="receive:true"
-           physx-body="type: static;"
-        static-body></a-cylinder>
+           ></a-cylinder>
 
    <a-entity gltf-model="#shoes" scale="0.01 0.01 0.01" position="0 1.4 0" rotation="40 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
    
