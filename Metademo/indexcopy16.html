@@ -63,6 +63,7 @@
             <a-asset-items id="shoes" src= "assets/air_jordan_1_877294.glb" ></a-assets-items>
       </a-assets>
       
+     
 
       <a-entity 
         id="player" 
@@ -70,8 +71,12 @@
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
-        <a-entity camera orbit-controls="target: 0 1.4 0; minDistance: 0; maxDistance: 5; initialPosition: 0.2 1.4 0.2"></a-entity>
-    
+        
+      
+           <a-entity camera look-controls orbit-controls="target: 0 1.4 0; minDistance: 0; maxDistance: 5; initialPosition: 0.2 1.4 0.2"></a-entity>
+   
+   
+
         <a-entity 
             id="controller-data" 
             controller-listener="leftControllerId:  #left-controller; 
