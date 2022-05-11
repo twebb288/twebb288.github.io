@@ -87,7 +87,8 @@ AFRAME.registerComponent("physics-grab", {
           <img id="occmap" src="assets/Concrete_002_MetalicConcrete_002_Roughness.jpg">
           <img id="normalmap" src="assets/Concrete_002_NormalMap.jpg">
           <video id="video" src="https://spestect.sirv.com/airj.mp4" crossorigin="anonymous" autoplay loop play-on-click></video>
-         
+         <img id="1" src="assets/image15.jpg">
+         <img id="2" src="assets/image16.jpg">
             <a-asset-items id="shoes" src= "assets/air_jordan_1_877294.glb" ></a-assets-items>
       </a-assets>
       
@@ -185,6 +186,19 @@ AFRAME.registerComponent("physics-grab", {
           physx-body="type: static;"
         static-body></a-cylinder>
 
+        <a-cylinder height="0.1" radius="4" rotation="0 0 0" position="0 4.6 0"
+          material=
+          "side:double;
+          src:#ground; 
+          repeat:5 5;
+          ambientOcclusionMap:#ocmap;
+          normalMap:#normalmap;
+          normalTextureRepeat:5 5;
+          ambientOcclusionMap:#occmap;
+          ambientOcclusionTextureRepeat:5 5"
+          physx-body="type: static;"
+        static-body></a-cylinder>
+
      <a-cylinder radius="5" height ="5" position="0 2.5 0" material=
           "side:double;
           src:#ground; 
@@ -209,7 +223,7 @@ AFRAME.registerComponent("physics-grab", {
         </a-curvedimage>
 
         <a-curvedimage
-            src="#video"
+            src="#1"
             radius="4.8"
             theta-length="60"
             height="3"
@@ -221,7 +235,7 @@ AFRAME.registerComponent("physics-grab", {
         </a-curvedimage>
 
            <a-curvedimage
-            src="#video"
+            src="#2"
             radius="4.8"
             theta-length="60"
             height="3"
