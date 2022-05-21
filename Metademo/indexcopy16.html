@@ -15,6 +15,7 @@
     <script src="aframe-spe-particles-component.js"></script>
       <script src="physx.release.js"></script>
   <script src="physics.js"></script>
+     <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
 
 
   <script >AFRAME.registerComponent('play-on-click', {
@@ -60,6 +61,40 @@ AFRAME.registerComponent("physics-grab", {
 
 </script>
 
+<script>
+  AFRAME.registerComponent('foo', {
+    init: function() {
+      this.selectedTexture = null
+      setTimeout((e) => {
+        var els = document.getElementsByClassName("images");
+        Array.from(els).forEach((el) => {
+          el.addEventListener('click', (e)=>{
+          this.selectedTexture = e.target.src
+          })
+        });
+      }, 1000)
+
+      this.el.addEventListener('click', (e) => {
+      if (!this.selectedTexture) {
+      return
+      }
+        this.el.setAttribute("material", "src", this.selectedTexture)
+      })
+    }
+  })
+
+
+</script>
+
+<style>
+  .images {
+  position: fixed;
+  z-index: 10;
+}</style>
+
+<img class="images" src="https://i.imgur.com/wjobVTN.jpg" width="90px" height="90px">
+<img class="images" src="https://i.imgur.com/I7PAB.jpg" width="90px" height="90px" style="margin-left: 90px">
+
   </head>
   <body>
     <a-scene
@@ -77,7 +112,9 @@ AFRAME.registerComponent("physics-grab", {
         <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
         <img id="sky" src="assets/Group184.webp" crossorigin="anonymous" />
         
-         
+            <img id="one" src="https://i.imgur.com/wjobVTN.jpg">
+    <img id="two" src="https://i.imgur.com/I7PAB.jpg">
+
           <img id="logo" src="assets/logo1.jpg">
           <img id="left" src="https://spestect.sirv.com/Spins/DSC_left.webp">
           <img id="right" src="https://spestect.sirv.com/Spins/DSC_right.webp">
@@ -157,7 +194,7 @@ AFRAME.registerComponent("physics-grab", {
         radius="0.10"
         color="green"
       ></a-sphere>
-       
+        <a-box position="0 1.5 -3" foo material="src: #one"></a-box>
       
             <a-cylinder height="0.1" radius="5" rotation="0 0 0" position="0 0 0"
           material=
@@ -199,9 +236,9 @@ AFRAME.registerComponent("physics-grab", {
           physx-body="type: static;"
         static-body></a-cylinder>
 
-     <a-cylinder radius="5" height ="5" position="0 2.5 0" material=
+     <a-cylinder radius="5" height ="5" position="0 2.5 0" foo material=
           "side:double;
-          src:#ground; 
+          src:#one; 
           repeat:10 1;
           ambientOcclusionMap:#ocmap;
           normalMap:#normalmap;
