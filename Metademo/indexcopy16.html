@@ -92,8 +92,9 @@ AFRAME.registerComponent("physics-grab", {
   z-index: 10;
 }</style>
 
-<img class="images" src="https://i.imgur.com/wjobVTN.jpg" width="90px" height="90px">
-<img class="images" src="https://i.imgur.com/I7PAB.jpg" width="90px" height="90px" style="margin-left: 90px">
+<img class="images" src="assets/Wood_Floor_011_basecolor.jpg" width="90px" height="90px">
+<img class="images" src="assets/wood_cabinet_worn_long_diff_4k.jpg" width="90px" height="90px" style="margin-left: 90px">
+<img class="images" src="assets/Concrete_002_Color.jpg" width="90px" height="90px" style="margin-left: 180px">
 
   </head>
   <body>
@@ -112,8 +113,10 @@ AFRAME.registerComponent("physics-grab", {
         <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
         <img id="sky" src="assets/Group184.webp" crossorigin="anonymous" />
         
-            <img id="one" src="https://i.imgur.com/wjobVTN.jpg">
-    <img id="two" src="https://i.imgur.com/I7PAB.jpg">
+            <img id="one" src="assets/Wood_Floor_011_basecolor.jpg">
+    <img id="two" src="assets/wood_cabinet_worn_long_diff_4k.jpg">
+    <img id="three" src="assets/Concrete_002_Color.jpg">
+
 
           <img id="logo" src="assets/logo1.jpg">
           <img id="left" src="https://spestect.sirv.com/Spins/DSC_left.webp">
@@ -139,7 +142,7 @@ AFRAME.registerComponent("physics-grab", {
         
         
       
-           <a-entity camera stereocam="eye:left" orbit-controls="target: 0 1.4 0; minDistance: 0; maxDistance:5; initialPosition: 0 0.5 0.1"></a-entity>
+           <a-camera stereocam="eye:left" orbit-controls="target: 0 1.4 0; minDistance: 0; maxDistance:5; initialPosition: 0 0.5 0.1"></a-camera>
    
 
         <a-entity 
@@ -197,7 +200,7 @@ AFRAME.registerComponent("physics-grab", {
         <a-box position="0 1.5 -3" foo material="src: #one"></a-box>
       
             <a-cylinder height="0.1" radius="5" rotation="0 0 0" position="0 0 0"
-          material=
+          foo material=
           "side:double;
           src:#ground; 
           repeat:5 5;
@@ -211,7 +214,7 @@ AFRAME.registerComponent("physics-grab", {
 
 
             <a-cylinder height="0.1" radius="5" rotation="0 0 0" position="0 5 0"
-          material=
+           foo material=
           "side:double;
           src:#ground; 
           repeat:5 5;
@@ -224,7 +227,7 @@ AFRAME.registerComponent("physics-grab", {
         static-body></a-cylinder>
 
         <a-cylinder height="0.1" radius="4" rotation="0 0 0" position="0 4.6 0"
-          material=
+          foo material=
           "side:double;
           src:#ground; 
           repeat:5 5;
@@ -238,7 +241,7 @@ AFRAME.registerComponent("physics-grab", {
 
      <a-cylinder radius="5" height ="5" position="0 2.5 0" foo material=
           "side:double;
-          src:#one; 
+          src:#ground; 
           repeat:10 1;
           ambientOcclusionMap:#ocmap;
           normalMap:#normalmap;
@@ -297,7 +300,7 @@ AFRAME.registerComponent("physics-grab", {
 
  
  
-<a-cylinder radius="0.4" height ="1" position="0 0.5 0" material=
+<a-cylinder radius="0.4" height ="1" position="0 0.5 0" foo material=
           "side:double;
           src:#ground; 
           repeat:1 1;
@@ -309,7 +312,7 @@ AFRAME.registerComponent("physics-grab", {
            shadow="receive:true"
            ></a-cylinder>
 
-   <a-entity gltf-model="#shoes" scale="0.01 0.01 0.01" position="0 1.4 0" rotation="40 0 0" animation-mixer="timeScale:1" shadow="receive:true"></a-entity>
+   <a-entity gltf-model="#shoes" scale="0.01 0.01 0.01" position="0 1.4 0" rotation="40 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
    
 
    <a-entity position="0 2.5 -3">
