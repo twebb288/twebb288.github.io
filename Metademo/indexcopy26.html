@@ -15,7 +15,8 @@
 
       <a-assets>
         
-<img id="Mary" src="assets/IMG_9447.PNG"></img>
+<img id="left" src="assets/trroper3d360_L.png"></img>
+<img id="right" src="assets/trroper3d360_R.png"></img>
         
       </a-assets>
       
@@ -24,23 +25,8 @@
 
     <!-- native sphere, will render on 'left' eye, and will take only the first half of the video for projection -->
 
-      <a-entity geometry="primitive: sphere;
-                      radius: 100;
-                      segmentsWidth: 64;
-                      segmentsHeight: 64;"
-              material="shader: flat; src: #Mary; side: double"
-              scale="-1 1 1" stereo="eye:left; mode:half">
-      </a-entity>
-
-      <!-- native sphere, will render on 'right' eye, and will take only the second half of the video for projection -->
-
-      <a-entity geometry="primitive: sphere;
-                      radius: 100;
-                      segmentsWidth: 64;
-                      segmentsHeight: 64;"
-              material="shader: flat; src: #Mary; side: double"
-              scale="-1 1 1" stereo="eye:right; mode:half">
-      </a-entity>
+<a-sky id="sky1" src="#left" stereo="eye:left"></a-sky>
+      <a-sky id="sky2" src="#right" stereo="eye:right"></a-sky>
      
 
     </a-scene>
