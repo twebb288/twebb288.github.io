@@ -14,9 +14,10 @@
 
 
       <a-assets>
-        
-<img id="left" src="assets/trooper_L.jpg"></img>
-<img id="right" src="assets/trooper_R.jpg"></img>
+          <img id="Mary" src="assets/shoes_L.png" ></img>
+          <img id="Mary2" src="assets/shoes_R.png" ></img>
+<img id="left" src="assets/untitled_L.jpg"></img>
+<img id="right" src="assets/untitled_R.jpg"></img>
         
       </a-assets>
       
@@ -25,9 +26,45 @@
 
     <!-- native sphere, will render on 'left' eye, and will take only the first half of the video for projection -->
 
-<a-sky id="sky1" src="#left" stereo="eye:left"></a-sky>
-      <a-sky id="sky2" src="#right" stereo="eye:right"></a-sky>
      
+           <a-entity geometry="primitive: sphere;
+                      radius: 100;
+                      segmentsWidth: 64;
+                      segmentsHeight: 64;
+                      phi-length:180"
+              material="shader: flat; src: #Mary; side:double; opacity:0.99"
+              scale="-1 1 1" stereo="eye:left; mode:half">
+      </a-entity>
+
+      <!-- native sphere, will render on 'right' eye, and will take only the second half of the video for projection -->
+
+      <a-entity geometry="primitive: sphere;
+                      radius: 100;
+                      segmentsWidth: 64;
+                      segmentsHeight: 64;
+                      phi-length:180"
+              material="shader: flat; src: #Mary2; side:double; opacity:0.99"
+              scale="-1 1 1" stereo="eye:right; mode:half">
+      </a-entity>
+
+      <a-entity geometry="primitive: sphere;
+                      radius: 100;
+                      segmentsWidth: 64;
+                      segmentsHeight: 64;
+                      phi-length:180"
+              material="shader: flat; src: #left; side:double;"
+              scale="-1 1 1" stereo="eye:left; mode:half">
+      </a-entity>
+
+  <a-entity geometry="primitive: sphere;
+                      radius: 100;
+                      segmentsWidth: 64;
+                      segmentsHeight: 64;
+                      phi-length:180"
+              material="shader: flat; src: #right; side:double;"
+              scale="-1 1 1" stereo="eye:right; mode:half">
+      </a-entity>
+
 
     </a-scene>
   </body>
