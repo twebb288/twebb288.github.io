@@ -1,0 +1,312 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Vaporwave - A-Frame</title>
+     <meta name="description" content="Hello, World! - A-Frame">
+   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script src="aframe-stereo-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="controller-listener.js"></script>
+  <script src="player-move.js"></script>
+    <script src="raycaster-extras.js"></script>
+        <script src="aframe-sprite-particles-component.js"></script>
+    <script src="aframe-spe-particles-component.js"></script>
+      <script src="physx.release.js"></script>
+  <script src="physics.js"></script>
+     <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
+
+
+  <script >AFRAME.registerComponent('play-on-click', {
+  init: function () {
+    this.onClick = this.onClick.bind(this);
+  },
+  play: function () {
+    window.addEventListener('click', this.onClick);
+  },
+  pause: function () {
+    window.removeEventListener('click', this.onClick);
+  },
+  onClick: function (evt) {
+    var videoEl = this.el.getAttribute('material').src;
+    if (!videoEl) { return; }
+    this.el.object3D.visible = true;
+    videoEl.play();
+  }
+});</script>
+
+<script>
+
+AFRAME.registerComponent("physics-grab", {
+    init: function () 
+    {
+        let self = this;
+
+        this.el.addEventListener("raycaster-grabbed", function() {
+           self.el.addState("grabbed"); 
+        });
+
+        this.el.addEventListener("raycaster-released", function() {
+           self.el.removeState("grabbed"); 
+        });
+    },
+
+    tick: function()
+    {
+
+    }
+});
+
+
+</script>
+
+<script>
+  AFRAME.registerComponent('foo', {
+    init: function() {
+      this.selectedTexture = null
+      setTimeout((e) => {
+        var els = document.getElementsByClassName("images");
+        Array.from(els).forEach((el) => {
+          el.addEventListener('click', (e)=>{
+          this.selectedTexture = e.target.src
+          })
+        });
+      }, 1000)
+
+      this.el.addEventListener('click', (e) => {
+      if (!this.selectedTexture) {
+      return
+      }
+        this.el.setAttribute("material", "src", this.selectedTexture)
+      })
+    }
+  })
+
+
+</script>
+
+<style>
+  .images {
+  position: fixed;
+  z-index: 10;
+}</style>
+
+<img class="images" src="assets/Wood_Floor_011_basecolor.jpg" width="90px" height="90px">
+<img class="images" src="assets/wood_cabinet_worn_long_diff_4k.jpg" width="90px" height="90px" style="margin-left: 90px">
+<img class="images" src="assets/Concrete_002_Color.jpg" width="90px" height="90px" style="margin-left: 180px">
+
+  </head>
+  <body>
+    <a-scene
+    renderer="colorManagement: true"
+      antialias="true"
+      gltf-model="dracoDecoderPath: assets/"
+      cursor="rayOrigin: mouse; fuse: false" physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;"
+      device-orientation-permission-ui="enabled: false"
+      physics="gravity: -1.6">
+
+
+      <a-assets>
+        <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+        <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+        <img id="sky" src="assets/Group184.webp" crossorigin="anonymous" />
+        
+            <img id="one" src="assets/Wood_Floor_011_basecolor.jpg">
+    <img id="two" src="assets/wood_cabinet_worn_long_diff_4k.jpg">
+    <img id="three" src="assets/Concrete_002_Color.jpg">
+
+
+          <img id="logo" src="assets/logo1.jpg">
+          <img id="left" src="https://spestect.sirv.com/Spins/DSC_left.webp">
+          <img id="right" src="https://spestect.sirv.com/Spins/DSC_right.webp">
+          <img id="left2" src="assets/jordans_L.jpg">
+          <img id="right2" src="assets/jordans_R.jpg">
+          <img id="ground" src="assets/Concrete_002_Color.jpg">
+          <img id="occmap" src="assets/Concrete_002_MetalicConcrete_002_Roughness.jpg">
+          <img id="normalmap" src="assets/Concrete_002_NormalMap.jpg">
+          <video id="video" src="" crossorigin="anonymous" autoplay loop play-on-click></video>
+         <img id="1" src="assets/image15.jpg">
+         <img id="2" src="assets/image16.jpg">
+            <a-asset-items id="shoes" src= "assets/boxer.glb" ></a-assets-items>
+      </a-assets>
+      
+     
+
+      <a-entity 
+        id="player" 
+        position="0 0 0" 
+        player-move="controllerListenerId: #controller-data;
+                     navigationMeshClass: environmentGround;">
+        
+        
+      
+           <a-camera stereocam="eye:left" orbit-controls="target: 0 1.4 0; minDistance: 0; maxDistance:5; initialPosition: 0 0.5 0.1"></a-camera>
+   
+
+        <a-entity 
+            id="controller-data" 
+            controller-listener="leftControllerId:  #left-controller; 
+                                 rightControllerId: #right-controller;">
+        </a-entity>
+
+ <a-entity 
+            id="left-controller"
+            oculus-touch-controls="hand: left"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;"
+                              static-body="shape: sphere; sphereRadius: 0.02;"
+        vive-controls="hand: left"
+        sphere-collider="objects: .throwable"
+        grab>
+        </a-entity>
+
+        <a-entity
+            id="right-controller"
+            oculus-touch-controls="hand: right"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;"
+                                static-body="shape: sphere; sphereRadius: 0.02;"
+        vive-controls="hand: right"
+        sphere-collider="objects: .throwable"
+        grab>
+        </a-entity>
+
+
+    </a-entity>
+          
+     
+
+     
+      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+    
+      <a-entity light="color: white; type: ambient;"></a-entity>
+
+      <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
+
+<a-sphere
+      physx-body="type: dynamic;"
+            raycaster-target="canGrab: true;"
+            physics-grab
+        class="throwable"
+        dynamic-body
+        position="0 1 0.5"
+        radius="0.10"
+        color="green"
+      ></a-sphere>
+        
+      
+            <a-cylinder height="0.1" radius="5" rotation="0 0 0" position="0 0 0"
+          foo material=
+          "side:double;
+          src:#ground; 
+          repeat:5 5;
+          ambientOcclusionMap:#ocmap;
+          normalMap:#normalmap;
+          normalTextureRepeat:5 5;
+          ambientOcclusionMap:#occmap;
+          ambientOcclusionTextureRepeat:5 5"
+          physx-body="type: static;"
+        static-body></a-cylinder>
+
+
+            <a-cylinder height="0.1" radius="5" rotation="0 0 0" position="0 5 0"
+           foo material=
+          "side:double;
+          src:#ground; 
+          repeat:5 5;
+          ambientOcclusionMap:#ocmap;
+          normalMap:#normalmap;
+          normalTextureRepeat:5 5;
+          ambientOcclusionMap:#occmap;
+          ambientOcclusionTextureRepeat:5 5"
+          physx-body="type: static;"
+        static-body></a-cylinder>
+
+        <a-cylinder height="0.1" radius="4" rotation="0 0 0" position="0 4.6 0"
+          foo material=
+          "side:double;
+          src:#ground; 
+          repeat:5 5;
+          ambientOcclusionMap:#ocmap;
+          normalMap:#normalmap;
+          normalTextureRepeat:5 5;
+          ambientOcclusionMap:#occmap;
+          ambientOcclusionTextureRepeat:5 5"
+          physx-body="type: static;"
+        static-body></a-cylinder>
+
+     <a-cylinder radius="5" height ="5" position="0 2.5 0" foo material=
+          "side:double;
+          src:#ground; 
+          repeat:10 1;
+          ambientOcclusionMap:#ocmap;
+          normalMap:#normalmap;
+          normalTextureRepeat:10 1;
+          ambientOcclusionMap:#occmap;
+          ambientOcclusionTextureRepeat:10 1"
+           shadow="receive:true"open-ended="true" ></a-cylinder>
+
+  <a-curvedimage
+            src="#video"
+            radius="4.8"
+            theta-length="60"
+            height="3"
+            rotation="0 150 0"
+            scale="1 1 1"
+            position="0 2.5 0"
+            play-on-click
+            >        
+        </a-curvedimage>
+
+        <a-curvedimage
+            src="#1"
+            radius="4.8"
+            theta-length="60"
+            height="3"
+            rotation="0 60 0"
+            scale="1 1 1"
+            position="0 2.5 0"
+            play-on-click
+            >        
+        </a-curvedimage>
+
+           <a-curvedimage
+            src="#2"
+            radius="4.8"
+            theta-length="60"
+            height="3"
+            rotation="0 240 0"
+            scale="1 1 1"
+            position="0 2.5 0"
+            play-on-click
+            >        
+        </a-curvedimage>
+
+          <a-curvedimage
+            src="#video"
+            radius="4.8"
+            theta-length="60"
+            height="3"
+            rotation="0 330 0"
+            scale="1 1 1"
+            position="0 2.5 0"
+            play-on-click
+            >        
+        </a-curvedimage>
+
+ 
+
+
+   <a-entity gltf-model="#shoes" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
+   
+
+   
+     
+
+    </a-scene>
+  </body>
+</html> 
