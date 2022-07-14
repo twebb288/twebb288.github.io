@@ -93,14 +93,7 @@
     let vologram = new Vologram(url, updateLoading)
     scene.add(vologram)
 
-    function animate() {
-        requestAnimationFrame(animate)
-        renderer.render(scene, camera)
-    }
-
-    animate()
-
-    renderer.setAnimationLoop( function () {
+renderer.setAnimationLoop( function () {
 
     renderer.render( scene, camera );
 
