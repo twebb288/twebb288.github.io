@@ -74,11 +74,7 @@
 
     renderer.outputEncoding = THREE.sRGBEncoding;
 
-    renderer.setAnimationLoop( function () {
 
-    renderer.render( scene, camera );
-
-} );
 
 
     //setup some helper on the scene
@@ -102,6 +98,12 @@
 
     animate()
 
+    renderer.setAnimationLoop( function () {
+
+    renderer.render( scene, camera );
+
+} );
+    
 </script>
 
 <span id="gui">Loading...</span>
