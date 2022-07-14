@@ -66,13 +66,15 @@
 
                         } );
                         
-renderer.xr.enabled = true;
+    renderer.xr.enabled = true;
                 renderer.xr.setReferenceSpaceType( 'local' );
                 document.body.appendChild( renderer.domElement );
 
-document.body.appendChild( VRButton.createButton( renderer ) );
+    document.body.appendChild( VRButton.createButton( renderer ) );
 
-renderer.setAnimationLoop( function () {
+    renderer.outputEncoding = THREE.sRGBEncoding;
+
+    renderer.setAnimationLoop( function () {
 
     renderer.render( scene, camera );
 
