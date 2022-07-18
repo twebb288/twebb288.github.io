@@ -11,9 +11,15 @@
     <script src="controller-listener.js"></script>
     <script src="player-move.js"></script>
     <script src="raycaster-extras.js"></script>
-
-
-
+      <script src="https://cdn.jsdelivr.net/npm/volograms-js@0.1.12/src/Vologram.js"></script>
+   
+<script type="text/javascript">
+AFRAME.registerComponent('foo', {
+   let url = 'https://twebb288.github.io/1658148174654_ld'
+    let vologram = new Vologram(url)
+    scene.add(vologram)
+});
+</script>
 
   </head>
   <body>
@@ -32,7 +38,7 @@
               
              
       </a-assets>
-      
+        <a-entity foo></a-entity>
 
       <a-entity 
         id="player" 

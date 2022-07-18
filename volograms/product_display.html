@@ -69,7 +69,7 @@
 
                         
 
-            loader.load("london/london.gltf", function(gltf) { scene.add( gltf.scene );
+            loader.load("london/scene.glb_1210751.glb", function(gltf) { scene.add( gltf.scene );
    gltf.scene.scale.set(0.35, 0.35, 0.35); 
    gltf.scene.position.z = 0.5;  })// do something with model 2 here } )
              
@@ -96,8 +96,7 @@
 
 
     //setup some helper on the scene
-    scene.add(new THREE.AxesHelper(1))
-    scene.add(new THREE.GridHelper(10, 10))
+  
 
     // as a volograms takes time to be downloaded, display loading information
     const updateLoading = p => {
