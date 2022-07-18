@@ -61,6 +61,10 @@
     controls.target.set(0, 0.9, 0)
     controls.update()
 
+THREE.DRACOLoader.setDecoderPath( 'Metademo/assets/' );
+loader.setDRACOLoader( new THREE.DRACOLoader() );
+
+
     const loader = new GLTFLoader().setPath( 'https://twebb288.github.io/1658148174654_ld/' );
                         loader.load( 'Lononstreet.glb', function ( gltf ) {
  
