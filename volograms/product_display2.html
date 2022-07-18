@@ -65,6 +65,10 @@
 
 
     const loader = new GLTFLoader().setPath( '1658148174654_ld/' );
+                        
+THREE.DRACOLoader.setDecoderPath( '1658148174654_ld/' );
+loader.setDRACOLoader( new THREE.DRACOLoader() );
+
                         loader.load( 'londonstreet.glb', function ( gltf ) {
 
                             scene.add( gltf.scene );
