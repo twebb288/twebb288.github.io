@@ -64,32 +64,33 @@
 
 
 
-    const loader = new GLTFLoader().setPath( 'https://twebb288.github.io/1658148174654_ld/' );
-                        loader.load( 'Lononstreet.glb', function ( gltf ) {
- THREE.DRACOLoader.setDecoderPath( 'https://twebb288.github.io/1658148174654_ld/' );
-loader.setDRACOLoader( new THREE.DRACOLoader() );
-                            scene.add( gltf.scene );
-   gltf.scene.position.z = -.25;
-                            render();
+    const loader = new GLTFLoader().setPath( '' );
+                     
 
-                        } );
-
-
-    const loader2 = new GLTFLoader().setPath( 'https://twebb288.github.io/1658148174654_ld/' );
-                        loader2.load( 'air_jordan_1_877294.glb', function ( gltf2 ) {
- THREE.DRACOLoader.setDecoderPath( 'https://twebb288.github.io/1658148174654_ld/' );
-loader2.setDRACOLoader( new THREE.DRACOLoader() );
-                            scene.add( gltf2.scene );
-   gltf2.scene.position.z = -.25;
-                            render();
-
-                        } );
                         
 
+            loader.load("scene.glb", function(gltf) { scene.add( gltf.scene );
+   gltf.scene.scale.set(0.35, 0.35, 0.35); 
+   gltf.scene.position.z = 0.5;  })// do something with model 2 here } )
+             
+     loader.load("scene.gltf", function(gltf) { scene.add( gltf.scene );
+   gltf.scene.scale.set(0.13, 0.13, 0.13); 
+   gltf.scene.position.y = 1.4;  
+   gltf.scene.position.x = -0.5; 
+ gltf.scene.position.z = 0.15; 
 
-   
+                            render();
 
-    renderer.outputEncoding = THREE.sRGBEncoding;
+                       
+})
+             
+
+
+       renderer.colorManagement=true;                  
+       renderer.outputEncoding = THREE.sRGBEncoding
+
+
+
 
 
 

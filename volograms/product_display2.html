@@ -64,12 +64,13 @@
 
 
 
-    const loader = new GLTFLoader().setPath( '1658148174654_ld/' );
+    const loader = new GLTFLoader();
                         
-THREE.DRACOLoader.setDecoderPath( '1658148174654_ld/' );
-loader.setDRACOLoader( new THREE.DRACOLoader() );
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath( '1658148174654_ld/' );
+loader.setDRACOLoader( dracoLoader );
 
-                        loader.load( 'londonstreet.glb', function ( gltf ) {
+                        loader.load( '1658148174654_ld/londonstreet.glb', function ( gltf ) {
 
                             scene.add( gltf.scene );
    gltf.scene.position.z = -.25;
