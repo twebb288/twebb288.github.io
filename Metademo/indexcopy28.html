@@ -18,23 +18,7 @@
      <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
 
 
-  <script >AFRAME.registerComponent('play-on-click', {
-  init: function () {
-    this.onClick = this.onClick.bind(this);
-  },
-  play: function () {
-    window.addEventListener('click', this.onClick);
-  },
-  pause: function () {
-    window.removeEventListener('click', this.onClick);
-  },
-  onClick: function (evt) {
-    var videoEl = this.el.getAttribute('material').src;
-    if (!videoEl) { return; }
-    this.el.object3D.visible = true;
-    videoEl.play();
-  }
-});</script>
+
 
 <script>
 
@@ -92,9 +76,7 @@ AFRAME.registerComponent("physics-grab", {
   z-index: 10;
 }</style>
 
-<img class="images" src="assets/Wood_Floor_011_basecolor.jpg" width="90px" height="90px">
-<img class="images" src="assets/wood_cabinet_worn_long_diff_4k.jpg" width="90px" height="90px" style="margin-left: 90px">
-<img class="images" src="assets/Concrete_002_Color.jpg" width="90px" height="90px" style="margin-left: 180px">
+
 
   </head>
   <body>
@@ -111,7 +93,7 @@ AFRAME.registerComponent("physics-grab", {
         <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
         <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
         <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
-        <img id="sky" src="assets/Group184.webp" crossorigin="anonymous" />
+        <img id="sky" src="assets/001.jpg" crossorigin="anonymous" />
         
             <img id="one" src="assets/Wood_Floor_011_basecolor.jpg">
     <img id="two" src="assets/wood_cabinet_worn_long_diff_4k.jpg">
@@ -129,7 +111,7 @@ AFRAME.registerComponent("physics-grab", {
           <video id="video" src="" crossorigin="anonymous" autoplay loop play-on-click></video>
          <img id="1" src="assets/image15.jpg">
          <img id="2" src="assets/image16.jpg">
-            <a-asset-items id="shoes" src= "assets/boxer.glb" ></a-assets-items>
+            <a-asset-items id="shoes" src= "assets/Scaniverse 2022-07-24 104404.glb" ></a-assets-items>
       </a-assets>
       
      
@@ -185,19 +167,9 @@ AFRAME.registerComponent("physics-grab", {
     
       <a-entity light="color: white; type: ambient;"></a-entity>
 
-      <a-sky material="shader:gradient;topColor:185, 248, 248;bottomColor:101, 211, 243;"></a-sky>
+      <a-sky src="#sky"></a-sky>
 
-<a-sphere
-      physx-body="type: dynamic;"
-            raycaster-target="canGrab: true;"
-            physics-grab
-        class="throwable"
-        dynamic-body
-        position="0 1 0.5"
-        radius="0.10"
-        color="green"
-      ></a-sphere>
-        
+
       
             <a-cylinder height="0.1" radius="5" rotation="0 0 0" position="0 0 0"
           foo material=
@@ -213,90 +185,10 @@ AFRAME.registerComponent("physics-grab", {
         static-body></a-cylinder>
 
 
-            <a-cylinder height="0.1" radius="5" rotation="0 0 0" position="0 5 0"
-           foo material=
-          "side:double;
-          src:#ground; 
-          repeat:5 5;
-          ambientOcclusionMap:#ocmap;
-          normalMap:#normalmap;
-          normalTextureRepeat:5 5;
-          ambientOcclusionMap:#occmap;
-          ambientOcclusionTextureRepeat:5 5"
-          physx-body="type: static;"
-        static-body></a-cylinder>
 
-        <a-cylinder height="0.1" radius="4" rotation="0 0 0" position="0 4.6 0"
-          foo material=
-          "side:double;
-          src:#ground; 
-          repeat:5 5;
-          ambientOcclusionMap:#ocmap;
-          normalMap:#normalmap;
-          normalTextureRepeat:5 5;
-          ambientOcclusionMap:#occmap;
-          ambientOcclusionTextureRepeat:5 5"
-          physx-body="type: static;"
-        static-body></a-cylinder>
+      
 
-     <a-cylinder radius="5" height ="5" position="0 2.5 0" foo material=
-          "side:double;
-          src:#ground; 
-          repeat:10 1;
-          ambientOcclusionMap:#ocmap;
-          normalMap:#normalmap;
-          normalTextureRepeat:10 1;
-          ambientOcclusionMap:#occmap;
-          ambientOcclusionTextureRepeat:10 1"
-           shadow="receive:true"open-ended="true" ></a-cylinder>
-
-  <a-curvedimage
-            src="#video"
-            radius="4.8"
-            theta-length="60"
-            height="3"
-            rotation="0 150 0"
-            scale="1 1 1"
-            position="0 2.5 0"
-            play-on-click
-            >        
-        </a-curvedimage>
-
-        <a-curvedimage
-            src="#1"
-            radius="4.8"
-            theta-length="60"
-            height="3"
-            rotation="0 60 0"
-            scale="1 1 1"
-            position="0 2.5 0"
-            play-on-click
-            >        
-        </a-curvedimage>
-
-           <a-curvedimage
-            src="#2"
-            radius="4.8"
-            theta-length="60"
-            height="3"
-            rotation="0 240 0"
-            scale="1 1 1"
-            position="0 2.5 0"
-            play-on-click
-            >        
-        </a-curvedimage>
-
-          <a-curvedimage
-            src="#video"
-            radius="4.8"
-            theta-length="60"
-            height="3"
-            rotation="0 330 0"
-            scale="1 1 1"
-            position="0 2.5 0"
-            play-on-click
-            >        
-        </a-curvedimage>
+ 
 
  
 
