@@ -112,9 +112,9 @@ AFRAME.registerComponent("physics-grab", {
                      navigationMeshClass: environmentGround;">
         
         
-      
-           <a-camera></a-camera>
-   
+      <a-entity>
+           <a-camera><a-box  position="0 0 1000"></a-box></a-camera>
+   </a-entity>
 
         <a-entity 
             id="controller-data" 
@@ -182,7 +182,7 @@ AFRAME.registerComponent("physics-grab", {
  
 
 
-   <a-entity gltf-model="#shoes" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo look-at="a-camera"></a-entity>
+   <a-entity gltf-model="#shoes" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo look-at="a-box"></a-entity>
    
 
    
