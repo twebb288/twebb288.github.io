@@ -18,7 +18,23 @@
      <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
 
 
-
+  <script >AFRAME.registerComponent('play-on-click', {
+  init: function () {
+    this.onClick = this.onClick.bind(this);
+  },
+  play: function () {
+    window.addEventListener('click', this.onClick);
+  },
+  pause: function () {
+    window.removeEventListener('click', this.onClick);
+  },
+  onClick: function (evt) {
+    var videoEl = this.el.getAttribute('material').src;
+    if (!videoEl) { return; }
+    this.el.object3D.visible = true;
+    videoEl.play();
+  }
+});</script>
 
 <script>
 
@@ -101,6 +117,7 @@ AFRAME.registerComponent("physics-grab", {
          <img id="1" src="assets/image15.jpg">
          <img id="2" src="assets/image16.jpg">
             <a-asset-items id="shoes" src= "assets/fed4.glb" ></a-assets-items>
+               <video id="video1" src="https://spestect.sirv.com/all_time_hot_shots_-_16x9_-_01_-_with_end_slate-mp4-1080p.mp4" autoplay loop="true" crossorigin="anonymous"></video>
       </a-assets>
       
      
@@ -112,9 +129,9 @@ AFRAME.registerComponent("physics-grab", {
                      navigationMeshClass: environmentGround;">
         
         
-      <a-entity>
-           <a-camera><a-box  position="0 0 1000"></a-box></a-camera>
-   </a-entity>
+      
+           <a-camera stereocam="eye:left"></a-camera>
+   
 
         <a-entity 
             id="controller-data" 
@@ -174,7 +191,7 @@ AFRAME.registerComponent("physics-grab", {
         static-body></a-cylinder>
 
 
-
+ <a-video src="#video1" width="16" height="9" scale="0.3 0.3 0.3" position="2 3 -2 " play-on-click></a-video>
       
 
  
@@ -182,7 +199,7 @@ AFRAME.registerComponent("physics-grab", {
  
 
 
-   <a-entity gltf-model="#shoes" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo look-at="a-box"></a-entity>
+   <a-entity gltf-model="#shoes" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo ></a-entity>
    
 
    
