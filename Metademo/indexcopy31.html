@@ -100,8 +100,8 @@ AFRAME.registerComponent("physics-grab", {
           <video id="video" src="" crossorigin="anonymous" autoplay loop play-on-click></video>
          <img id="1" src="assets/image15.jpg">
          <img id="2" src="assets/image16.jpg">
-            <a-asset-items id="shoes" src= "assets/ferdress2.glb" ></a-assets-items>
-            	<a-asset-items id="scene" src= "assets/scenefp.glb" ></a-assets-items>
+            <a-asset-items id="shoes" src= "assets/ferdress3.glb" ></a-assets-items>
+            	<a-asset-items id="scene" src= "assets/scenefp2.glb" ></a-assets-items>
       </a-assets>
       
      
@@ -114,7 +114,7 @@ AFRAME.registerComponent("physics-grab", {
         
         
       
-           <a-camera stereocam="eye:left" orbit-controls="target: 0 1.4 0; minDistance: 0; maxDistance:5; initialPosition: 0 0.5 0.1"></a-camera>
+           <a-camera camera look-controls orbit-controls="target: 0 1 0; minDistance: 0; maxDistance: 180; initialPosition: 0 0 2"></a-camera>
    
 
         <a-entity 
@@ -170,7 +170,7 @@ AFRAME.registerComponent("physics-grab", {
 
 
    <a-entity gltf-model="#shoes" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:false" foo></a-entity>
-   <a-entity gltf-model="#scene" scale="1 1 1" position="0 0 0.5" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:false" foo></a-entity>
+   <a-entity gltf-model="#scene" scale="1 1 1" position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:false" foo></a-entity>
    
 
    
