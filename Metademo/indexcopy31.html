@@ -85,7 +85,7 @@ AFRAME.registerComponent("physics-grab", {
       antialias="true"
       gltf-model="dracoDecoderPath: assets/"
       cursor="rayOrigin: mouse; fuse: false" physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;"
-      
+      device-orientation-permission-ui="enabled: false"
       physics="gravity: -1.6">
 
 
@@ -115,7 +115,7 @@ AFRAME.registerComponent("physics-grab", {
         
         
       
-           <a-camera camera look-controls orbit-controls="target: 0 1 0; minDistance: 0; maxDistance: 180; initialPosition: 0 0 2"></a-camera>
+           <a-camera camera  orbit-controls="target: 0 1 0; minDistance: 0; maxDistance: 180; initialPosition: 0 0 2"></a-camera>
    
 
         <a-entity 
@@ -171,7 +171,7 @@ AFRAME.registerComponent("physics-grab", {
 
 
    <a-entity gltf-model="#shoes" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:false" foo></a-entity>
-   <a-entity gltf-model="#scene" scale="1 1 1" position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:false" foo></a-entity>
+   <a-entity gltf-model="#scene" scale="1 1 1" position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
    <a-entity gltf-model="#ferfont" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
    
 
