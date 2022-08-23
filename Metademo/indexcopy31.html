@@ -103,6 +103,8 @@ AFRAME.registerComponent("physics-grab", {
             <a-asset-items id="shoes" src= "assets/ferdress3.glb" ></a-assets-items>
             	<a-asset-items id="scene" src= "assets/scenefp2.glb" ></a-assets-items>
             		<a-asset-items id="ferfont" src= "assets/ferfont.glb" ></a-assets-items>
+            			 <img id="shoe1" src="assets/3322010050_6_1_1.jpg">
+            			 <img id="shoe2" src="assets/3322010050_6_4_1.jpg">
       </a-assets>
       
      
@@ -164,7 +166,23 @@ AFRAME.registerComponent("physics-grab", {
       <a-entity light="color: white; type: ambient;"></a-entity>
 
       
+       
 
+                       <a-plane 
+               src="#shoe2"
+               position="-1 1 1"
+               rotation="0 160 0" 
+               width="0.75" 
+               height="1.5"
+               ></a-plane>
+
+                         <a-plane 
+               src="#shoe1"
+               position="1 1 1"
+               rotation="0 -160 0" 
+               width="0.75" 
+               height="1.5"
+               ></a-plane>
  
 
  
