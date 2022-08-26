@@ -76,7 +76,27 @@ AFRAME.registerComponent("physics-grab", {
   z-index: 10;
 }</style>
 
-
+     <script >    
+        AFRAME.registerComponent('vidtex', {
+            init: function(){
+                let el = this.el;
+                el.addEventListener("model-loaded", e =>{
+                    let tree3D = el.getObject3D('mesh');
+                    if (!tree3D){return;}                   
+                    tree3D.traverse(function(node){
+                        if (node.isMesh){                           
+                           // if (node.name === 'myModelName'){
+                          // node.material do stuff to your material
+                           //}
+                          //  console.log(node.name,  node.material);
+                              node.material.normalmap =  new THREE.TextureLoader().load( "assets/Concrete_002_NormalMap.jpg");
+                            node.material.map =  new THREE.VideoTexture().load( "assets/pexels-mikhail-nilov-7677746.mp4");
+                        }
+                    });
+                });
+            }
+        });       
+    </script>
 
   </head>
   <body>
@@ -91,7 +111,7 @@ AFRAME.registerComponent("physics-grab", {
 
       <a-assets>
   <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
-        <img id="sky" src="assets/Screenshot 2022-08-22 at 17.45.png" crossorigin="anonymous" />
+        <img id="sky" src="assets/Screenshot 2022-08-22 at 17 (1).jpg" crossorigin="anonymous" />
         
        
           <img id="ground" src="assets/Concrete_002_Color.jpg">
@@ -189,8 +209,8 @@ AFRAME.registerComponent("physics-grab", {
 
 
    <a-entity gltf-model="#shoes" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:false" foo></a-entity>
-   <a-entity gltf-model="#scene" scale="1 1 1" position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
-   <a-entity gltf-model="#ferfont" scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
+   <a-entity gltf-model="#scene" scale="1 1 1" vidtex position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
+   <a-entity gltf-model="#ferfont"  scale="1 1 1" position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
    
 
    
