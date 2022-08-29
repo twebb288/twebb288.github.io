@@ -123,7 +123,11 @@ body
       </a-assets>
       
      
-
+   <a-entity 
+        id="player" 
+        position="0 0 0" 
+        player-move="controllerListenerId: #controller-data;
+                     navigationMeshClass: environmentGround;">
       
         
         
@@ -140,7 +144,7 @@ body
                                  rightControllerId: #right-controller;">
         </a-entity>
 
- <a-entity 
+  <a-entity 
             id="left-controller"
             oculus-touch-controls="hand: left"
             raycaster="objects: .raycaster-target, .environmentGround;"
@@ -165,7 +169,7 @@ body
         </a-entity>
 
 
-    </a-entity>
+  </a-entity>
           
      
 
