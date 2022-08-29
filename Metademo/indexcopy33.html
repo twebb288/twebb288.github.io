@@ -1,8 +1,8 @@
   <!DOCTYPE html>
 <html>
   <head>
-    <title>Vaporwave - A-Frame</title>
-     <meta name="description" content="Hello, World! - A-Frame">
+    <title>Archway cobbles</title>
+     <meta name="description" content="Archway cobbles">
    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
   <script src="aframe-stereo-component.min.js"></script>
@@ -106,7 +106,7 @@ body
       antialias="true"
       gltf-model="dracoDecoderPath: assets/"
       cursor="rayOrigin: mouse; fuse: false" 
-      device-orientation-permission-ui="enabled: false"
+      device-orientation-permission-ui="enabled: true"
      screen-controls >
 
 
@@ -114,7 +114,7 @@ body
   
         <img id="sky" src="assets/Screenshot 2022-08-22 at 17 (1).jpg" crossorigin="anonymous" />
         
-       
+        <img id="screen" src="screen.png" crossorigin="anonymous" />
           
             <a-asset-items id="fer" src= "assets/fer.glb" ></a-assets-items>
             	<a-asset-items id="scene" src= "assets/ferkh.glb" ></a-assets-items>
@@ -187,7 +187,7 @@ body
        
 
  
-
+ <a-image src="#screen" scale="0.2 0.2 0.2" opacity="0.95"  position="0 1 0" rotation="-30 0 0" width="4" height="1.5"></a-image>
 
   
    <a-entity gltf-model="#scene" scale="1 1 1"  position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
