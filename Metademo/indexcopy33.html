@@ -11,43 +11,103 @@
   <script src="controller-listener.js"></script>
   <script src="player-move.js"></script>
     <script src="raycaster-extras.js"></script>
-        <script src="aframe-sprite-particles-component.js"></script>
-    <script src="aframe-spe-particles-component.js"></script>
-      <script src="physx.release.js"></script>
-  <script src="physics.js"></script>
-     <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
+       
+     <script src="joystick.js"></script> 
+     <script src="extended-wasd-controls.js"></script>
+<style>
+
+body
+.mainUI
+{
+  border: 0px solid pink; 
+  position: fixed; 
+  top: 0px;  
+  width:99%; 
+  height:99%; 
+  z-index: 1; 
+  pointer-events: none; /* allow click-through in transparent areas */
+}
+
+.regionUI
+{
+  border: 0px solid yellow;
+  position: absolute; 
+  display: flex;
+  flex-direction: row;
+  pointer-events: none;
+}
+
+.buttonUI
+{
+  border: 0px solid lime;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: auto; 
+  filter: drop-shadow(0px 0px 20px white);
+}
+
+</style>
 
 
+<script>
+
+  // need to run javascript code after a-scene entities and components are loaded
+  AFRAME.registerComponent('screen-controls', 
+  {
+    init: function () 
+    {
+        this.component = document.getElementById("camera").components["extended-wasd-controls"];
+        this.joystick1 = new Joystick("stick1", 64, 8);
+        console.log("controls initialized");
+      },
+
+      tick: function(time, deltaTime)
+      {
+        // console.log( joystick1.value )
+        // console.log( this.component.movePercent )
+        this.component.movePercent.x =  this.joystick1.value.x;
+        this.component.movePercent.z = -this.joystick1.value.y;
+        
+      }
+  });
 
 
+</script>
 
   </head>
   <body>
+<div class="mainUI" id="uiDiv" oncontextmenu="return false;">
+      <div class="regionUI" style="bottom: 10px; left: 10px;">
+    <div class="buttonUI" style="width: 128px; opacity:0.80;">
+      <img src="joystick-base.png"/>
+      <div id="stick1" style="position: absolute; left:32px; top:32px;">
+      <img src="joystick-red.png"/>    
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <a-scene
     renderer="colorManagement: true"
       antialias="true"
       gltf-model="dracoDecoderPath: assets/"
       cursor="rayOrigin: mouse; fuse: false" 
       device-orientation-permission-ui="enabled: false"
-      >
+     screen-controls >
 
 
       <a-assets>
-  <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+  
         <img id="sky" src="assets/Screenshot 2022-08-22 at 17 (1).jpg" crossorigin="anonymous" />
         
        
-          <img id="ground" src="assets/Concrete_002_Color.jpg">
-          <img id="occmap" src="assets/Concrete_002_MetalicConcrete_002_Roughness.jpg">
-          <img id="normalmap" src="assets/Concrete_002_NormalMap.jpg">
-          <video id="video" src="" crossorigin="anonymous" autoplay loop play-on-click></video>
-         <img id="1" src="assets/image15.jpg">
-         <img id="2" src="assets/image16.jpg">
+          
             <a-asset-items id="fer" src= "assets/fer.glb" ></a-assets-items>
             	<a-asset-items id="scene" src= "assets/ferkh.glb" ></a-assets-items>
-            		<a-asset-items id="ferfont" src= "assets/ferfont.glb" ></a-assets-items>
-            			 <img id="shoe1" src="assets/3322010050_6_1_1.jpg">
-            			 <img id="shoe2" src="assets/3322010050_6_4_1.jpg">
+            	
+           
       </a-assets>
       
      
@@ -60,7 +120,10 @@
         
         
       
-           <a-camera  orbit-controls="target: 0 0 0; distance: 0; maxDistance: 180; initialPosition: 0 0 2 maxPolarAngle:180"></a-camera>
+           <a-entity id="camera" camera look-controls wasd-controls
+    position="0.5 1.6 0.5"
+    extended-wasd-controls="flyEnabled: true; inputType: joystick;">
+  </a-entity>
    
 
         <a-entity 
