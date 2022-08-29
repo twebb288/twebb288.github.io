@@ -118,7 +118,7 @@ body
           
             <a-asset-items id="fer" src= "assets/fer.glb" ></a-assets-items>
             	<a-asset-items id="scene" src= "assets/ferkh.glb" ></a-assets-items>
-            	
+            	<a-asset-items id="shoe" src= "assets/ggdb.glb" ></a-assets-items>
            
       </a-assets>
       
@@ -190,7 +190,13 @@ body
 
 
   
-   <a-entity gltf-model="#scene" scale="1 1 1" vidtex position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
+   <a-entity gltf-model="#scene" scale="1 1 1"  position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
+   <a-entity gltf-model="#shoe" scale="2 2 2"  position="-1 1.6 0" rotation="45 45 0" animation-mixer="timeScale:1" shadow="receive:true" foo animation="property: object3D.rotation.y;
+          to: 150; 
+          dir: alternate; 
+          dur: 6000; 
+          loop: true;
+          easing: linear"></a-entity>
    
    
 
