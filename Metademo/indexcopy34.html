@@ -121,7 +121,8 @@ AFRAME.registerComponent("physics-grab", {
          <img id="1" src="assets/image15.jpg">
          <img id="2" src="assets/image16.jpg">
             
-            	<a-asset-items id="scene" src= "assets/kitchen.glb.glb" ></a-assets-items>
+            	<a-asset-items id="scene" src= "assets/grandroom.glb" ></a-assets-items>
+            		<a-asset-items id="mb" src= "assets/smb2.glb" ></a-assets-items>
             		
             			 
       </a-assets>
@@ -136,7 +137,7 @@ AFRAME.registerComponent("physics-grab", {
         
         
       
-           <a-camera  orbit-controls="target: 0 1 0; minDistance: 0; maxDistance: 180; initialPosition: 0 0 2 minPolarAngle:-180"></a-camera>
+           <a-camera ></a-camera>
    
 
         <a-entity 
@@ -192,8 +193,8 @@ AFRAME.registerComponent("physics-grab", {
 
 
    
-   <a-entity gltf-model="#scene" scale="1 1 1" vidtex position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
-   
+   <a-entity gltf-model="#scene" scale="1 1 1" vidtex position="0 0 -7.5" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
+     <a-entity gltf-model="#mb" scale="1 1 1" vidtex position="0 0.3 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
    
 
    
