@@ -119,6 +119,7 @@ body
             <a-asset-items id="scene" src= "assets/fbscene2.glb" ></a-assets-items>
               <a-asset-items id="unitedlogo" src= "assets/Manulogo.glb" ></a-assets-items>
               <a-asset-items id="arsenallogo" src= "assets/arsenallogo.glb" ></a-assets-items>
+                 <a-asset-items id="ronaldo" src= "assets/ronnie.glb" ></a-assets-items>
            
       </a-assets>
       
@@ -189,17 +190,19 @@ body
 
 
   
-   <a-entity gltf-model="#scene" scale="1 1 1"  position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
-   <a-entity gltf-model="#unitedlogo" scale="0.04 0.04 0.04"  position="-3 2.5 0" rotation="90 0 0" animation-mixer="timeScale:1" shadow="receive:true" animation="property: object3D.position.y;
+   <a-entity gltf-model="#scene" scale="0.5 0.5 0.5"  position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
+   <a-entity gltf-model="#unitedlogo" scale="0.02 0.02 0.02"  position="-1.5 2.5 0" rotation="90 0 0" animation-mixer="timeScale:1" shadow="receive:true" animation="property: object3D.position.y;
           to: 2.2; 
           dir: alternate; 
           dur: 3000; 
           loop: true" ></a-entity>
-    <a-entity gltf-model="#arsenallogo"  scale="1 1 1"  position="3 2.5 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" animation="property: object3D.position.y;
+    <a-entity gltf-model="#arsenallogo"  scale="0.5 0.5 0.5"  position="1.5 2.5 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" animation="property: object3D.position.y;
           to: 2.2; 
           dir: alternate; 
           dur: 3000; 
           loop: true"  ></a-entity>
+             <a-entity gltf-model="#ronaldo"  scale="1 1 1"  position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" ></a-entity>
+   
    
 
    
