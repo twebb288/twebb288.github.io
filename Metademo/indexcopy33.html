@@ -61,7 +61,27 @@ body
     }
 }
 </script>
-
+      <script >    
+        AFRAME.registerComponent('treeman', {
+            init: function(){
+                let el = this.el;
+                el.addEventListener("model-loaded", e =>{
+                    let tree3D = el.getObject3D('mesh');
+                    if (!tree3D){return;}                   
+                    tree3D.traverse(function(node){
+                        if (node.isMesh){                           
+                           // if (node.name === 'myModelName'){
+                          // node.material do stuff to your material
+                           //}
+                          //  console.log(node.name,  node.material);
+                             node.material.color=new THREE.Color(110011110);
+                            node.material.map =  new THREE.TextureLoader().load( "assets/Concrete_002_Color.jpg");
+                        }
+                    });
+                });
+            }
+        });       
+    </script>
 <script>
 
   // need to run javascript code after a-scene entities and components are loaded
@@ -118,7 +138,7 @@ body
           
             <a-asset-items id="fer" src= "assets/fer.glb" ></a-assets-items>
             	<a-asset-items id="scene" src= "assets/ferkh.glb" ></a-assets-items>
-            	<a-asset-items id="shoe" src= "assets/ggdb.glb" ></a-assets-items>
+            	<a-asset-items id="shoe" src= "assets/summerinkh.glb" ></a-assets-items>
            
       </a-assets>
       
@@ -135,6 +155,9 @@ body
            <a-camera id="camera" camera look-controls="reverseTouchDrag: true" wasd-controls
     position="0.5 1.6 0.5"
     extended-wasd-controls="flyEnabled: true; inputType: joystick;">
+     <a-entity id="hud" position="0 -0.3 -0.5" scale="0.5 0.5 0.5" opacity="0.8" align="left">
+      <a-image src="#screen" scale="0.6 0.3 0.3"></a-image>
+          </a-entity>
   </a-camera>
    
 
@@ -191,12 +214,7 @@ body
 
   
    <a-entity gltf-model="#scene" scale="1 1 1"  position="0 0 -0.3" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
-   <a-entity gltf-model="#shoe" scale="2 2 2"  position="-1 1.6 0" rotation="45 45 0" animation-mixer="timeScale:1" shadow="receive:true" foo animation="property: object3D.rotation.y;
-          to: 150; 
-          dir: alternate; 
-          dur: 6000; 
-          loop: true;
-          easing: linear"></a-entity>
+   <a-entity gltf-model="#shoe" treeman scale="0.3 0.3 0.3"  position="-2.5 1.6 -0.7" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" ></a-entity>
    
    
 
