@@ -14,7 +14,7 @@
       
      <script src="joystick.js"></script> 
      <script src="extended-wasd-controls.js"></script>
-     
+     <script src="aframe.depthkit.js"></script>
 <style>
 
 body
@@ -120,6 +120,7 @@ body
               <a-asset-items id="unitedlogo" src= "assets/Manulogo.glb" ></a-assets-items>
               <a-asset-items id="arsenallogo" src= "assets/arsenallogo.glb" ></a-assets-items>
                  <a-asset-items id="ronaldo" src= "assets/ronnie.glb" ></a-assets-items>
+                    <a-asset-items id="saka" src= "assets/saka.glb" ></a-assets-items>
            
       </a-assets>
       
@@ -184,24 +185,29 @@ body
       <a-entity light="color: white; type: ambient;"></a-entity>
 
       
-       
+       <a-entity depthkit="type: wire;
+                          metaPath:assets/Chae_Demo_Upres.txt;
+                          videoPath:assets/Chae_Demo_Upres.mp4;
+                          autoplay: true;">
+      </a-entity>
 
  
 
 
   
    <a-entity gltf-model="#scene" scale="0.5 0.5 0.5"  position="0 0 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" foo></a-entity>
-   <a-entity gltf-model="#unitedlogo" scale="0.02 0.02 0.02"  position="-1.5 2.5 0" rotation="90 0 0" animation-mixer="timeScale:1" shadow="receive:true" animation="property: object3D.position.y;
+   <a-entity gltf-model="#unitedlogo" scale="0.01 0.01 0.01"  position="-1.5 2.5 0" rotation="90 0 0" animation-mixer="timeScale:1" shadow="receive:true" animation="property: object3D.position.y;
           to: 2.2; 
           dir: alternate; 
           dur: 3000; 
           loop: true" ></a-entity>
-    <a-entity gltf-model="#arsenallogo"  scale="0.5 0.5 0.5"  position="1.5 2.5 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" animation="property: object3D.position.y;
+    <a-entity gltf-model="#arsenallogo"  scale="0.3 0.3 0.3"  position="1.5 2.5 0" rotation="0 0 0" animation-mixer="timeScale:1" shadow="receive:true" animation="property: object3D.position.y;
           to: 2.2; 
           dir: alternate; 
           dur: 3000; 
           loop: true"  ></a-entity>
              <a-entity gltf-model="#ronaldo"  scale="1 1 1"  position="-1.5 0 0.5" rotation="0 45 0" animation-mixer="timeScale:1" shadow="receive:true" ></a-entity>
+             <a-entity gltf-model="#saka"  scale="0.9 0.9 0.9"  position="1.5 0 0.5" rotation="0 -20 0" animation-mixer="timeScale:1" shadow="receive:true" ></a-entity>
    
    
 
