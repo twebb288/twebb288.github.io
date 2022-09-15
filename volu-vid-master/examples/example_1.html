@@ -126,22 +126,18 @@
   </head>
   <body>
     <a-scene>
-
-	  <a-entity position="0 3 0" geometry="primitive: plane; width: auto; height: auto" material="color: #000"
-                  text="color: white; align: center; value: [* Use WASD to navigate *] ; width: 4; ">
-	  </a-entity>
+      <a-assets>
+        <a-asset-items id="scene" src= "assets/Scaniverse 2022-07-14 104556.glb"></a-assets-items>
+      </a-assets>
 
       <a-entity camera look-controls wasd-controls="fly:true;" position="0 2 4"> </a-entity>
 
-      <a-sky src="assets/sky.jpg"></a-sky>
+  
 
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-box position="-1 0.5 .3" rotation="0 45 0" width="1.5" height="1.5" depth="1.5" color="#4CC3D9"></a-box>
-      <a-cylinder position=".25 0.75 3.7"  radius="0.125" height="4.5" color="#FFC65D"></a-cylinder>
-      <a-cylinder position="0 0 0" radius="12" height=".1" rotation="0 0 0"  color="#7BC8A4"></a-cylinder>
+      
 
       <a-entity rgbd-video="
-            name:video;
+            name:2022-07-13--19-33-03;
             depthFocalLengthX: 365.2185974121094;
             depthFocalLengthY: 365.2185974121094;
             depthImageSizeX: 512;
@@ -150,7 +146,11 @@
             depthPrincipalPointY: 209.3957977294922;
             farClip: 1200;
             nearClip: 0;
-            " position="0 .3 0" scale="1 1 1" rotation="0 0 -90"> </a-entity>
+            " position="0 -4 -1" scale="4 4 4" rotation="0 0 -90"> </a-entity>
+
+             <a-gltf-model src="#scene" scale="1 1 1"  position="0 0 -2" rotation="0 0 0"></a-gltf-model>
+
+
 	</a-scene>
 
 
