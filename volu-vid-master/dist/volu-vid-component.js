@@ -18,6 +18,7 @@
 		var video          = document.createElement( 'video' );
 		 video.loop = true;
 		 video.id = properties.name;
+		 video.autoplay = true;
 
 		var depthWidth   = properties.depthImageSizeX;
 		var depthHeight  = properties.depthImageSizeY;
@@ -125,8 +126,8 @@
 			pointsMaterial.uniforms.opacity.value = 1;
 
 			video.src = 'rgbd_files/' + properties.name + '.webm';
-
 			video.play();
+
 
 			interval = setInterval( function () {
 
@@ -196,7 +197,7 @@
         var video = new RGBDVideo(this.data);
         this.el.setObject3D('mesh', video);
 	      video.play();
-	      video.autoplay = true;
+	      
       },
 
     });
