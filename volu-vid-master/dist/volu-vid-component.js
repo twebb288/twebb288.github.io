@@ -197,7 +197,7 @@
         var video = new RGBDVideo(this.data);
         this.el.setObject3D('mesh', video);
 	      video.play();
-	      
+	      video.addEventListener("click", update);
       },
 
     });
