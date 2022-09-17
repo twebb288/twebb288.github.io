@@ -141,9 +141,11 @@
 
   </head>
   <body>
-    <a-scene>
+    <a-scene
+    cursor="rayOrigin: mouse; fuse: false">
       <a-assets>
         <a-asset-items id="scene" src= "assets/Scaniverse 2022-07-14 104556.glb"></a-assets-items>
+          <video id="video" src="assets/2022-07-13--19-33-03.webm" crossorigin="anonymous" autoplay loop play-on-click></video>
       </a-assets>
 
       <a-entity camera look-controls wasd-controls="fly:true;" position="0 2 4"> </a-entity>
