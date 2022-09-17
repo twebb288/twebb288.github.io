@@ -193,7 +193,7 @@
       },
 
       update: function() {
-        var el = document.querySelector('#my-volumetric-video');
+        //var el = document.querySelector('#my-volumetric-video');
         var video = new RGBDVideo(this.data);
         this.el.setObject3D('mesh', video);
 	      video.play();

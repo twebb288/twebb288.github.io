@@ -162,7 +162,7 @@ AFRAME.registerComponent('start', {
     // activate for desktop/touchscreen
     buttonEnter.addEventListener('touchstart', fadeIn,);
     buttonEnter.addEventListener('mousedown',  fadeIn,);
-    buttonEnter.addEventListener('mousedown',  RGBDVideo,);
+    buttonEnter.addEventListener('mousedown',  RGBDVideo,); 
   
   }
 });
@@ -224,7 +224,7 @@ AFRAME.registerComponent('start', {
       <a-entity camera look-controls wasd-controls="fly:true;" position="0 2 4"> </a-entity>
 
   
-<a-box onclick="rgbd-video()"></a-box>
+<a-box onclick="RGBDVideo()"></a-box>
       
 
       <a-entity id="rgbd-video" rgbd-video="
