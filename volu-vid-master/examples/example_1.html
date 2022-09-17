@@ -6,23 +6,7 @@
     <meta name="description" content="Volu Vid Aframe Component Demo">
     
     <!-- MUST include these two shaders. Seems easiest to leave them in the HTML for now -->
-    <script >AFRAME.registerComponent('play-on-click', {
-  init: function () {
-    this.onClick = this.onClick.bind(this);
-  },
-  play: function () {
-    window.addEventListener('click', this.onClick);
-  },
-  pause: function () {
-    window.removeEventListener('click', this.onClick);
-  },
-  onClick: function (evt) {
-    var videoEl = this.el.getAttribute('material').src;
-    if (!videoEl) { return; }
-    this.el.object3D.visible = true;
-    videoEl.play();
-  }
-});</script>
+
     <script id="vs" type="x-shader/x-vertex">
       vec3 rgb2hsl( vec3 color ) {
         float h = 0.0;
@@ -164,9 +148,10 @@
             depthPrincipalPointY: 240.3957977294922;
             farClip: 1200;
             nearClip: 0;
-            " position="0 -4 -1" scale="4 4 4" rotation="0 0 -90" play-on-click> </a-entity>
+            " position="0 -4 -1" scale="4 4 4" rotation="0 0 -90"> </a-entity>
 
              <a-gltf-model src="#scene" scale="1 1 1"  position="0 0 -2" rotation="0 0 0"></a-gltf-model>
+
 
 
 	</a-scene>

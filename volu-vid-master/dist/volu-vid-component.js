@@ -170,7 +170,6 @@
 
 } )();
 
-
 /**
  * Simple Component Registry
  */ 
@@ -197,6 +196,8 @@
         var video = new RGBDVideo(this.data);
         this.el.setObject3D('mesh', video);
 	      video.play();
+	      video.autoplay = true;
       },
 
     });
+
