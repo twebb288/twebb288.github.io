@@ -6,7 +6,23 @@
     <meta name="description" content="Volu Vid Aframe Component Demo">
     
     <!-- MUST include these two shaders. Seems easiest to leave them in the HTML for now -->
-    
+    <script >AFRAME.registerComponent('play-on-click', {
+  init: function () {
+    this.onClick = this.onClick.bind(this);
+  },
+  play: function () {
+    window.addEventListener('click', this.onClick);
+  },
+  pause: function () {
+    window.removeEventListener('click', this.onClick);
+  },
+  onClick: function (evt) {
+    var videoEl = this.el.getAttribute('material').src;
+    if (!videoEl) { return; }
+    this.el.object3D.visible = true;
+    videoEl.play();
+  }
+});</script>
     <script id="vs" type="x-shader/x-vertex">
       vec3 rgb2hsl( vec3 color ) {
         float h = 0.0;
@@ -138,12 +154,12 @@
 
       <a-entity rgbd-video="
             name:2022-07-13--19-33-03;
-            depthFocalLengthX: 365.2185974121094;
-            depthFocalLengthY: 365.2185974121094;
-            depthImageSizeX: 512;
-            depthImageSizeY: 424;
-            depthPrincipalPointX: 257.6430969238281;
-            depthPrincipalPointY: 209.3957977294922;
+            depthFocalLengthX: 436.25082397460938;
+            depthFocalLengthY: 436.25082397460938;
+            depthImageSizeX: 640;
+            depthImageSizeY: 480;
+            depthPrincipalPointX: 320.6430969238281;
+            depthPrincipalPointY: 240.3957977294922;
             farClip: 1200;
             nearClip: 0;
             " position="0 -4 -1" scale="4 4 4" rotation="0 0 -90"> </a-entity>
