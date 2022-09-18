@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Volu Vid Aframe Component Demo</title>
     <meta name="description" content="Volu Vid Aframe Component Demo">
-    
-  
+    <button onclick="playVid()" type="button">Play Video</button>
+<button onclick="pauseVid()" type="button">Pause Video</button><br> 
     <!-- MUST include these two shaders. Seems easiest to leave them in the HTML for now -->
 
     <script id="vs" type="x-shader/x-vertex">
@@ -124,8 +124,25 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="../dist/volu-vid-component.js"></script>
 
+<script> 
+var video = document.getElementById("a-entity"); 
 
+function playVid() { 
+  video.play(); 
+} 
 
+function pauseVid() { 
+  video.pause(); 
+} 
+</script> 
+<style type="text/css">
+  button {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+}
+</style>
   </head>
 
   <body>
@@ -142,10 +159,10 @@
       <a-entity camera look-controls wasd-controls="fly:true;" position="0 2 4"> </a-entity>
 
   
-<a-box onclick="play()"></a-box>
+
       
 
-      <a-entity rgbd-video="
+      <a-entity id="video" rgbd-video="
             name:2022-07-13--19-33-03;
             depthFocalLengthX: 436.25082397460938;
             depthFocalLengthY: 436.25082397460938;
@@ -163,9 +180,6 @@
 
 	</a-scene>
 
-<script type="text/javascript">
-  function update(){}
-</script>
 
 
 
