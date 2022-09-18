@@ -124,17 +124,19 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="../dist/volu-vid-component.js"></script>
 
-<script> 
-var video = document.getElementById("2022-07-13--19-33-03"); 
-
-function playVid() { 
-  video.play(); 
-} 
-
-function pauseVid() { 
-  video.pause(); 
-} 
-</script> 
+    <script >
+      // Component to play video when clicked
+      AFRAME.registerComponent("click-play", {
+        init: function(){
+         
+          let self = this
+          this.el.addEventListener("click", ()=> {
+            action = !self.el.getAttribute("rgbd-video").play;
+            self.el.setAttribute("rgbd-video", "play",action ); 
+          })
+        }
+      });
+    </script>
 <style type="text/css">
   button {
   position: absolute;
@@ -162,7 +164,7 @@ function pauseVid() {
 
       
 
-      <a-entity id="video" rgbd-video="
+      <a-entity  click-play ="" class = "playable" id="video" rgbd-video="
             name:2022-07-13--19-33-03;
             depthFocalLengthX: 436.25082397460938;
             depthFocalLengthY: 436.25082397460938;
