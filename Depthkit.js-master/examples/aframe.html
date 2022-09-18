@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Video Component</title>
+    <meta name="description" content="A-Frame Video Component">
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    <!--Depthkit.js-->
+    <script src="../build/depthkit.js"></script>
+    
+    <script >
+      // Component to play video when clicked
+      AFRAME.registerComponent("click-play", {
+        init: function(){
+         
+          let self = this
+          this.el.addEventListener("click", ()=> {
+            action = !self.el.getAttribute("depthkit").play;
+            self.el.setAttribute("depthkit", "play",action ); 
+          })
+        }
+      });
+    </script>
+
+  </head>
+  <body>
+    <a-scene background="color: #FAFAFA" >
+      <a-sky src = "../assets/sky.jpg"></a-sky>
+      <a-entity geometry="primitive: circle; radius: 2" rotation="-90 0 0" material="color: #093d44; emissive: #000000; emissiveIntensity: 0"></a-entity>
+      <a-entity >
+            <a-entity click-play ="" class = "playable" depthkit="videoPath: ../assets/John/John.mp4; metaPath: ../assets/John/John.txt; meshScalar: 3;autoplay:true" rotation="14.43452573273083 0 90.00021045914971" position = "0 0.92 0"></a-entity>    
+      </a-entity>
+      <a-entity camera orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"></a-entity>
+      <a-entity raycaster="objects: .playable; direction: 0.5246319754776164 -0.013081918732702627 0.8512286142445662; origin: -31.62430459328952 14.345122966919757 -20.638149941293474; useWorldCoordinates: true" cursor="rayOrigin: mouse"> </a-entity>
+  
+  </body>
+ 
+</html>
