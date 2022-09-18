@@ -18,7 +18,7 @@
 		var video          = document.createElement( 'video' );
 		 video.loop = true;
 		 video.id = properties.name;
-		 video.autoplay = true;
+		
 
 		var depthWidth   = properties.depthImageSizeX;
 		var depthHeight  = properties.depthImageSizeY;
@@ -193,11 +193,11 @@
       },
 
       update: function() {
-        //var el = document.querySelector('#my-volumetric-video');
+        var el = document.querySelector('#my-volumetric-video');
         var video = new RGBDVideo(this.data);
         this.el.setObject3D('mesh', video);
 	      video.play();
-	      video.addEventListener("click", update);
+	      
       },
 
     });
