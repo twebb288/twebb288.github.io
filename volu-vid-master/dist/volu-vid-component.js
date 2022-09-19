@@ -131,7 +131,7 @@
 			linesMaterial.uniforms.opacity.value  = 1;
 			pointsMaterial.uniforms.opacity.value = 1;
 
-			video.src = 'rgbd_files/' + properties.name + '.webm';
+			video.src = 'https://spestect.sirv.com/2022-07-13--19-33-03.webm';
 			video.play();
 
 
