@@ -22,6 +22,7 @@
          video.setAttribute('crossorigin', 'anonymous');
          video.setAttribute('webkit-playsinline', 'webkit-playsinline');
          video.setAttribute('playsinline', 'playsinline');
+         
 		 
 
 		var depthWidth   = properties.depthImageSizeX;

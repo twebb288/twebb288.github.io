@@ -131,8 +131,9 @@
          
           let self = this
           this.el.addEventListener("click", ()=> {
-            action = !self.el.getAttribute("rgbd-video").play;
-            self.el.setAttribute("rgbd-video", "play",action ); 
+            var video = new RGBDVideo(this.data);
+        this.el.setObject3D('mesh', video);
+        video.play();
           })
         }
       });
