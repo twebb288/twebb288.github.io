@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Volu Vid Aframe Component Demo</title>
     <meta name="description" content="Volu Vid Aframe Component Demo">
-    <button onclick="playVid()" type="button">Play Video</button>
+    <button onclick="playVid()" type="button" style="margin-left: 90px">Play Video</button>
 <button onclick="pauseVid()" type="button">Pause Video</button><br> 
     <!-- MUST include these two shaders. Seems easiest to leave them in the HTML for now -->
 
@@ -123,7 +123,10 @@
 
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="../dist/volu-vid-component.js"></script>
-
+<script type="text/javascript">
+  document.addEventListener('keydown', function (evt) { video.play() });
+  document.addEventListener('click', function (evt) { video.play() });
+</script>
     <script >
       // Component to play video when clicked
       AFRAME.registerComponent("click-play", {
@@ -133,7 +136,7 @@
           this.el.addEventListener("click", ()=> {
             var video = new RGBDVideo(this.data);
         this.el.setObject3D('mesh', video);
-        video.play();
+        video.pause();
           })
         }
       });
@@ -141,7 +144,7 @@
 <style type="text/css">
   button {
   position: absolute;
-  left: 0px;
+  
   top: 0px;
   z-index: 1000;
 }
