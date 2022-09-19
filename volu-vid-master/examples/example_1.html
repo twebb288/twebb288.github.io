@@ -130,13 +130,13 @@
     <script >
       // Component to play video when clicked
       AFRAME.registerComponent("click-play", {
-        init: function(){
+        playVid: function(){
          
           let self = this
           this.el.addEventListener("click", ()=> {
             var video = new RGBDVideo(this.data);
         this.el.setObject3D('mesh', video);
-        video.pause();
+        video.play();
           })
         }
       });
