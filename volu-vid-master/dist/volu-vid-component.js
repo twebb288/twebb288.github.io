@@ -22,7 +22,8 @@
          video.setAttribute('crossorigin', 'anonymous');
          video.setAttribute('webkit-playsinline', 'webkit-playsinline');
          video.setAttribute('playsinline', 'playsinline');
-         
+         video.muted = true;
+
          
 		 
 
