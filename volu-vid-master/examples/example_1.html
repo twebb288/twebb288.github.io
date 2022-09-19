@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <title>Volu Vid Aframe Component Demo</title>
     <meta name="description" content="Volu Vid Aframe Component Demo">
-    <button onclick="playVid()" type="button" style="margin-left: 90px">Play Video</button>
-<button onclick="pauseVid()" type="button">Pause Video</button><br> 
     <!-- MUST include these two shaders. Seems easiest to leave them in the HTML for now -->
 
     <script id="vs" type="x-shader/x-vertex">
@@ -124,23 +122,19 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="../dist/volu-vid-component.js"></script>
 <script type="text/javascript">
-  document.addEventListener('keydown', function (evt) { video.play() });
-  document.addEventListener('click', function (evt) { video.play() });
+  function playVid() {
+    document.querySelector("a-entity").setAttribute('rgbd-video', {
+      video.play()
+    });
+  }
+
+    function pauseVid() {
+    document.querySelector("a-entity").setAttribute('rgbd-video', {
+      farClip:10;
+    });
+  }
 </script>
-    <script >
-      // Component to play video when clicked
-      AFRAME.registerComponent("click-play", {
-        playVid: function(){
-         
-          let self = this
-          this.el.addEventListener("click", ()=> {
-            var video = new RGBDVideo(this.data);
-        this.el.setObject3D('mesh', video);
-        video.play();
-          })
-        }
-      });
-    </script>
+
 <style type="text/css">
   button {
   position: absolute;
@@ -149,6 +143,8 @@
   z-index: 1000;
 }
 </style>
+    <button onclick="playVid()" type="button" style="margin-left: 90px">Play Video</button>
+<button onclick="pauseVid()" type="button">Pause Video</button><br> 
   </head>
 
   <body>
@@ -164,7 +160,6 @@
 
       <a-entity camera look-controls wasd-controls="fly:true;" position="0 2 4"> </a-entity>
 
-  
 
       
 
@@ -178,7 +173,7 @@
             depthPrincipalPointY: 240.3957977294922;
             farClip: 1200;
             nearClip: 0;
-            " position="0 -4 -1" scale="4 4 4" rotation="0 0 -90"> </a-entity>
+            " position="0 -4 -1" scale="4 4 4" rotation="0 0 -90"> <a-box scale="0.2 0.2 0.2" position="-1 0 0"></a-box></a-entity>
 
              <a-gltf-model src="#scene" scale="1 1 1"  position="0 0 -2" rotation="0 0 0"></a-gltf-model>
 
