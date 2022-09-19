@@ -121,7 +121,31 @@
 
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="../dist/volu-vid-component.js"></script>
+<script>
+  
+AFRAME.registerComponent('play-on-click', {
+  init: function () {
+    this.onClick = this.onClick.bind(this);
+  },
+  play: function () {
+    window.addEventListener('click', this.onClick);
+  },
+  pause: function () {
+    window.removeEventListener('click', this.onClick);
+  },
+  onClick: function (evt) {
+    var videoEl = this.el.getAttribute('material').src;
+    if (!videoEl) { return; }
+    this.el.object3D.visible = true;
+    videoEl.play();
+  }
+});
 
+ window.addEventListener('click', function () { 
+   document.querySelector('#video').play();
+ });
+
+</script>
 
 
   </head>
@@ -143,7 +167,7 @@
 
       
 
-      <a-video id="video" rgbd-video="
+      <a-video play-on-click id="video" rgbd-video="
             name:2022-07-13--19-33-03;
             depthFocalLengthX: 436.25082397460938;
             depthFocalLengthY: 436.25082397460938;
