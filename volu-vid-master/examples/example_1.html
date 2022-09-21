@@ -121,6 +121,8 @@
 
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="../dist/volu-vid-component.js"></script>
+         <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
+
 <script>
   
 AFRAME.registerComponent('play-on-click', {
@@ -155,7 +157,9 @@ AFRAME.registerComponent('play-on-click', {
     
     <a-scene
      cursor="rayOrigin: mouse; fuse: false"
-     renderer="colorManagement: true">
+     renderer="colorManagement: true"
+     antialias="true"
+     device-orientation-permission-ui="enabled: false">
      
       <a-assets>
         <a-asset-items id="scene" src= "assets/Scaniverse 2022-07-14 104556.glb"></a-assets-items>
@@ -177,7 +181,11 @@ AFRAME.registerComponent('play-on-click', {
             depthPrincipalPointY: 240.3957977294922;
             farClip: 1200;
             nearClip: 0;
-            " position="0 -4 -1" scale="4 4 4" rotation="0 0 -90" autoplay></a-video>
+            " position="0 0 -1" scale="1 1 1" rotation="0 0 -90" autoplay animation="property: object3D.position.y;
+          to: 0.1; 
+          dir: alternate; 
+          dur: 3000; 
+          loop: true"></a-video>
 
              <a-gltf-model src="#scene" scale="1 1 1"  position="0 0 -2" rotation="0 0 0"></a-gltf-model>
 

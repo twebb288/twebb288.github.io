@@ -9,7 +9,7 @@
 
 ( function () {
 
-	var precision      = 1;
+	var precision      = 0.8;
 	var linesGeometry  = new THREE.Geometry();
 	var pointsGeometry = new THREE.Geometry();
 
