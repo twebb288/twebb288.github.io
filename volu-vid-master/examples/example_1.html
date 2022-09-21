@@ -169,7 +169,7 @@ AFRAME.registerComponent('play-on-click', {
        
       </a-assets>
 
-      <a-entity camera look-controls wasd-controls="fly:true;" position="0 1.6 0"> </a-entity>
+      <a-entity camera orbit-controls="initialPosition: 0 0 0; maxPolarAngle:180;  maxDistance: 2; target: 0 1.6 -1.5; " > </a-entity>
 
 
       
@@ -192,7 +192,7 @@ AFRAME.registerComponent('play-on-click', {
 </a-entity>
 
              <a-gltf-model src="#scene" scale="1 1 1"  position="0 0 -2" rotation="0 0 0"></a-gltf-model>
-             <a-gltf-model src="#holo" animation-mixer scale="0.04 0.07 0.04"  position="0 0 -1.44" rotation="0 0 0"></a-gltf-model>
+             <a-gltf-model  id="holo" src="#holo" animation-mixer scale="0.04 0.07 0.04"  position="0 0 -1.44" rotation="0 0 0"></a-gltf-model>
 
 
 
