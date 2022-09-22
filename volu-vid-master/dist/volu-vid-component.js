@@ -24,7 +24,7 @@
          video.setAttribute('crossorigin', 'anonymous');
          video.setAttribute('webkit-playsinline', 'webkit-playsinline');
          video.setAttribute('playsinline', 'playsinline');
-         video.muted = true;
+         video.muted = false;
     
 		 
 
@@ -206,7 +206,7 @@
         this.el.setObject3D('mesh', video);
 	      video.play();
 
-const startButton = document.getElementById( 'startButton' );
+			const startButton = document.getElementById( 'startButton' );
 			startButton.addEventListener( 'click', function () {
 					video.play();
 
