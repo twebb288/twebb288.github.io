@@ -133,7 +133,7 @@
 			linesMaterial.uniforms.opacity.value  = 1;
 			pointsMaterial.uniforms.opacity.value = 1;
 
-			video.src = 'rgbd_files/' + properties.name + '.webm';
+			video.src = 'rgbd_files/' + properties.name + '.mp4';
 			video.play();
 
 
