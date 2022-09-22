@@ -13,6 +13,7 @@
 	var linesGeometry  = new THREE.Geometry();
 	var pointsGeometry = new THREE.Geometry();
 
+
 	RGBDVideo = function ( properties ) {
 
 		var video          = document.getElementById( 'video' );
@@ -23,7 +24,6 @@
          video.setAttribute('webkit-playsinline', 'webkit-playsinline');
          video.setAttribute('playsinline', 'playsinline');
          video.muted = true;
-
          
 		 
 
@@ -204,14 +204,9 @@
         var video = new RGBDVideo(this.data);
         this.el.setObject3D('mesh', video);
 	      video.play();
-		function playVid() { 
-  video.play(); 
-}
-  function pauseVid() { 
-  video.pause(); 
-} 
-      },
 
+
+      },
 
     });
 
