@@ -14,6 +14,7 @@
 	var pointsGeometry = new THREE.Geometry();
 
 
+
 	RGBDVideo = function ( properties ) {
 
 		var video          = document.getElementById( 'video' );
@@ -24,7 +25,7 @@
          video.setAttribute('webkit-playsinline', 'webkit-playsinline');
          video.setAttribute('playsinline', 'playsinline');
          video.muted = true;
-         
+    
 		 
 
 		var depthWidth   = properties.depthImageSizeX;
@@ -205,7 +206,11 @@
         this.el.setObject3D('mesh', video);
 	      video.play();
 
+const startButton = document.getElementById( 'startButton' );
+			startButton.addEventListener( 'click', function () {
+					video.play();
 
+			} );
       },
 
     });
