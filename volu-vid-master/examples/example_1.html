@@ -5,6 +5,7 @@
     <title>Volu Vid Aframe Component Demo</title>
     <meta name="description" content="Volu Vid Aframe Component Demo">
     <!-- MUST include these two shaders. Seems easiest to leave them in the HTML for now -->
+<video id="video" playsinline webkit-playsinline muted   src="rgbd_files/2022-09-20--18-41-281.webm" style="display: none;"></video>
 
     <script id="vs" type="x-shader/x-vertex">
       vec3 rgb2hsl( vec3 color ) {
@@ -123,31 +124,8 @@
     <script src="../dist/volu-vid-component.js"></script>
          <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
 
-<script>
+
   
-AFRAME.registerComponent('play-on-click', {
-  init: function () {
-    this.onClick = this.onClick.bind(this);
-  },
-  play: function () {
-    window.addEventListener('click', this.onClick);
-  },
-  pause: function () {
-    window.removeEventListener('click', this.onClick);
-  },
-  onClick: function (evt) {
-    var videoEl = this.el.getAttribute('material').src;
-    if (!videoEl) { return; }
-    this.el.object3D.visible = true;
-    videoEl.play();
-  }
-});
-
- window.addEventListener('click', function () { 
-   document.querySelector('#video').play();
- });
-
-</script>
 
 <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
@@ -155,7 +133,57 @@ AFRAME.registerComponent('play-on-click', {
   </head>
 
   <body>
+<script>
+  function pause1() {
+ document.getElementById('video').pause();
+    };
 
+  function play1() {
+  
+    document.getElementById('video').play();
+    };
+
+  
+</script>
+<div class="btn-group" >
+
+<button class="play" onclick="playVid()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer;  ">
+</button>
+<button class="pause" onclick="pauseVid()" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ">
+</button>
+</div>
+
+<style>
+  button:active{opacity:50%}
+
+
+ .play {
+    background: url(assets/play.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .pause {
+    background: url(assets/pause.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+
+.btn-group {
+  z-index: 1000;
+  margin-bottom:20px;
+  text-align: center;
+  position:absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+}
+</style>
     
     <a-scene
      cursor="rayOrigin: mouse; fuse: false"

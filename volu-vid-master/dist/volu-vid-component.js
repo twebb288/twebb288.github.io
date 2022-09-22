@@ -15,7 +15,7 @@
 
 	RGBDVideo = function ( properties ) {
 
-		var video          = document.createElement( 'video' );
+		var video          = document.getElementById( 'video' );
 		 video.loop = true;
 		 video.id = properties.name;
          video.crossOrigin = 'anonymous';
@@ -204,8 +204,14 @@
         var video = new RGBDVideo(this.data);
         this.el.setObject3D('mesh', video);
 	      video.play();
-
+		function playVid() { 
+  video.play(); 
+}
+  function pauseVid() { 
+  video.pause(); 
+} 
       },
+
 
     });
 
