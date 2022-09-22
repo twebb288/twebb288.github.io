@@ -211,7 +211,15 @@ const startButton = document.getElementById( 'startButton' );
 					video.play();
 
 			} );
+
+			const stopButton = document.getElementById( 'stopButton' );
+			stopButton.addEventListener( 'click', function () {
+					video.pause();
+
+			} );
       },
+
+
 
     });
 
