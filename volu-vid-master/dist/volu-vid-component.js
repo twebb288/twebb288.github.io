@@ -17,7 +17,7 @@
 
 	RGBDVideo = function ( properties ) {
 
-		var video          = document.getElementById( 'video' );
+		var video          = document.createElement( 'video' );
 		 video.loop = true;
 		 video.id = properties.name;
          video.crossOrigin = 'anonymous';
@@ -209,6 +209,7 @@
 			const startButton = document.getElementById( 'startButton' );
 			startButton.addEventListener( 'click', function () {
 					video.play();
+
 
 			} );
 

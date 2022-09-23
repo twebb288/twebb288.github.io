@@ -191,12 +191,13 @@
      device-orientation-permission-ui="enabled: false">
      
       <a-assets>
-        <a-asset-items id="scene" src= "assets/Scaniverse 2022-07-14 104556.glb"></a-assets-items>
+        <a-asset-items id="scene" src= "assets/modern_vr_art_gallery_pyramid.glb"></a-assets-items>
         	<a-asset-items id="holo" src= "assets/fbscene2.glb"></a-assets-items>
-       <video id="video" playsinline webkit-playsinline muted   src="rgbd_files/2022-09-20--18-41-281.mp4" style="display: none;"></video>
+          
+       
       </a-assets>
 
-      <a-entity camera orbit-controls="initialPosition: 0 0 0; maxPolarAngle:180;  maxDistance: 1; target: 0 1.6 -1.5; " > </a-entity>
+      <a-entity camera orbit-controls="initialPosition: 0 1.6 0; maxPolarAngle:180; minDistance:0; maxDistance: 1; target: 0 1.6 -1.6; " > </a-entity>
 
 
       
@@ -218,8 +219,9 @@
           loop: true"></a-video>
 </a-entity>
 
-             <a-gltf-model src="#scene" scale="1 1 1"  position="0 0 -2" rotation="0 0 0"></a-gltf-model>
+             <a-gltf-model src="#scene" scale="1 1 1"  position="0 0 -2" rotation="0 0 0" animation-mixer></a-gltf-model>
              <a-gltf-model  id="holo" src="#holo" animation-mixer scale="0.04 0.07 0.04"  position="0 0 -1.44" rotation="0 0 0"></a-gltf-model>
+            
 
 
 
