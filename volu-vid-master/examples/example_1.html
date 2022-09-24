@@ -193,11 +193,12 @@
       <a-assets>
         <a-asset-items id="scene" src= "assets/modern_vr_art_gallery_pyramid.glb"></a-assets-items>
         	<a-asset-items id="holo" src= "assets/fbscene2.glb"></a-assets-items>
+            <a-asset-items id="bird" src= "assets/morphball.glb"></a-assets-items>
           
        
       </a-assets>
 
-      <a-entity camera orbit-controls="initialPosition: 0 1.6 0; maxPolarAngle:180; minDistance:0; maxDistance: 1; target: 0 1.6 -1.6; " > </a-entity>
+      <a-entity camera orbit-controls="initialPosition: 0 1.6 0; maxPolarAngle:180; minDistance:0; maxDistance: 10; target: 0 1.6 -1.6; " > </a-entity>
 
 
       
@@ -220,7 +221,8 @@
 </a-entity>
 
              <a-gltf-model src="#scene" scale="1 1 1"  position="0 0 -2" rotation="0 0 0" animation-mixer></a-gltf-model>
-             <a-gltf-model  id="holo" src="#holo" animation-mixer scale="0.04 0.07 0.04"  position="0 0 -1.44" rotation="0 0 0"></a-gltf-model>
+             <a-gltf-model  id="holo" src="#holo" animation-mixer scale="0.04 0.0 0.04"  position="0 0 -1.44" rotation="0 0 0"></a-gltf-model>
+             <a-gltf-model  id="bird" src="#bird" animation-mixer scale="0.3 0.3 0.3"  position="0 2.3 -1.6" rotation="0 0 0"></a-gltf-model>
             
 
 
