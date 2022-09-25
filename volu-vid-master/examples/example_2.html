@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Volu Vid Aframe Component Demo</title>
+    <meta name="description" content="Volu Vid Aframe Component Demo">
+    <!-- MUST include these two shaders. Seems easiest to leave them in the HTML for now -->
+
+    <script id="vs" type="x-shader/x-vertex">
+      vec3 rgb2hsl( vec3 color ) {
+        float h = 0.0;
+        float s = 0.0;
+        float l = 0.0;
+        float r = color.r;
+        float g = color.g;
+        float b = color.b;
+        float cMin = min( r, min( g, b ) );
+        float cMax = max( r, max( g, b ) );
+        l =  ( cMax + cMin ) / 2.0;
+        if ( cMax > cMin ) {
+          float cDelta = cMax - cMin;
+          // saturation
+          if ( l < 0.5 ) {
+            s = cDelta / ( cMax + cMin );
+          } else {
+            s = cDelta / ( 2.0 - ( cMax + cMin ) );
+          }
+
+          // hue
+          if ( r == cMax ) {
+            h = ( g - b ) / cDelta;
+          } else if ( g == cMax ) {
+            h = 2.0 + ( b - r ) / cDelta;
+          } else {
+            h = 4.0 + ( r - g ) / cDelta;
+          }
+
+          if ( h < 0.0) {
+            h += 6.0;
+          }
+          h = h / 6.0;
+
+        }
+        return vec3( h, s, l );
+      }
+
+      // camera intrinsics from metadata file
+      uniform float mindepth;
+      uniform float maxdepth;
+      uniform float imageWidth;
+      uniform float imageHeight;
+      uniform float focalX;
+      uniform float focalY;
+      uniform float principleX;
+      uniform float principleY;
+
+      uniform sampler2D map;
+      varying float visibility;
+      varying vec2 vUv;
+
+
+
+      // projection formula
+      vec3 xyz( float x , float y, float depth ) {
+        float z = depth * ( maxdepth - mindepth ) + mindepth;
+        return vec3(
+
+       // The shader as it is written operates on a scale that seems about
+       // 100x larger than units in AFRAME
+       // Scale hack,
+              0.01 * ((x - principleX)  * z / focalX) ,
+              0.01 * ((y - principleY) * z / focalY),
+              0.01 * (-z) );
+      }
+
+      void main() {
+
+        vUv = vec2 (position.x/imageWidth, position.y/imageHeight);
+        vUv.y = vUv.y * 0.5;// + 0.5;
+
+        vec3 hsl = rgb2hsl( texture2D( map, vUv ).xyz );
+        vec4 pos = vec4( xyz( position.x, position.y, hsl.x ), 5.0 );
+
+        // Positioning the cloud
+        // pos.x -= 07.0; Puts the base of the video in the right spot for rotated DepthKit video
+        pos.z += 000.0;
+        pos.y += 00.0;
+        pos.x -= 07.0;
+
+        visibility = hsl.z * 2.0;
+
+        gl_PointSize = 2.0;
+
+
+        gl_Position = projectionMatrix * modelViewMatrix * pos;
+
+      }
+
+    </script>
+
+    <script id="fs" type="x-shader/x-fragment">
+
+      uniform sampler2D map;
+      uniform float opacity;
+
+      varying float visibility;
+      varying vec2 vUv;
+
+      void main() {
+
+        if ( visibility < 0.75 ) discard;
+
+        vec4 color = texture2D( map, vUv + vec2(0.0, 0.5) );
+        color.w = opacity;
+
+        gl_FragColor = color;
+
+      }
+
+    </script>
+
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="../dist/volu-vid-component.js"></script>
+         <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
+
+   <script src="../dist/aframe-particle-system-component.min.js"></script>
+  
+
+<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+  </head>
+
+  <body>
+<script>
+  function pauseVid() {
+ document.getElementById('if').pause();
+    };
+
+  function playVid() {
+  
+    document.getElementById('if').play();
+    };
+
+  
+</script>
+<div class="btn-group" >
+
+<button id="startButton" onclick="playVid()" class="play" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer;  ">
+</button>
+<button id="stopButton" onclick="pauseVid()" class="pause" style="z-index: 1; position: relative; border: none; margin-top: 0px; cursor: pointer; ">
+</button>
+</div>
+
+<style>
+  button:active{opacity:50%}
+
+
+ .play {
+    background: url(assets/play.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+ .pause {
+    background: url(assets/pause.svg);
+    background-size: contain;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+
+.btn-group {
+  z-index: 1000;
+  margin-bottom:20px;
+  text-align: center;
+  position:absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+}
+</style>
+    
+    <a-scene
+     cursor="rayOrigin: mouse; fuse: false"
+     renderer="colorManagement: true"
+     antialias="true"
+     device-orientation-permission-ui="enabled: false"
+     background="color: black">
+     
+      <a-assets>
+        
+        	<a-asset-items id="holo" src= "assets/fbscene2.glb"></a-assets-items>
+            <video id="if" src="assets/if.mp4" crossorigin="anonymous" autoplay loop></video>
+         
+       
+      </a-assets>
+
+      <a-entity camera orbit-controls="initialPosition: 0 1.6 0; maxPolarAngle:180; minDistance:0; maxDistance: 10; target: 0 1.6 -1.6; " > </a-entity>
+
+ <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity>
+      
+<a-entity>
+      <a-video src="#video" id="video" rgbd-video="
+            name:Fer_if;
+            depthFocalLengthX: 436.25082397460938;
+            depthFocalLengthY: 436.25082397460938;
+            depthImageSizeX: 640;
+            depthImageSizeY: 480;
+            depthPrincipalPointX: 320.6430969238281;
+            depthPrincipalPointY: 240.3957977294922;
+            farClip: 1200;
+            nearClip: 0;
+            " position="0 -1.2 -1" scale="2 2 2" rotation="0 0 -90" autoplay animation="property: object3D.position.y;
+          to: -1.28; 
+          dir: alternate; 
+          dur: 3000; 
+          loop: true"></a-video>
+</a-entity>
+             <a-gltf-model  id="holo" src="#holo" animation-mixer scale="0.04 0.0 0.04"  position="0 0 -1.44" rotation="0 0 0"></a-gltf-model>
+            
+          <a-video src="#if" position="0 2 -2.44" height="2" width="3"></a-video>
+   
+
+	</a-scene>
+
+
+
+
+  </body>
+</html>
