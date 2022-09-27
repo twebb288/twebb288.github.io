@@ -31,6 +31,7 @@
 
          
             <a-asset-items id="rocks" src= "assets/Sketchfab_2022_06_22_21_39_20.glb"></a-assets-items>
+              <a-asset-items id="boots" src= "assets/boots.glb"></a-assets-items>
               <img id="sky" src="assets/MonValley_A_LookoutPoint_8k.jpg">
               <img id="shoe1" src="assets/ultra-venom-6-min.jpeg">
              
@@ -77,7 +78,7 @@
   
       <a-entity gltf-model="#rocks" ></a-entity>
        <a-entity position="0 0 -3" gltf-model="#rocks" ></a-entity>
-    
+     <a-entity scale="0.001 0.001 0.001" position="0 1 0" gltf-model="#boots" rotation="30 0 0"></a-entity>
 <a-image src="#shoe1" width="2" height="1" position="0 2 3"></a-image>
  <a-image src="#shoe1" width="2" height="1" position="0 2 -3"></a-image>
      
