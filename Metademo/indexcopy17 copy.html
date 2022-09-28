@@ -18,7 +18,23 @@
 
 
   </head>
+
+  <style >
+    .title {
+      position:absolute;
+      z-index: 1000;
+      top:40px;
+      left: 40px;
+      background-color: white;
+      color: black;
+      font-family: Oswald, sans-serif;
+      font-weight: bold;
+      font-size: 40px;
+      text-decoration: underline;
+    }
+  </style>
   <body>
+    <div class="title" id="title" style="z-index: 1000;">NIKE VAPOUR WAVE</div>
     <a-scene
     renderer="colorManagement: true"
       antialias="true"
@@ -32,6 +48,8 @@
          
             <a-asset-items id="rocks" src= "assets/Sketchfab_2022_06_22_21_39_20.glb"></a-assets-items>
               <a-asset-items id="boots" src= "assets/boots.glb"></a-assets-items>
+                 <a-asset-items id="logo" src= "assets/Nike Logo.glb"></a-assets-items>
+
               <img id="sky" src="assets/MonValley_A_LookoutPoint_8k.jpg">
               <img id="shoe1" src="assets/ultra-venom-6-min.jpeg">
                 <img id="shoe2" src="assets/ultra-venom-7-min.png">
@@ -47,7 +65,7 @@
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
-        <a-entity camera stereocam="eye:left" orbit-controls="target: 0 1.6 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0.5 3; maxPolarAngle:180;"></a-entity>
+        <a-entity camera stereocam="eye:left" orbit-controls="target: 0 1 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0.5 3; maxPolarAngle:180;"></a-entity>
     
         <a-entity 
             id="controller-data" 
@@ -87,7 +105,7 @@
   <a-image src="#shoe3" width="1.4" height="2" position="1.7 2 -1.7" rotation="0 -50 0"></a-image>
    <a-image src="#shoe4" width="1.4" height="2" position="-1.7 2 -1.7" rotation="0 50 0"></a-image>
   
-
+     <a-entity gltf-model="#logo" scale="0.2 0.2 0.2" position="0 5 -4" rotation="90 0 0"></a-entity>
 
     </a-scene>
   </body>
