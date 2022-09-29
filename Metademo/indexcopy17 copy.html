@@ -23,7 +23,7 @@
     .title {
       position:absolute;
       z-index: 1000;
-      top:40px;
+      bottom: 0px;
       left: 0px;
       background-color: white;
       color: black;
@@ -47,7 +47,7 @@
 
          
             <a-asset-items id="rocks" src= "assets/Sketchfab_2022_06_22_21_39_20.glb"></a-assets-items>
-              <a-asset-items id="boots" src= "assets/boots.glb"></a-assets-items>
+              <a-asset-items id="boots" src= "assets/boot3.glb"></a-assets-items>
                  <a-asset-items id="logo" src= "assets/Nike Logo.glb"></a-assets-items>
 
               <img id="sky" src="assets/MonValley_A_LookoutPoint_8k.jpg">
@@ -65,7 +65,7 @@
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
-        <a-entity camera stereocam="eye:left" orbit-controls="target: 0 1 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0.5 3; maxPolarAngle:180;"></a-entity>
+        <a-entity camera stereocam="eye:left" orbit-controls="target: 0 1 0; minDistance: 0; maxDistance: 20; initialPosition: 0 1 0.3; maxPolarAngle:180;"></a-entity>
     
         <a-entity 
             id="controller-data" 
@@ -99,7 +99,7 @@
   
       <a-entity gltf-model="#rocks" ></a-entity>
        <a-entity position="0 0 -3" gltf-model="#rocks" ></a-entity>
-     <a-entity scale="0.001 0.001 0.001" position="0 1 0" gltf-model="#boots" rotation="30 0 0"></a-entity>
+     <a-entity scale="0.1 0.1 0.1" position="0 1 0" gltf-model="#boots" rotation="-60 0 0"></a-entity>
 
  <a-image src="#shoe2" width="1.4" height="2" position="0 2 -3" rotation="0 0 0"></a-image>
   <a-image src="#shoe3" width="1.4" height="2" position="1.7 2 -1.7" rotation="0 -50 0"></a-image>
