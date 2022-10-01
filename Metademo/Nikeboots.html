@@ -14,8 +14,33 @@
     <script src="raycaster-extras.js"></script>
         <script src="aframe-sprite-particles-component.js"></script>
     <script src="aframe-spe-particles-component.js"></script>
+<script src="physx.release.js"></script>
+  <script src="physics.js"></script>
+
+  <script>
+
+AFRAME.registerComponent("physics-grab", {
+    init: function () 
+    {
+        let self = this;
+
+        this.el.addEventListener("raycaster-grabbed", function() {
+           self.el.addState("grabbed"); 
+        });
+
+        this.el.addEventListener("raycaster-released", function() {
+           self.el.removeState("grabbed"); 
+        });
+    },
+
+    tick: function()
+    {
+
+    }
+});
 
 
+</script>
 
   </head>
 
@@ -40,7 +65,8 @@
       antialias="true"
       gltf-model="dracoDecoderPath: assets/"
       cursor="rayOrigin: mouse; fuse: false"
-      device-orientation-permission-ui="enabled: false">
+      device-orientation-permission-ui="enabled: false"
+      physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;">>
 
 
       <a-assets>
@@ -102,7 +128,7 @@
   
       
        <a-entity scale="0.2 0.2 0.2" position="0 0 0" gltf-model="#rocks" ></a-entity>
-     <a-entity scale="1 1 1" position="0 0.5 0" gltf-model="#boots" rotation="20 0 0"></a-entity>
+     <a-entity physx-body="type: kinematic;" raycaster-target="canGrab: true;" scale="1 1 1" position="0 0.5 0" gltf-model="#boots" rotation="20 0 0"></a-entity>
 
  <a-image src="#shoe2" width="1.4" height="2" position="0 1.5 -2.4" rotation="0 0 0"></a-image>
   <a-image src="#shoe3" width="1.4" height="2" position="1.7 1.5 -1.7" rotation="0 -50 0"></a-image>
