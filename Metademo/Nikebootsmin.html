@@ -65,7 +65,7 @@ AFRAME.registerComponent("physics-grab", {
       gltf-model="dracoDecoderPath: assets/"
       cursor="rayOrigin: mouse; fuse: false"
       device-orientation-permission-ui="enabled: false"
-      physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;">>
+      physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;">
 
 
       <a-assets>
@@ -73,16 +73,15 @@ AFRAME.registerComponent("physics-grab", {
          
             <a-asset-items id="rocks" src= "assets/cracked_concrete_block2.glb"></a-assets-items>
               <a-asset-items id="boots" src= "assets/boots4.glb"></a-assets-items>
-                 <a-asset-items id="logo" src= "assets/Nike Logo.glb"></a-assets-items>
+               
 
-              <img id="sky" src="assets/wo0qmas-360-virtual-tour-miami-bayside 1-2.jpg">
-              <img id="shoe1" src="assets/ultra-venom-6-min.jpeg">
-                <img id="shoe2" src="assets/10-nike-dream-speed-2-mercurial.webp">
-                  <img id="shoe3" src="assets/2-nike-dream-speed-2-mercurial-min.webp">
-                <img id="shoe4" src="assets/1-nike-dream-speed-2-mercurial-min.webp">
-                <img id="shoe5" src="assets/4-nike-dream-speed-2-mercurial-min.webp">
-                  <img id="shoe6" src="assets/9-nike-dream-speed-2-mercurial-min.webp">
-                <img id="shoe7" src="assets/3-nike-dream-speed-2-mercurial-min.webp">
+              <img id="sky" src="https://spestect.sirv.com/Nike%20Boots/wo0qmas-360-virtual-tour-miami-bayside%201-2.jpg">
+                <img id="shoe2" src="https://spestect.sirv.com/Nike%20Boots/1-nike-dream-speed-2-mercurial-min.webp">
+                  <img id="shoe3" src="https://spestect.sirv.com/Nike%20Boots/2-nike-dream-speed-2-mercurial-min.webp">
+                <img id="shoe6" src="https://spestect.sirv.com/Nike%20Boots/3-nike-dream-speed-2-mercurial-min.webp">
+                <img id="shoe5" src="https://spestect.sirv.com/Nike%20Boots/4-nike-dream-speed-2-mercurial-min.webp">
+                  <img id="shoe4" src="https://spestect.sirv.com/Nike%20Boots/10-nike-dream-speed-2-mercurial.webp">
+                <img id="shoe7" src="https://spestect.sirv.com/Nike%20Boots/9-nike-dream-speed-2-mercurial-min.webp">
              
       </a-assets>
       
@@ -93,7 +92,7 @@ AFRAME.registerComponent("physics-grab", {
         player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
         
-        <a-entity camera="fov:60" stereocam="eye:left" orbit-controls="target: 0 0.5 0; minDistance: 0; maxDistance: 2; initialPosition: 0 0.5 0.5; maxPolarAngle:180;"></a-entity>
+        <a-entity camera="fov:60" stereocam="eye:left" orbit-controls="autoRotate:true; autoRotateSpeed:0.2; target: 0 0.5 0; minDistance: 0; maxDistance: 2; initialPosition: 0 0.5 0.5; maxPolarAngle:180;"></a-entity>
     
         <a-entity 
             id="controller-data" 
@@ -133,11 +132,10 @@ AFRAME.registerComponent("physics-grab", {
   <a-image src="#shoe3" width="1.4" height="2" position="1.7 1.5 -1.7" rotation="0 -50 0"></a-image>
    <a-image src="#shoe4" width="1.4" height="2" position="-1.7 1.5 -1.7" rotation="0 50 0"></a-image>
 
-   <a-image src="#shoe5" width="1.4" height="2" position="0 1.5 2.4" rotation="0 0 0"></a-image>
-  <a-image src="#shoe6" width="1.4" height="2" position="1.7 1.5 1.7" rotation="0 50 0"></a-image>
-   <a-image src="#shoe7" width="1.4" height="2" position="-1.7 1.5 1.7" rotation="0 -50 0"></a-image>
+   <a-image src="#shoe5" width="1.4" height="2" position="0 1.5 2.4" rotation="0 180 0"></a-image>
+  <a-image src="#shoe6" width="1.4" height="2" position="1.7 1.5 1.7" rotation="0 230 0"></a-image>
+   <a-image src="#shoe7" width="1.4" height="2" position="-1.7 1.5 1.7" rotation="0 -230 0"></a-image>
   
-     <a-entity gltf-model="#logo" scale="0.2 0.2 0.2" position="0 5 -4" rotation="90 0 0"></a-entity>
 
     </a-scene>
   </body>
