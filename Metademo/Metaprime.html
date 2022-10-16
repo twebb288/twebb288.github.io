@@ -37,7 +37,15 @@ AFRAME.registerComponent("physics-grab", {
 
     }
 });
+AFRAME.registerComponent('link', {
+  schema: {default: ''},
 
+  init: function () {
+    var url = this.data;
+    this.el.addEventListener('click', function () {
+    window.location.href = url;
+ });
+}
 
 </script>
 
@@ -82,6 +90,7 @@ AFRAME.registerComponent("physics-grab", {
                 <img id="shoe5" src="https://spestect.sirv.com/Nike%20Boots/4-nike-dream-speed-2-mercurial-min.webp">
                   <img id="shoe4" src="https://spestect.sirv.com/Nike%20Boots/10-nike-dream-speed-2-mercurial.webp">
                 <img id="shoe7" src="https://spestect.sirv.com/Nike%20Boots/9-nike-dream-speed-2-mercurial-min.webp">
+                <img id="Kickz" src="https://www.awin1.com/cshow.php?s=3108001&v=28429&q=434226&r=1161673" border="0">
              
       </a-assets>
       
@@ -128,10 +137,12 @@ AFRAME.registerComponent("physics-grab", {
        <a-entity scale="1 1 1" position="0 0 0" gltf-model="#rocks" ></a-entity>
      <a-entity physics-grab physx-body="type: kinematic;" raycaster-target="canGrab: true;" scale="0.1 0.1 0.1" position="0 0.5 0" gltf-model="#boots" rotation="-20 0 0"></a-entity>
 
- <a-image scale="2 2 2" src="#shoe2" width="1.26" height="0.84" position="0 1.5 -2.4" rotation="0 0 0"></a-image>
-  
 
+
+ <a-image scale="2 2 2" src="#Kickz" width="0.6" height="1.6" position="0 1.5 -2.4" rotation="0 0 0" link="href:https://www.awin1.com/cread.php?s=3108001&v=28429&q=434226&r=1161673"></a-image>
    
+
+
   
 
     </a-scene>
