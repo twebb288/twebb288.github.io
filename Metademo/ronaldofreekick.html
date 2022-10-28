@@ -1,0 +1,158 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Vaporwave - A-Frame</title>
+     <meta name="description" content="Hello, World! - A-Frame">
+   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script src="aframe-stereo-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+         <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
+  <script src="controller-listener.js"></script>
+  <script src="player-move.js"></script>
+    <script src="raycaster-extras.js"></script>
+        
+<script src="physx.release.js"></script>
+  <script src="physics.js"></script>
+
+  <script >AFRAME.registerComponent('play-on-click', {
+  init: function () {
+    this.onClick = this.onClick.bind(this);
+  },
+  play: function () {
+    window.addEventListener('click', this.onClick);
+  },
+  pause: function () {
+    window.removeEventListener('click', this.onClick);
+  },
+  onClick: function (evt) {
+    var videoEl = this.el.getAttribute('material').src;
+    if (!videoEl) { return; }
+    this.el.object3D.visible = true;
+    videoEl.play();
+  }
+});</script>
+
+  <script>
+
+AFRAME.registerComponent("physics-grab", {
+    init: function () 
+    {
+        let self = this;
+
+        this.el.addEventListener("raycaster-grabbed", function() {
+           self.el.addState("grabbed"); 
+        });
+
+        this.el.addEventListener("raycaster-released", function() {
+           self.el.removeState("grabbed"); 
+        });
+    },
+
+    tick: function()
+    {
+
+    }
+});
+
+
+</script>
+
+  </head>
+
+  <style >
+    .title {
+      position:absolute;
+      z-index: 1000;
+      bottom: 0px;
+      left: 0px;
+      background-color: white;
+      color: black;
+      font-family: Oswald, sans-serif;
+      font-weight: bold;
+      font-size: 40px;
+      text-decoration: underline;
+    }
+  </style>
+  <body>
+    <div class="title" id="title" style="z-index: 1000;"><br></div>
+    <a-scene
+    renderer="colorManagement: true"
+      antialias="true"
+      gltf-model="dracoDecoderPath: assets/"
+      cursor="rayOrigin: mouse; fuse: false"
+      device-orientation-permission-ui="enabled: false"
+      physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;">
+
+
+      <a-assets>
+
+         
+            <a-asset-items id="rocks" src= "assets/footballpath.glb"></a-assets-items>
+              
+               
+
+              <img id="sky" src="https://spestect.sirv.com/Nike%20Boots/wo0qmas-360-virtual-tour-miami-bayside%201-2.jpg">
+                <img id="shoe2" src="https://spestect.sirv.com/Nike%20Boots/1-nike-dream-speed-2-mercurial-min.webp">
+                  <img id="shoe3" src="https://spestect.sirv.com/Nike%20Boots/2-nike-dream-speed-2-mercurial-min.webp">
+                <img id="shoe6" src="https://spestect.sirv.com/Nike%20Boots/3-nike-dream-speed-2-mercurial-min.webp">
+                <img id="shoe5" src="https://spestect.sirv.com/Nike%20Boots/4-nike-dream-speed-2-mercurial-min.webp">
+                  <img id="shoe4" src="https://spestect.sirv.com/Nike%20Boots/10-nike-dream-speed-2-mercurial.webp">
+                <video id="ronaldovid" src="assets/Ronaldo1.mp4" loop>
+             
+      </a-assets>
+      
+
+      <a-entity 
+        id="player" 
+        position="0 0 0" 
+        player-move="controllerListenerId: #controller-data;
+                     navigationMeshClass: environmentGround;">
+        
+        <a-entity camera="fov:60" stereocam="eye:left" orbit-controls="autoRotate:true; autoRotateSpeed:0; target: 0 1 0; minDistance: 0; maxDistance: 2; initialPosition: 0 1 1; maxPolarAngle:180;"></a-entity>
+    
+        <a-entity 
+            id="controller-data" 
+            controller-listener="leftControllerId:  #left-controller; 
+                                 rightControllerId: #right-controller;">
+        </a-entity>
+
+        <a-entity 
+            id="left-controller"
+            oculus-touch-controls="hand: left">
+        </a-entity>
+
+        <a-entity
+            id="right-controller"
+            oculus-touch-controls="hand: right"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;">
+        </a-entity>
+
+    </a-entity>
+          
+     
+
+     
+      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+    
+      <a-entity light="color: #d7866e; intensity: 2.4; type: ambient;"></a-entity>
+
+      <a-sky  color="black" rotation="0 -90 0"></a-sky>
+  
+      
+       <a-entity scale="1 1 1" position="0 1 0" gltf-model="#rocks" animation-mixer rotation="0 -90 0"></a-entity>
+    
+
+ <a-video src="#ronaldovid" width="1.080" height="0.64" scale="1.5 1.5 1.5" position="0 1.5 -1.4" rotation="0 0 0" play-on-click></a-video>
+  <a-image src="#shoe3" width="1.4" height="2" position="1.7 1.5 -1.7" rotation="0 -50 0"></a-image>
+   <a-image src="#shoe4" width="1.4" height="2" position="-1.7 1.5 -1.7" rotation="0 50 0"></a-image>
+
+
+  
+
+    </a-scene>
+  </body>
+</html> 
