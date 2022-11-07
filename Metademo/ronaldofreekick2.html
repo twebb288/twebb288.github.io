@@ -93,6 +93,7 @@ AFRAME.registerComponent("physics-grab", {
             <a-asset-items id="rocks" src= "assets/ronnie.glb"></a-assets-items>
               
                
+              <img id="stadium" src="assets/stadium2.jpg">
 
               <img id="sky" src="https://spestect.sirv.com/Nike%20Boots/wo0qmas-360-virtual-tour-miami-bayside%201-2.jpg">
                 <img id="score" src="assets/scoreboard.jpg">
@@ -100,6 +101,14 @@ AFRAME.registerComponent("physics-grab", {
                 
                 <video id="ronaldovid" src="assets/Ronaldo1.mp4" loop></video>
              
+
+			<img id="ground" src="assets/Grass004_1K_Color.jpg">
+          	<img id="occmap" src="assets/Grass004_1K_AmbientOcclusion.jpg">
+          	<img id="normalmap" src="assets/Grass004_1K_NormalDX.jpg">
+          	<img id="dispmap" src="assets/Grass004_1K_Displacement.jpg">
+
+
+
       </a-assets>
       
 
@@ -134,13 +143,24 @@ AFRAME.registerComponent("physics-grab", {
           
      
 
-     
+     <a-circle scale="2 2 2" rotation="-90 0 0" 
+
+		material=
+          "src:#ground; 
+          repeat:3 3;
+          ambientOcclusionMap:#ocmap;
+          normalMap:#normalmap;
+          normalTextureRepeat:3 3;
+          ambientOcclusionMap:#occmap;
+          ambientOcclusionTextureRepeat:3 3
+          displacementMap:#dispmap;
+          displacementTextureRepeat:3 3"></a-circle>
       
     
       <a-entity light="color: #ffffff; intensity: 1; type: ambient;"></a-entity>
 
       
-  <a-sky color="black"></a-sky>
+  <a-sky src="#stadium"></a-sky>
       
        <a-entity scale="1 1 1" position="1 0 -0.5" gltf-model="#rocks" animation-mixer rotation="0 -20 0"></a-entity>
     
