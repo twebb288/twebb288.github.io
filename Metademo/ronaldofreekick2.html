@@ -90,16 +90,14 @@ AFRAME.registerComponent("physics-grab", {
       <a-assets>
 
          
-            <a-asset-items id="rocks" src= "assets/footballpath.glb"></a-assets-items>
+            <a-asset-items id="rocks" src= "assets/ronnie.glb"></a-assets-items>
               
                
 
               <img id="sky" src="https://spestect.sirv.com/Nike%20Boots/wo0qmas-360-virtual-tour-miami-bayside%201-2.jpg">
-                <img id="shoe2" src="https://spestect.sirv.com/Nike%20Boots/1-nike-dream-speed-2-mercurial-min.webp">
-                  <img id="shoe3" src="https://spestect.sirv.com/Nike%20Boots/2-nike-dream-speed-2-mercurial-min.webp">
-                <img id="shoe6" src="https://spestect.sirv.com/Nike%20Boots/3-nike-dream-speed-2-mercurial-min.webp">
-                <img id="shoe5" src="https://spestect.sirv.com/Nike%20Boots/4-nike-dream-speed-2-mercurial-min.webp">
-                  <img id="shoe4" src="https://spestect.sirv.com/Nike%20Boots/10-nike-dream-speed-2-mercurial.webp">
+                <img id="score" src="assets/scoreboard.jpg">
+                  <img id="mom" src="assets/mom1.jpg">
+                
                 <video id="ronaldovid" src="assets/Ronaldo1.mp4" loop></video>
              
       </a-assets>
@@ -137,19 +135,19 @@ AFRAME.registerComponent("physics-grab", {
      
 
      
-      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+      
     
-      <a-entity light="color: #d7866e; intensity: 2.4; type: ambient;"></a-entity>
+      <a-entity light="color: #ffffff; intensity: 1; type: ambient;"></a-entity>
 
       
-  
+  <a-sky color="black"></a-sky>
       
-       <a-entity scale="1 1 1" position="0 1 0" gltf-model="#rocks" animation-mixer rotation="0 -90 0"></a-entity>
+       <a-entity scale="1 1 1" position="1 0 -0.5" gltf-model="#rocks" animation-mixer rotation="0 -20 0"></a-entity>
     
 
- <a-video src="#ronaldovid" width="1.080" height="0.64" scale="1.2 1.2 1.2" position="0 1.5 -1" rotation="0 0 0" play-on-click></a-video>
-  <a-image src="#shoe3" width="1.4" height="2" position="1.7 1.5 -1.7" rotation="0 -50 0"></a-image>
-   <a-image src="#shoe4" width="1.4" height="2" position="-1.7 1.5 -1.7" rotation="0 50 0"></a-image>
+ <a-video src="#ronaldovid" width="1.080" height="0.64" scale="3 3 3" position="0 2.2 -1" rotation="0 0 0" play-on-click></a-video>
+  <a-image src="#score" scale="0.5 0.5 0.5" width="2.5" height=1.0 position="0 0.68 0.72" rotation="-30 0 0"></a-image>
+   <a-image src="#mom" scale="1 1 1" width="1.11" height="0.66" position="0 1 0" rotation="0 0 0"></a-image>
 
 
   
