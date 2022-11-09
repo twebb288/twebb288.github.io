@@ -68,6 +68,14 @@ AFRAME.registerComponent("physics-grab", {
     document.getElementById('scene2').setAttribute('visible', 'true')
   }
   </script>
+
+    <script type="text/javascript">
+
+  function previousScene() {
+    document.getElementById('scene2').setAttribute('visible', 'false')
+    document.getElementById('scene1').setAttribute('visible', 'true')
+  }
+  </script>
   </head>
 
   <style >
@@ -204,7 +212,7 @@ AFRAME.registerComponent("physics-grab", {
       <a-sky src="#sky" color="" rotation="0 -90 0"></a-sky>
   
       
-       <a-entity scale="0.2 0.2 0.2" position="0 0 0" gltf-model="#rocks" ></a-entity>
+       <a-entity onclick="previousScene()" scale="0.2 0.2 0.2" position="0 0 0" gltf-model="#rocks" ></a-entity>
      <a-entity physics-grab physx-body="type: kinematic;" raycaster-target="canGrab: true;" scale="1 1 1" position="0 0.5 0" gltf-model="#boots" rotation="20 0 0"></a-entity>
 
  <a-image src="#shoe2" width="1.4" height="2" position="0 1.5 -2.4" rotation="0 0 0"></a-image>
