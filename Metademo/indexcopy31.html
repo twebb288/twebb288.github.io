@@ -19,7 +19,40 @@
 
 
 
-
+<input id="image-file" type="file" style="position: absolute; z-index: 3" />
+    <script>
+AFRAME.registerComponent("dnd-gltf", {
+  init: function () {
+    this.el.addEventListener("dragover", ev => {
+      if (ev.dataTransfer) ev.preventDefault();
+    }, false);
+    this.el.addEventListener("drop", ev => {
+      if (!ev.dataTransfer) return;
+      ev.preventDefault();
+      //console.log("canvas drop", ev.dataTransfer);
+      for (const item of ev.dataTransfer.items) {
+        if (item.kind !== "file") continue;
+        const file = item.getAsFile();
+        if (!file.name.endsWith(".gltf") && !file.name.endsWith(".glb")) continue;
+        const reader = new FileReader();
+        reader.addEventListener("load", ev => {
+          //console.log(reader.result);
+          const item = document.createElement("a-asset-item");
+          item.id = file.name;
+          item.setAttribute("src", reader.result);
+          this.el.querySelector("a-assets").append(item);
+          const entity = document.createElement("a-entity");
+          entity.setAttribute("gltf-model", `#${file.name}`);
+          entity.setAttribute("animation-mixer", "");
+          this.el.append(entity);
+        });
+        reader.readAsDataURL(file);
+      }
+    }, false);
+    //console.log("canvas file dnd");
+  },
+});
+    </script>
 <script>
 
 AFRAME.registerComponent("physics-grab", {
@@ -106,7 +139,9 @@ AFRAME.registerComponent("physics-grab", {
       gltf-model="dracoDecoderPath: assets/"
       cursor="rayOrigin: mouse; fuse: false" physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;"
       device-orientation-permission-ui="enabled: false"
-      physics="gravity: -1.6">
+      physics="gravity: -1.6"
+      dnd-gltf
+      >
 
 
       <a-assets>

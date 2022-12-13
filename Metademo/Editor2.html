@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script src="aframe-stereo-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+         <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script> 
+  <script src="controller-listener.js"></script>
+  <script src="player-move.js"></script>
+    <script src="raycaster-extras.js"></script>
+        
+<script src="physx.release.js"></script>
+  <script src="physics.js"></script>
+
+  <script>
+
+AFRAME.registerComponent("physics-grab", {
+    init: function () 
+    {
+        let self = this;
+
+        this.el.addEventListener("raycaster-grabbed", function() {
+           self.el.addState("grabbed"); 
+        });
+
+        this.el.addEventListener("raycaster-released", function() {
+           self.el.removeState("grabbed"); 
+        });
+    },
+
+    tick: function()
+    {
+
+    }
+});
+
+      AFRAME.registerComponent("model-changer", {
+        init: function() {
+          const boyImg = document.getElementById("boy")
+          const girlImg = document.getElementById("girl")
+
+          function getAssetSrc(id) {
+            return document.getElementById(id).getAttribute("src")
+          }
+          boyImg.addEventListener("click", e => {
+            this.el.setAttribute("scale", "4 4 4")
+            this.el.setAttribute("gltf-model", getAssetSrc("model2"))
+          })
+           girlImg.addEventListener("click", e => {
+            this.el.setAttribute("scale", "0.2 0.2 0.2")
+            this.el.setAttribute("gltf-model", getAssetSrc("rocks"))
+          })
+        }
+      })
+
+      AFRAME.registerComponent("product-changer", {
+        init: function() {
+          const cube = document.getElementById("cubethumb")
+          const bootmodel = document.getElementById("bootthumb")
+
+          function getAssetSrc(id) {
+            return document.getElementById(id).getAttribute("src")
+          }
+          cube.addEventListener("click", e => {
+            this.el.setAttribute("scale", "0.05 0.05 0.05")
+            this.el.setAttribute("gltf-model", getAssetSrc("cube"))
+          })
+           bootmodel.addEventListener("click", e => {
+            this.el.setAttribute("scale", "1 1 1")
+            this.el.setAttribute("gltf-model", getAssetSrc("boots"))
+          })
+        }
+      })
+
+
+      AFRAME.registerComponent("sky-changer", {
+        init: function() {
+          const sky1 = document.getElementById("skythumb")
+          const sky2 = document.getElementById("skythumb2")
+          const sky3 = document.getElementById("skythumb3")
+
+          function getAssetSrc(id) {
+            return document.getElementById(id).getAttribute("src")
+          }
+          sky1.addEventListener("click", e => {
+            this.el.setAttribute("scale", "1 1 1")
+            this.el.setAttribute("src", getAssetSrc("skythumb"))
+          })
+           sky2.addEventListener("click", e => {
+            this.el.setAttribute("scale", "1 1 1")
+            this.el.setAttribute("src", getAssetSrc("skythumb2"))
+          })
+             sky3.addEventListener("click", e => {
+            this.el.setAttribute("scale", "1 1 1")
+            this.el.setAttribute("src", getAssetSrc("skythumb3"))
+          })
+        }
+      })
+
+  AFRAME.registerComponent('material-changer', {
+    init: function() {
+      this.selectedTexture = null
+      setTimeout((e) => {
+        var els = document.getElementsByClassName("images");
+        Array.from(els).forEach((el) => {
+          el.addEventListener('click', (e)=>{
+          this.selectedTexture = e.target.src
+          })
+        });
+      }, 1000)
+
+      this.el.addEventListener('click', (e) => {
+      if (!this.selectedTexture) {
+      return
+      }
+        this.el.setAttribute("material", "src", this.selectedTexture)
+      })
+    }
+  })
+
+
+</script>
+  </head>
+
+  <body>
+
+<link href="bootstrap.min.css" rel="stylesheet">
+<link href="sidebars.css" rel="stylesheet">
+  <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .a-scene {
+        z-index: 0
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<main class="d-flex flex-nowrap">
+
+ 
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">Sidebar</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link active" aria-current="page">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          Orders
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+          Products
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+          Customers
+        </a>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>mdo</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="sidebars.js"></script>
+
+    <a-scene class="a-scene"
+    renderer="colorManagement: true"
+      antialias="true"
+      gltf-model="dracoDecoderPath: assets/"
+      cursor="rayOrigin: mouse; fuse: false"
+      device-orientation-permission-ui="enabled: false"
+      physx="autoLoad: true; delay: 1000; wasmUrl: physx.release.wasm; useDefaultScene: false;">
+
+
+      <a-assets>
+
+          <a-asset-items id="cube" src= "assets/cube.glb"></a-assets-items>
+            <a-asset-items id="rocks" src= "assets/cracked_concrete_block2.glb"></a-assets-items>
+              <a-asset-items id="boots" src= "assets/boots4.glb"></a-assets-items>
+                <a-asset-items id="model2" src= "assets/Project Name (4).glb"></a-assets-items>
+                   <a-asset-items id="model3" src= "assets/ronnie.glb"></a-assets-items>
+
+              <img id="sky" src="https://spestect.sirv.com/Rectangle%201235.webp">
+                <img id="shoe2" src="https://spestect.sirv.com/Nike%20Boots/1-nike-dream-speed-2-mercurial-min.webp">
+                  <img id="shoe3" src="https://spestect.sirv.com/Nike%20Boots/2-nike-dream-speed-2-mercurial-min.webp">
+                <img id="shoe6" src="https://spestect.sirv.com/Nike%20Boots/3-nike-dream-speed-2-mercurial-min.webp">
+                <img id="shoe5" src="https://spestect.sirv.com/Nike%20Boots/4-nike-dream-speed-2-mercurial-min.webp">
+                  <img id="shoe4" src="https://spestect.sirv.com/Nike%20Boots/10-nike-dream-speed-2-mercurial.webp">
+                <img id="shoe7" src="https://spestect.sirv.com/Nike%20Boots/9-nike-dream-speed-2-mercurial-min.webp">
+             <img id="imageblank" src="assets/imageblank.jpg">
+      </a-assets>
+      
+
+      <a-entity 
+        id="player" 
+        position="0 0 0" 
+        player-move="controllerListenerId: #controller-data;
+                     navigationMeshClass: environmentGround;">
+        
+        <a-entity camera="fov:60" stereocam="eye:left" orbit-controls="autoRotate:false; autoRotateSpeed:0.2; target: 0 0.5 0; minDistance: 0; maxDistance: 20; initialPosition: 0 0.5 0.5; maxPolarAngle:180;"></a-entity>
+    
+        <a-entity 
+            id="controller-data" 
+            controller-listener="leftControllerId:  #left-controller; 
+                                 rightControllerId: #right-controller;">
+        </a-entity>
+
+        <a-entity 
+            id="left-controller"
+            oculus-touch-controls="hand: left">
+        </a-entity>
+
+        <a-entity
+            id="right-controller"
+            oculus-touch-controls="hand: right"
+            raycaster="objects: .raycaster-target, .environmentGround;"
+            raycaster-extras="controllerListenerId: #controller-data; 
+                              beamImageSrc: #gradient; beamLength: 0.5;">
+        </a-entity>
+
+    </a-entity>
+          
+     
+
+     
+      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+    
+     
+
+      <a-sky src="#sky" color="" rotation="0 -90 0" sky-changer></a-sky>
+  
+      
+       <a-entity scale="4 4 4" position="0 0 0" gltf-model="#model2" model-changer></a-entity>
+     <a-entity physics-grab physx-body="type: kinematic;" raycaster-target="canGrab: true;" scale="0.05 0.05 0.05" position="0 0.5 0" gltf-model="#cube" rotation="20 0 0" product-changer ></a-entity>
+
+ <a-image material-changer src="#imageblank"  width="1.4" height="2" position="0 1.5 -2.4" rotation="0 0 0"></a-image>
+  <a-image material-changer  src="#imageblank" width="1.4" height="2" position="1.7 1.5 -1.7" rotation="0 -50 0"></a-image>
+   <a-image material-changer  src="#imageblank" width="1.4" height="2" position="-1.7 1.5 -1.7" rotation="0 50 0"></a-image>
+
+   <a-image material-changer src="#imageblank" width="1.4" height="2" position="0 1.5 2.4" rotation="0 180 0"></a-image>
+  <a-image material-changer  src="#imageblank" width="1.4" height="2" position="1.7 1.5 1.7" rotation="0 230 0"></a-image>
+   <a-image material-changer src="#imageblank"  width="1.4" height="2" position="-1.7 1.5 1.7" rotation="0 -230 0"></a-image>
+  
+
+    </a-scene>
+  </body>
+
+</html>
